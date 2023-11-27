@@ -3500,3 +3500,354 @@ test11MessageNotUnderstoodAssignedToVariable
 ----SNAPSHOT----(23 November 2023 20:01:04) CuisUniversity-5981.image priorSource: 10344210!
 
 ----QUIT----(24 November 2023 09:47:44) CuisUniversity-5981.image priorSource: 10344696!
+
+----STARTUP---- (27 November 2023 19:06:46) as C:\Users\jgutierrez\OneDrive - HEXACTA S.A\Julian\isw1\Tesis\LiveTyping-TypeChecker\typeCheckerDragon_on_image_5981\CuisUniversity-5981.image!
+
+
+----QUIT----(27 November 2023 19:08:40) CuisUniversity-5981.image priorSource: 10344790!
+
+----STARTUP---- (27 November 2023 19:13:00) as C:\Users\jgutierrez\OneDrive - HEXACTA S.A\Julian\isw1\Tesis\LiveTyping-TypeChecker\typeCheckerDragon_on_image_5981\CuisUniversity-5981.image!
+
+
+!testRun: #TypeCheckerDragonTest #test01EmptyMethodDoesNotGenerateAlerts stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test01EmptyMethodDoesNotGenerateAlerts stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesAlert stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesAlert stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesAlert stamp: 'JFGO 11/27/2023 19:32:14'!
+PASSED!
+
+----SNAPSHOT----(27 November 2023 19:32:33) CuisUniversity-5981.image priorSource: 10345072!
+!TypeCheckerDragonTestMethods methodsFor: 'DELETE THIS' stamp: 'JFGO 11/27/2023 19:50:05'!
+m2
+	| col |
+	col:= OrderedCollection with: 1 with: 'string'.
+	col do:[:item | ].! !
+
+method := TypeCheckerDragonTestMethods >> #m2.!
+
+TypeCheckerDragonTestMethods printASTOn: method!
+
+TypeCheckerDragonTestMethods new m2!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:06:21'!
+test11MethodWithCollectionXXX
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #m2.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self fail.
+	! !
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:06:33' prior: 50655002!
+test11MethodWithCollectionXXX
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #m2.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self deny: typeChecker hasAlerts.
+	! !
+
+aMessageNode receiver!
+
+aMessageNode argumentsInEvaluationOrder!
+
+self first!
+!TypeCheckerDragonMethodVisitor methodsFor: 'visiting' stamp: 'JFGO 11/27/2023 20:19:38' prior: 50654039 overrides: 16906976!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverTypes |
+	aMessageNode receiver accept: self.
+	
+	
+	incompleteTypeInfo := OrderedCollection new. 
+	receiverTypes:=aMessageNode receiverTypesIn:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+	
+	incompleteTypeInfo do: [ :anIncompleteTypeInfoReason | anIncompleteTypeInfoReason addTo: self node: aMessageNode ].
+	
+	(receiverTypes isEmpty and: [ incompleteTypeInfo isEmpty])
+		ifTrue: [self addAlertWithMessage: 'Receiver has no types']
+		ifFalse: [ self checkMessageSentIn: aMessageNode isImplementedInAll: receiverTypes ].
+	
+	"aMessageNode argumentsInEvaluationOrder do: [:argumentBlock | argumentBlock accept: self]."! !
+
+!testRun: #TypeCheckerDragonTest #test01EmptyMethodDoesNotGenerateAlerts stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesAlert stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesAlert stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/27/2023 20:19:44'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesAlert stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionXXX stamp: 'JFGO 11/27/2023 20:19:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/27/2023 20:19:44'!
+FAILURE!
+!TypeCheckerDragonMethodVisitor methodsFor: 'visiting' stamp: 'JFGO 11/27/2023 20:19:58' prior: 50655026 overrides: 16906976!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverTypes |
+	aMessageNode receiver accept: self.
+	
+	
+	incompleteTypeInfo := OrderedCollection new. 
+	receiverTypes:=aMessageNode receiverTypesIn:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+	
+	incompleteTypeInfo do: [ :anIncompleteTypeInfoReason | anIncompleteTypeInfoReason addTo: self node: aMessageNode ].
+	
+	(receiverTypes isEmpty and: [ incompleteTypeInfo isEmpty])
+		ifTrue: [self addAlertWithMessage: 'Receiver has no types']
+		ifFalse: [ self checkMessageSentIn: aMessageNode isImplementedInAll: receiverTypes ].
+	
+	aMessageNode argumentsInEvaluationOrder do: [:argumentBlock | argumentBlock accept: self].! !
+!TypeCheckerDragonTestMethods methodsFor: 'DELETE THIS' stamp: 'JFGO 11/27/2023 20:20:35' prior: 50654991!
+m2
+	| col |
+	col:= OrderedCollection with: 1 with: 'string'.
+	col do:[:item | item factorial].! !
+
+TypeCheckerDragonTestMethods new m2!
+
+aMessageNode argumentsInEvaluationOrder!
+
+self first!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:29:49'!
+test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled
+	"TODO: This test should only pass when LiveTypingGenerics is weather disabled or not installed at all. Is it possible to control that here?"
+	"i.e if it exists and it's installed, disable it just for this test"
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #m2.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self deny: typeChecker hasAlerts.
+	! !
+
+!methodRemoval: TypeCheckerDragonTest #test11MethodWithCollectionXXX stamp: 'JFGO 11/27/2023 20:31:26'!
+test11MethodWithCollectionXXX
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #m2.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self deny: typeChecker hasAlerts.
+	!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:31:36' prior: 50655137!
+test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled
+	"TODO: This test should only pass when LiveTypingGenerics is weather disabled or not installed at all. Is it possible to control that here?"
+	"i.e if it exists and it's installed, disable it just for this test"
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #m2.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Receiver has no types'.
+	! !
+!TypeCheckerDragonTestMethods methodsFor: 'collections generics' stamp: 'JFGO 11/27/2023 20:32:57'!
+methodWithCollectionWithNoTypeError
+	| col |
+	col:= OrderedCollection with: 1 with: 2.
+	col do:[:item | item factorial].! !
+!TypeCheckerDragonTestMethods methodsFor: 'collections generics' stamp: 'JFGO 11/27/2023 20:33:30'!
+methodWithCollectionWithErrorTypeOnIteration
+	| col |
+	col:= OrderedCollection with: 1 with: 'string'.
+	col do:[:item | item factorial].! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/27/2023 20:33:30' prior: 50655166!
+test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled
+	"TODO: This test should only pass when LiveTypingGenerics is weather disabled or not installed at all. Is it possible to control that here?"
+	"i.e if it exists and it's installed, disable it just for this test"
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithErrorTypeOnIteration.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Receiver has no types'.
+	! !
+
+!methodRemoval: TypeCheckerDragonTestMethods #m2 stamp: 'JFGO 11/27/2023 20:33:30'!
+m2
+	| col |
+	col:= OrderedCollection with: 1 with: 'string'.
+	col do:[:item | item factorial].!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:33:45'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:33:45'!
+FAILURE!
+
+self alerts first message!
+
+self alerts second message!
+!TypeCheckerDragonTestMethods methodsFor: 'collections generics' stamp: 'JFGO 11/27/2023 20:37:05' prior: 50655186!
+methodWithCollectionWithNoTypeError
+	| col |
+	"col:= OrderedCollection with: 1 with: 2."
+	"TODO. Tener n elementos del mismo tipo con error genera n errores iguales. Podemos identificar un error duplicado y no agregarlo a la lista?"
+	col:= OrderedCollection with: 1.
+	col do:[:item | item factorial].! !
+
+!testRun: #TypeCheckerDragonTest #test01EmptyMethodDoesNotGenerateAlerts stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesAlert stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesAlert stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesAlert stamp: 'JFGO 11/27/2023 20:37:07'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:37:07'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:37:07'!
+FAILURE!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:37:43' prior: 50655201!
+test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled
+	"TODO: This test should only pass when LiveTypingGenerics is weather disabled or not installed at all. Is it possible to control that here?"
+	"i.e if it exists and it's installed, disable it just for this test"
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithNoTypeError.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Receiver has no types'.
+	! !
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:37:46'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:37:46'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:38:03'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/27/2023 20:38:03'!
+FAILURE!
+
+self alerts first message!
+
+self alerts second message!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:40:04'!
+test12MethodWithCollectionIteratingGeneratesAlertForItemsWithErrorTypes
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithNoTypeError.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assert: true. "TODO."
+	! !
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:40:18' prior: 50655348!
+test12MethodWithCollectionIteratingGeneratesAlertForItemsWithErrorTypes
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithErrorTypeOnIteration.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assert: true. "TODO."
+	! !
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 11/27/2023 20:41:31' prior: 50655361!
+test12MethodWithCollectionIteratingGeneratesAlertForItemsWithErrorTypes
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithErrorTypeOnIteration.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assert: true. "TODO. Instalar Generics y ver que onda"
+	! !
+
+----QUIT----(27 November 2023 20:41:35) CuisUniversity-5981.image priorSource: 10346784!
