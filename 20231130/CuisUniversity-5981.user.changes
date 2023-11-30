@@ -1,0 +1,395 @@
+
+
+----QUIT----(13 August 2023 19:14:09) CuisUniversity-5981.image priorSource: 5713367!
+
+----STARTUP---- (13 August 2023 19:14:10) as /Users/hernan/Documents/Cuis/5.0-64Bits/Cuis-University-Installer/CuisUniversity-5981.image!
+
+
+----QUIT----(13 August 2023 19:14:10) CuisUniversity-5981.image priorSource: 10197065!
+
+----STARTUP---- (30 November 2023 18:44:52) as C:\Users\jgutierrez\Tesis\clean5981\windows64\CuisUniversity-5981.image!
+
+
+----End fileIn of C:\Users\jgutierrez\Tesis\clean5981\windows64\LiveTypingDragon.2.st----!
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654523!
+perform
+	self typeCheck.
+	^self.! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654536!
+typeCheckWhenDisabledTyping
+	^self generateAlertWithMessage: 'Method has live typing disabled'.! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654505!
+generateAlertWithMessage: anAlertMessage
+	alerts add: (TypeCheckerDragonAlert for: compiledMethod withMessage: anAlertMessage).! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654542!
+typeCheckWhenEnabledTyping
+	(TypeCheckerDragonMethodVisitor for: compiledMethod collectingAlerts: alerts) accept.
+	^self.! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654516!
+initializeFor: aCompiledMethod 
+	compiledMethod := aCompiledMethod " asMethodReference".
+	alerts := OrderedCollection new.! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654512!
+hasAlerts
+	^alerts size > 0.! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654502!
+alerts
+	^alerts.! !
+!TypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654527!
+typeCheck
+	compiledMethod isPrimitive ifTrue: [^self].
+	compiledMethod isAnnotatingTypes 
+		ifTrue: [self typeCheckWhenEnabledTyping] 
+		ifFalse: [ self typeCheckWhenDisabledTyping]! !
+!TypeCheckerDragon class methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654558!
+for: aCompiledMethod   
+	^self new initializeFor: aCompiledMethod ! !
+!TypeCheckerDragonAlert methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654586!
+message
+	^alertMessage .! !
+!TypeCheckerDragonAlert methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654579!
+initializeFor: aCompiledMethod withMessage: anAlertMessage 
+	compiledMethod := aCompiledMethod.
+	alertMessage := anAlertMessage.! !
+!TypeCheckerDragonAlert class methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654600!
+for: aCompiledMethod withMessage: anAlertMessage 
+	^self new initializeFor: aCompiledMethod withMessage: anAlertMessage ! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654449!
+addProblem: anIncompleteTypeInfoError node: aMessageNode
+"TODO. We still don't know about warnings, this message is for coupling with incompleteTypeInfo"
+	self addAlertWithMessage: 'Cannot deduce Receiver Type'
+! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654387!
+addAlertWithMessage: aStringMessage
+
+	^ alerts add: (TypeCheckerDragonAlert for: methodNode withMessage: aStringMessage)! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654424 overrides: 16906976!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverTypes |
+	aMessageNode receiver accept: self.
+	
+	
+	incompleteTypeInfo := OrderedCollection new. 
+	receiverTypes:=aMessageNode receiverTypesIn:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+	
+	incompleteTypeInfo do: [ :anIncompleteTypeInfoReason | anIncompleteTypeInfoReason addTo: self node: aMessageNode ].
+	
+	(receiverTypes isEmpty and: [ incompleteTypeInfo isEmpty])
+		ifTrue: [self addAlertWithMessage: 'Receiver has no types']
+		ifFalse: [ self checkMessageSentIn: aMessageNode isImplementedInAll: receiverTypes ].
+	
+	aMessageNode argumentsInEvaluationOrder do: [:argumentBlock | argumentBlock accept: self].! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654459!
+addWarning: anIncompleteTypeInfoError node: aMessageNode
+"TODO. We still don't know about warnings, this message is for coupling with incompleteTypeInfo"
+	self addAlertWithMessage: 'Cannot deduce Receiver Type'
+! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654394!
+checkMessageSentIn: aMessageNode isImplementedInAll: receiverTypes 
+	
+	| implementorsFinder |
+	
+	implementorsFinder := AllActualLocalImplementors of: aMessageNode selectorSymbol forAll: receiverTypes.
+	implementorsFinder value.
+	
+	implementorsFinder notImplementedIsEmpty ifFalse: [  
+		alerts add: (TypeCheckerDragonAlert for: methodNode withMessage: 'Message Selector not implemented in Receiver')].! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654411 overrides: 16906943!
+visitBlockNode: aBlockNode
+	"Por ahora, no hay evidencia de necesitar hacer algo más que visitar los statements del bloque, que lo hace super. De ser asi definitivamente, este mensaje no tiene razon de ser reimplementado y deberiamos borrarlo".
+	super visitBlockNode: aBlockNode.! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654382!
+accept
+	self visitMethodNode: methodNode.! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654373!
+initializeFor: aCompiledMethod collectingAlerts: anAlertCollection
+	compiledMethod := aCompiledMethod.
+	methodNode := compiledMethod methodNode .
+	alerts := anAlertCollection .! !
+!TypeCheckerDragonMethodVisitor class methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:32' prior: 50654480!
+for: aCompiledMethod collectingAlerts: anAlertCollection  
+	^self new initializeFor: aCompiledMethod collectingAlerts: anAlertCollection .! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654622 overrides: 16961394!
+setUp
+	"Ensure that always this method initializes with live typing enabled. See test01 and test02"
+	(TypeCheckerDragonTestMethods >> #emptyMethodEnableTyping) initializeTypeInformation.
+	
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654631!
+test01EmptyMethodDoesNotGenerateAlerts
+
+	| methodToCheck typeChecker |
+	
+	methodToCheck := TypeCheckerDragonTestMethods >> #emptyMethodEnableTyping.
+	
+	typeChecker := methodToCheck typeCheckDragon.
+	
+	self deny: typeChecker hasAlerts.
+! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654674!
+test03PrimitiveMethodsDontCheckTypes
+
+	| methodToCheck typeChecker |
+	
+	"methodToCheck := Array >> #elementsForwardIdentityTo:."
+	methodToCheck := TypeCheckerDragonTestMethods >> #emptyMethodPrimitive.
+	
+	typeChecker := methodToCheck typeCheckDragon.
+	
+	self deny: typeChecker hasAlerts.
+! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654760!
+test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts
+
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithMessageArgumentToResolve.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	
+	self assert: 2 equals: typeChecker alerts size.
+	typeChecker alerts do: [:alert | 
+		self assert: (alert isKindOf: TypeCheckerDragonAlert).
+		self assert: 'Message Selector not implemented in Receiver' equals: alert message .
+	].
+	
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654657!
+assertTypeChecker: aTypeChecker hasOneAlertWithMessage: anAlertMessage
+	
+	| alert |
+	self assert: aTypeChecker hasAlerts.
+	self assert: aTypeChecker alerts size equals: 1.
+	alert:=aTypeChecker alerts anyOne.
+	self assert: (alert isKindOf: TypeCheckerDragonAlert).
+	self assert: anAlertMessage equals: alert message .
+	"PEDIR MAS INFO SOBRE LA ALERTA. NO HARIA FALTA EXPONER EL MENSAJE NI TENERLO HARDCODEADO".
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654687!
+test04MethodWithMessageNotUnderstoodByReceiverGeneratesAlert
+
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithMessageNotUnderstood.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Message Selector not implemented in Receiver'.
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654795!
+test10MessageSentToMethodWithNoReturnTypeGeneratesAlert
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithMessageWithNoReturnTypes.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	"TODO. So far, this test does not generate value versus test03, but we are waiting definition of error vs warning vs problem"
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Cannot deduce Receiver Type'.
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654642!
+test02MethodThatDontCheckTypesGeneratesAlert
+
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #emptyMethodEnableTyping.
+	methodToCkeck removeProperties .
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Method has live typing disabled'.
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654702!
+test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert
+
+	| methodToCkeck typeChecker firstAlert secondAlert |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithMessageNestedNotUnderstoodOnReceiver.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assert: 2 equals: typeChecker alerts size.
+	firstAlert := typeChecker alerts first.
+	self assert: 'Message Selector not implemented in Receiver' equals: firstAlert message .
+	secondAlert := typeChecker alerts second.
+	self assert: 'Cannot deduce Receiver Type' equals: secondAlert message .	
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654746!
+test07MethodWithMessageWithNoReceiverTypeGeneratesAlert
+
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithReceiverWithNoTypes.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Receiver has no types'.
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654813!
+test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled
+	"TODO: This test should only pass when LiveTypingGenerics is weather disabled or not installed at all. Is it possible to control that here?"
+	"i.e if it exists and it's installed, disable it just for this test"
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithNoTypeError.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assertTypeChecker: typeChecker hasOneAlertWithMessage: 'Receiver has no types'.
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654724!
+test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts
+
+	| methodToCkeck typeChecker firstAlert secondAlert |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithManyMessageNotUnderstood.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assert: 2 equals: typeChecker alerts size.
+	firstAlert := typeChecker alerts first.
+	self assert: 'Message Selector not implemented in Receiver' equals: firstAlert message .
+	secondAlert := typeChecker alerts second.
+	self assert: 'Cannot deduce Receiver Type' equals: secondAlert message .	
+	
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654835!
+test12MethodWithCollectionIteratingGeneratesAlertForItemsWithErrorTypes
+	
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodWithCollectionWithErrorTypeOnIteration.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	self assert: true. "TODO. Instalar Generics y ver que onda"
+	! !
+!TypeCheckerDragonTest methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654779!
+test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts
+	"This is because the object is able to respond to the message even if it is for throwing an exception"
+
+	| methodToCkeck typeChecker |
+	
+	methodToCkeck := TypeCheckerDragonTestMethods >> #methodInstanceNotIndexable.
+	
+	
+	typeChecker := methodToCkeck typeCheckDragon.
+	
+	
+	self deny: typeChecker hasAlerts .
+	! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654936!
+methodWithMessageNotUnderstoodAssignedToVariable
+	| v1 |
+	v1:= 'false' not.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654918!
+methodWithMessageNestedNotUnderstoodOnReceiver
+	"The first message that visitor evaluates is the outer not sent to ('false' not) which is perfectly defined." 
+	"The inner not message in the receiver it has a type problem, so this should force implement object recursion for receiver."
+	'false' not not.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654963!
+methodWithCollectionWithNoTypeError
+	| col |
+	"col:= OrderedCollection with: 1 with: 2."
+	"TODO. Tener n elementos del mismo tipo con error genera n errores iguales. Podemos identificar un error duplicado y no agregarlo a la lista?"
+	col:= OrderedCollection with: 1.
+	col do:[:item | item factorial].! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654869!
+m4
+	|temp|
+	temp size.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654883!
+emptyMethodPrimitive! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654911!
+methodWithMessageArgumentToResolve
+	self methodSumsNumber: ('10' factorial) anotherNumber: ('5' factorial).
+	! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654874!
+emptyMethodEnableTyping
+	"Actually, by default type checking will be enabled. Disable it manually from outside. Method name is for declarativity purposes"
+	1 + 1.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654955!
+methodWithCollectionWithErrorTypeOnIteration
+	| col |
+	col:= OrderedCollection with: 1 with: 'string'.
+	col do:[:item | item factorial].! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654949!
+methodWithReceiverWithNoTypes
+	nilVariableWithNoType size.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654865!
+m3
+	45 + 'hola'.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654898!
+methodWithManyMessageNotUnderstood
+	"The first message that visitor evaluates is factorial which is not understood by receiver that has also type problems" 
+	"The inner not message in the receiver it has a type problem, so this should force implement object recursion for receiver."
+	'false' not factorial.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654887!
+methodInstanceNotIndexable
+	15 size.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654942!
+methodWithMessageWithNoReturnTypes
+	(self methodSumsNumber: 1 anotherNumber: 1) factorial.
+	! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654931!
+methodWithMessageNotUnderstood
+	'false' not.! !
+!TypeCheckerDragonTestMethods methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654892!
+methodSumsNumber: aNumber anotherNumber: anotherNumber 
+	
+	anotherNumber + aNumber.! !
+!TypeCheckerDragonTestMethods class methodsFor: 'as yet unclassified' stamp: 'JFGO 11/30/2023 19:14:50' prior: 50654987!
+printASTOn: aCompiledMethod 
+	
+	| stream |
+	stream := String writeStream.
+	
+	aCompiledMethod methodNode nodePrintOn: stream indent: 0.
+	^stream! !
+
+!testRun: #TypeCheckerDragonTest #test01EmptyMethodDoesNotGenerateAlerts stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesAlert stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesAlert stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesAlert stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionIteratingGeneratesAlertForItemsWhenGenericsNotInstalled stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithCollectionIteratingGeneratesAlertForItemsWithErrorTypes stamp: 'JFGO 11/30/2023 19:36:08'!
+ERROR!
