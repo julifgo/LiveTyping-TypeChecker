@@ -1,6 +1,6 @@
-'From Cuis 6.0 [latest update: #5981] on 13 December 2023 at 6:52:12 pm'!
+'From Cuis 6.0 [latest update: #5981] on 13 December 2023 at 7:46:52 pm'!
 'Description '!
-!provides: 'LiveTypingTypeChecker' 1 1!
+!provides: 'LiveTypingTypeChecker' 1 2!
 SystemOrganization addCategory: 'LiveTypingTypeChecker-TypeCheckingDragon'!
 SystemOrganization addCategory: 'LiveTypingTypeChecker-TypeCheckingDragon-Tests'!
 
@@ -71,13 +71,13 @@ addAlertWithMessage: aStringMessage
 
 	^ alerts add: (TypeCheckerDragonAlert for: methodNode withMessage: aStringMessage)! !
 
-!TypeCheckerDragonMethodVisitor methodsFor: 'visiting' stamp: 'JFGO 12/11/2023 18:51:06'!
+!TypeCheckerDragonMethodVisitor methodsFor: 'visiting' stamp: 'JFGO 12/13/2023 19:39:56'!
 checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType 
 	
 	| implementorsFinder |
 	
 	implementorsFinder := AllActualLocalImplementors of: aMessageNode selectorSymbol forAll: receiverLiveType.
-	implementorsFinder value.
+	implementorsFinder LiveTypeValue.
 	
 	implementorsFinder notImplementedIsEmpty ifFalse: [  
 		alerts add: (TypeCheckerDragonAlert for: methodNode withMessage: 'Message Selector not implemented in Receiver')].! !
@@ -461,3 +461,19 @@ receiverLiveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeI
 !MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 12/8/2023 21:15:34'!
 receiverLiveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo castingWith: aTypeCastApplier
 	^self receiverOrCascadeReceiver typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo castingWith: aTypeCastApplier ! !
+
+!AllActualLocalImplementors methodsFor: '*LiveTypingTypeChecker-Evaluating' stamp: 'JFGO 12/13/2023 19:43:25'!
+LiveTypeValue
+	
+	notImplemented := OrderedCollection new.
+	implementors := IdentitySet new.
+	types liveTypesDo: [ :aLiveType | 
+		(aLiveType liveClass lookupSelector: selector ) 
+			ifNil: [ notImplemented add: (NotImplementedMethod class: aLiveType liveClass selector: selector ) ]
+			ifNotNil: [ :method | implementors add: method ].
+		 ].
+
+	implementors := implementors collect: [ :method | method asMethodReference ].
+	
+	^self 
+! !
