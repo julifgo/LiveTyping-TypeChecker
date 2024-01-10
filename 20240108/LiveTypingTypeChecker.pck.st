@@ -1,6 +1,6 @@
-'From Cuis 6.0 [latest update: #5981] on 8 January 2024 at 6:30:49 pm'!
+'From Cuis 6.0 [latest update: #5981] on 10 January 2024 at 4:03:55 pm'!
 'Description '!
-!provides: 'LiveTypingTypeChecker' 1 4!
+!provides: 'LiveTypingTypeChecker' 1 7!
 SystemOrganization addCategory: 'LiveTypingTypeChecker-TypeCheckingDragon'!
 SystemOrganization addCategory: 'LiveTypingTypeChecker-TypeCheckingDragon-Tests'!
 
@@ -671,6 +671,41 @@ printASTOn: aCompiledMethod
 typeCheckDragon
 	^(TypeCheckerDragon for: self) perform! !
 
+!MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 1/4/2024 20:30:25'!
+liveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier storingGenericsInfoIn: aStorage
+	
+	| messageReturnTypes sentSelector receiverTypes  |
+
+	sentSelector := self selectorSymbol.
+	receiverTypes := aTypeCastApplier receiverLiveTypesFor: self in: aCompiledMethod addingIncompleteTypeInfoTo:  incompleteTypeInfoReasons storingGenericsInfoIn: aStorage.
+	
+	messageReturnTypes := Set new.
+	receiverTypes liveTypesDo: [:aReceiverType | | currentReceiverClass currentMethodRef | 								
+			currentReceiverClass := aReceiverType liveClass.
+			currentMethodRef := (MethodReference class: currentReceiverClass selector: sentSelector).
+			(aStorage genericTypeConstructorFrom: currentMethodRef) 
+				ifNil: [
+					(currentReceiverClass lookupSelector: sentSelector) 
+						ifNil: [ incompleteTypeInfoReasons add: (
+							IncompleteTypeInfoError dueToMissingImplementationOf: currentMethodRef node: self) ]
+						ifNotNil: [ :implementor |
+							self returnTypesOf: implementor 
+								from: aReceiverType 
+								receiving: sentSelector 
+								in: aCompiledMethod
+								addingReturnTypesTo: messageReturnTypes 
+								addingIncompleteTypeInfoTo: incompleteTypeInfoReasons 
+								storingGenericsInfoIn: aStorage
+							].
+				] 
+				ifNotNil: [:aGenericTypeConstructor | 
+					messageReturnTypes add: (aGenericTypeConstructor in: aCompiledMethod forArguments: self argumentsInEvaluationOrder storingGenericsInfoIn: aStorage).
+				].
+			
+			].
+		
+	^RawToLiveTypesAdapter new adapt: messageReturnTypes.! !
+
 !MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 12/8/2023 21:15:33'!
 receiverLiveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo 
 	^self receiverLiveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo castingWith: NoTypeCastApplier new.! !
@@ -678,6 +713,43 @@ receiverLiveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeI
 !MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 12/8/2023 21:15:34'!
 receiverLiveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo castingWith: aTypeCastApplier
 	^self receiverOrCascadeReceiver typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo castingWith: aTypeCastApplier ! !
+
+!MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 1/4/2024 20:29:26'!
+returnTypesOf: implementor from: aReceiverType receiving: sentSelector in: aCompiledMethod addingReturnTypesTo: messageReturnTypes addingIncompleteTypeInfoTo: incompleteTypeInfoReasons storingGenericsInfoIn: aStorage
+
+	| returnTypes |
+
+	"generic getter case"
+	((aReceiverType isGenericType) and: [aStorage getterMethodsFor: aReceiverType includes: sentSelector]) ifTrue: [
+		| parameterIndex |
+		parameterIndex := (aStorage getterMethodsFor: aReceiverType) at: sentSelector.
+		messageReturnTypes addAll: (aReceiverType generics at: parameterIndex).
+		^self.
+	].
+	
+	"generic setter case"
+	(((aStorage tracedMethodsFor: aReceiverType liveClass) includesKey: sentSelector)
+		or: [(aStorage tracedMethodsFromParametersFor: aReceiverType liveClass) includesKey: sentSelector])
+		ifTrue: [ | lastArgument argumentType |
+		"setters need to receive the object from where the type will be set, then there's at least one argument - Adrian"
+		lastArgument := self argumentsInEvaluationOrder last.
+		argumentType := lastArgument 
+						liveTypesIn: aCompiledMethod 
+						addingIncompleteTypeInfoTo: incompleteTypeInfoReasons 
+						storingGenericsInfoIn: aStorage.
+						
+		messageReturnTypes add: argumentType.
+		^self.	
+	].
+	
+	"general case"
+	returnTypes := implementor returnLiveTypesForReceiver: aReceiverType liveClass usingStorage: aStorage.
+	(returnTypes isEmpty or: [returnTypes allSatisfy:[:item | item isEmptyType]])
+		ifTrue: [ incompleteTypeInfoReasons add: (IncompleteTypeInfoWarning dueToNoReturnTypeOf: implementor methodReference node: self) ]
+		ifFalse: [
+			returnTypes := returnTypes collect: [ :aType | aType asTypeFor: aReceiverType liveClass].
+			messageReturnTypes addAll: returnTypes.
+		].! !
 
 !AllActualLocalImplementors methodsFor: '*LiveTypingTypeChecker-Evaluating' stamp: 'JFGO 12/13/2023 19:43:25'!
 LiveTypeValue
