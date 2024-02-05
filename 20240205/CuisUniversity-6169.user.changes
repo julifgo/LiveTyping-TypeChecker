@@ -1,0 +1,2874 @@
+
+
+----STARTUP---- (5 February 2024 18:00:08) as C:\Users\julian.gutierrez\OneDrive - HEXACTA S.A\Tesis\TESIS-LAST\windows64\CuisUniversity-6169.image!
+
+
+----End fileIn of C:\Users\julian.gutierrez\OneDrive - HEXACTA S.A\Tesis\TESIS-LAST\windows64\LiveTypingGenerics.pck.st----!
+
+----End fileIn of C:\Users\julian.gutierrez\OneDrive - HEXACTA S.A\Tesis\TESIS-LAST\windows64\LiveTypingTypeChecker.pck.st----!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 18:07:44'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 18:07:45'!
+PASSED!
+!MethodNotAnnotatingTypesIssue methodsFor: 'method' stamp: 'JFGO 2/5/2024 18:24:33'!
+receiver
+	self shouldNotHappenBecause: 'Method does not annotate types, there are no message nodes to evaluate'! !
+!MethodNotAnnotatingTypesIssue methodsFor: 'method' stamp: 'JFGO 2/5/2024 18:24:36'!
+selector
+	self shouldNotHappenBecause: 'Method does not annotate types, there are no message nodes to evaluate'! !
+
+----SNAPSHOT----(5 February 2024 18:25:19) CuisUniversity-6169.image priorSource: 6245038!
+
+Object subclass: #TypeCheckingResultsIssues
+	instanceVariableNames: 'compiledMethod'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+!classDefinition: #TypeCheckingResultsIssues category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 2/5/2024 18:29:41'!
+Object subclass: #TypeCheckingResultsIssues
+	instanceVariableNames: 'compiledMethod'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonWarning
+	instanceVariableNames: 'methodNode messageNode reasonDescription'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+!classDefinition: #TypeCheckingDragonWarning category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 2/5/2024 18:30:26'!
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonWarning
+	instanceVariableNames: 'methodNode messageNode reasonDescription'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonError
+	instanceVariableNames: 'methodNode messageNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+!classDefinition: #TypeCheckingDragonError category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 2/5/2024 18:30:45'!
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonError
+	instanceVariableNames: 'methodNode messageNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonIncompleteInformation
+	instanceVariableNames: 'methodNode messageNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+!classDefinition: #TypeCheckingDragonIncompleteInformation category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 2/5/2024 18:30:59'!
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonIncompleteInformation
+	instanceVariableNames: 'methodNode messageNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+TypeCheckingResultsIssues subclass: #MethodNotAnnotatingTypesIssue
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+!classDefinition: #MethodNotAnnotatingTypesIssue category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 2/5/2024 18:31:14'!
+TypeCheckingResultsIssues subclass: #MethodNotAnnotatingTypesIssue
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+----SNAPSHOT----(5 February 2024 18:31:29) CuisUniversity-6169.image priorSource: 6585714!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 18:32:37'!
+PASSED!
+!TypeCheckingResultsIssues methodsFor: 'method' stamp: 'JFGO 2/5/2024 18:33:25'!
+method
+	^compiledMethod.! !
+
+!methodRemoval: MethodNotAnnotatingTypesIssue #method stamp: 'JFGO 2/5/2024 18:33:31'!
+method
+	^compiledMethod .!
+
+!methodRemoval: TypeCheckingDragonError #method stamp: 'JFGO 2/5/2024 18:33:37'!
+method
+	^compiledMethod .!
+
+!methodRemoval: TypeCheckingDragonIncompleteInformation #method stamp: 'JFGO 2/5/2024 18:33:42'!
+method
+	^compiledMethod .!
+
+!methodRemoval: TypeCheckingDragonIncompleteInformation #problemDescription stamp: 'JFGO 2/5/2024 18:33:44'!
+problemDescription
+	^'No type information on receiver collected'.!
+
+!methodRemoval: TypeCheckingDragonWarning #method stamp: 'JFGO 2/5/2024 18:33:47'!
+method
+	^compiledMethod.!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:33:51'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 18:33:51'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 18:33:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:34:09'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:34:41'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 18:34:41'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 18:34:41'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:34:51'!
+ERROR!
+!TypeCheckingDragonError class methodsFor: 'instance creation' stamp: 'JFGO 2/5/2024 18:48:02'!
+ReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode .! !
+!TypeCheckingDragonIncompleteInformation class methodsFor: 'instance creation' stamp: 'JFGO 2/5/2024 18:48:02'!
+ReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode ! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 2/5/2024 18:48:02' prior: 50536431 overrides: 16919345!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverLiveType  |
+	aMessageNode receiver accept: self.
+	
+	
+	incompleteTypeInfo := OrderedCollection new. 
+	receiverLiveType:=aMessageNode receiverLiveTypesIn:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+		
+	incompleteTypeInfo do: [ :anIncompleteTypeInfoReason | anIncompleteTypeInfoReason addTo: self. ].
+	
+	(receiverLiveType isEmptyType and: [ incompleteTypeInfo isEmpty])
+		ifTrue: [issues add: (TypeCheckingDragonIncompleteInformation ReceiverWithNoTypesOn: compiledMethod for: methodNode by: aMessageNode)]
+		ifFalse: [ self checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType ].
+	
+	aMessageNode argumentsInEvaluationOrder do: [:argumentBlock | argumentBlock accept: self].! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 2/5/2024 18:48:02' prior: 50536402!
+checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType 
+	
+	| implementorsFinder |
+	
+	implementorsFinder := AllActualLocalImplementors of: aMessageNode selectorSymbol forAll: receiverLiveType.
+	implementorsFinder LiveTypeValue.
+	
+	implementorsFinder notImplementedIsEmpty ifFalse: [  
+		issues add: (TypeCheckingDragonError ReceiverWithNoTypesOn: compiledMethod for: methodNode by: aMessageNode)].! !
+
+!methodRemoval: TypeCheckingDragonError class #on:for:by: stamp: 'JFGO 2/5/2024 18:48:02'!
+on: aCompiledMethod for: aMethodNode by: aMessageNode 
+	
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode .!
+
+!methodRemoval: TypeCheckingDragonIncompleteInformation class #on:for:by: stamp: 'JFGO 2/5/2024 18:48:02'!
+on: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode !
+!TypeCheckingDragonError class methodsFor: 'instance creation' stamp: 'JFGO 2/5/2024 18:48:28'!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode .! !
+!TypeCheckingDragonIncompleteInformation class methodsFor: 'instance creation' stamp: 'JFGO 2/5/2024 18:48:28'!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode ! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 2/5/2024 18:48:28' prior: 50537746 overrides: 16919345!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverLiveType  |
+	aMessageNode receiver accept: self.
+	
+	
+	incompleteTypeInfo := OrderedCollection new. 
+	receiverLiveType:=aMessageNode receiverLiveTypesIn:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+		
+	incompleteTypeInfo do: [ :anIncompleteTypeInfoReason | anIncompleteTypeInfoReason addTo: self. ].
+	
+	(receiverLiveType isEmptyType and: [ incompleteTypeInfo isEmpty])
+		ifTrue: [issues add: (TypeCheckingDragonIncompleteInformation forReceiverWithNoTypesOn: compiledMethod for: methodNode by: aMessageNode)]
+		ifFalse: [ self checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType ].
+	
+	aMessageNode argumentsInEvaluationOrder do: [:argumentBlock | argumentBlock accept: self].! !
+!TypeCheckerDragonMethodVisitor methodsFor: 'as yet unclassified' stamp: 'JFGO 2/5/2024 18:48:28' prior: 50537774!
+checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType 
+	
+	| implementorsFinder |
+	
+	implementorsFinder := AllActualLocalImplementors of: aMessageNode selectorSymbol forAll: receiverLiveType.
+	implementorsFinder LiveTypeValue.
+	
+	implementorsFinder notImplementedIsEmpty ifFalse: [  
+		issues add: (TypeCheckingDragonError forReceiverWithNoTypesOn: compiledMethod for: methodNode by: aMessageNode)].! !
+
+!methodRemoval: TypeCheckingDragonError class #ReceiverWithNoTypesOn:for:by: stamp: 'JFGO 2/5/2024 18:48:28'!
+ReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode .!
+
+!methodRemoval: TypeCheckingDragonIncompleteInformation class #ReceiverWithNoTypesOn:for:by: stamp: 'JFGO 2/5/2024 18:48:28'!
+ReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode !
+!TypeCheckingDragonIncompleteInformation class methodsFor: 'instance creation' stamp: 'JFGO 2/5/2024 18:49:00' prior: 50537814!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode.! !
+!TypeCheckingDragonError methodsFor: 'initialization' stamp: 'JFGO 2/5/2024 18:49:36'!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: description  .
+	compiledMethod := aCompiledMethod .
+	methodNode := aMethodNode.
+	messageNode := aMessageNode.! !
+!TypeCheckingDragonIncompleteInformation methodsFor: 'initialization' stamp: 'JFGO 2/5/2024 18:49:36'!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: description  
+	compiledMethod := aCompiledMethod.
+	methodNode := aMethodNode.
+	messageNode := aMessageNode.! !
+!TypeCheckingDragonError class methodsFor: 'as yet unclassified' stamp: 'JFGO 2/5/2024 18:49:36' prior: 50537805!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: 'Receiver has no types' .! !
+!TypeCheckingDragonIncompleteInformation class methodsFor: 'as yet unclassified' stamp: 'JFGO 2/5/2024 18:49:36' prior: 50537886!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: 'Receiver has no types'.! !
+
+!methodRemoval: TypeCheckingDragonError #initializeOn:for:by: stamp: 'JFGO 2/5/2024 18:49:36'!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode .
+	compiledMethod := aCompiledMethod .
+	methodNode := aMethodNode.
+	messageNode := aMessageNode.!
+
+!methodRemoval: TypeCheckingDragonIncompleteInformation #initializeOn:for:by: stamp: 'JFGO 2/5/2024 18:49:36'!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	compiledMethod := aCompiledMethod.
+	methodNode := aMethodNode.
+	messageNode := aMessageNode.!
+
+!classDefinition: #TypeCheckingDragonIncompleteInformation category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 2/5/2024 18:49:56'!
+TypeCheckingResultsIssues subclass: #TypeCheckingDragonIncompleteInformation
+	instanceVariableNames: 'methodNode messageNode problemDescription'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+!TypeCheckingDragonIncompleteInformation methodsFor: 'initialization' stamp: 'JFGO 2/5/2024 18:49:52' prior: 50537904!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: description  
+	compiledMethod := aCompiledMethod.
+	methodNode := aMethodNode.
+	messageNode := aMessageNode.
+	problemDescription := description.! !
+!TypeCheckingDragonIncompleteInformation methodsFor: 'printing' stamp: 'JFGO 2/5/2024 18:50:48'!
+problemDescription
+	^problemDescription .! !
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 18:50:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 18:50:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 18:50:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 18:50:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 18:50:51'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 18:50:52'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:50:52'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 18:50:52'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 18:50:52'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 18:50:52'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 18:50:52'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 18:50:52'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 18:51:01'!
+FAILURE!
+!TypeCheckingDragonIncompleteInformation class methodsFor: 'instance creation' stamp: 'JFGO 2/5/2024 19:06:19' prior: 50537925!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode 
+	^self new initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: 'No type information on receiver collected'.! !
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 19:06:24'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 19:06:27'!
+PASSED!
+!TypeCheckingResultsIssues methodsFor: 'method' stamp: 'JFGO 2/5/2024 19:09:56'!
+problemDescription
+	self subclassResponsibility .! !
+!TypeCheckingResultsIssues methodsFor: 'method' stamp: 'JFGO 2/5/2024 19:11:17'!
+receiver
+	self subclassResponsibility .! !
+!TypeCheckingResultsIssues methodsFor: 'method' stamp: 'JFGO 2/5/2024 19:11:21'!
+selector
+	self subclassResponsibility .! !
+
+----SNAPSHOT----(5 February 2024 19:11:41) CuisUniversity-6169.image priorSource: 6588592!
+
+self receiver!
+
+self receiver selector!
+
+self selector!
+!Behavior method!
+receiver
+	#_coverageTracker5116495_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116495_
+		cover: (12 to: 22)
+		declaredAt: (12 to: 22)
+		by: messageNode.
+	#_coverageTracker5116495_
+		coverAll:
+			{24 to: 31}
+		evaluating: [ receiver1 receiver ]
+		thatSends: #receiver
+		to: receiver1 ] value.! !
+!Behavior method!
+on: aCompiledMethod for: aMethodNode by: aMessageNode reason: aReasonDescription
+	#_coverageTracker5116536_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116536_
+		coverAll:
+			{86 to: 89}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116536_
+		coverAll:
+			{91 to: 93}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5116536_
+		coverAll:
+			{95 to: 107. 125 to: 128. 142 to: 144. 159 to: 165}
+		evaluating: [
+			receiver2
+				initializeOn:
+					(#_coverageTracker5116536_
+						cover: (109 to: 123)
+						declaredAt: (5 to: 19)
+						by: aCompiledMethod)
+				for:
+					(#_coverageTracker5116536_
+						cover: (130 to: 140)
+						declaredAt: (26 to: 36)
+						by: aMethodNode)
+				by:
+					(#_coverageTracker5116536_
+						cover: (146 to: 157)
+						declaredAt: (42 to: 53)
+						by: aMessageNode)
+				reason:
+					(#_coverageTracker5116536_
+						cover: (167 to: 184)
+						declaredAt: (63 to: 80)
+						by: aReasonDescription) ]
+		thatSends: #initializeOn:for:by:reason:
+		to: receiver2 ] value.! !
+!Behavior method!
+methodWithMessageNotUnderstoodAssignedToVariable
+	| v1 |
+	#_coverageTracker5116568_ markAsExecuted.
+	#_coverageTracker5116568_
+		cover: (59 to: 60)
+		declaredAt: (53 to: 54)
+		by:
+			(v1 _ [ | receiver1 |
+			receiver1 _ #_coverageTracker5116568_
+				coverAll:
+					{64 to: 70}
+				byLiteralOrPseudoVariable: 'false'.
+			#_coverageTracker5116568_
+				coverAll:
+					{72 to: 74}
+				evaluating: [ receiver1 not ]
+				thatSends: #not
+				to: receiver1 ] value).! !
+!Behavior method!
+receiver
+	#_coverageTracker5116598_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116598_
+		cover: (12 to: 22)
+		declaredAt: (12 to: 22)
+		by: messageNode.
+	#_coverageTracker5116598_
+		coverAll:
+			{24 to: 31}
+		evaluating: [ receiver1 receiver ]
+		thatSends: #receiver
+		to: receiver1 ] value.! !
+!Behavior method!
+visitBlockNode: aBlockNode
+	"Por ahora, no hay evidencia de necesitar hacer algo más que visitar los statements del bloque, que lo hace super. De ser asi definitivamente, este mensaje no tiene razon de ser reimplementado y deberiamos borrarlo"
+	#_coverageTracker5116607_ markAsExecuted.
+	self.
+	#_coverageTracker5116607_
+		coverAll:
+			{253 to: 267}
+		evaluating: [
+			super visitBlockNode:
+				(#_coverageTracker5116607_
+					cover: (269 to: 278)
+					declaredAt: (17 to: 26)
+					by: aBlockNode) ]
+		thatSends: #visitBlockNode:
+		to: super.! !
+!Behavior method!
+addAlertWithMessage: aStringMessage
+	#_coverageTracker5116629_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ #_coverageTracker5116629_
+		cover: (41 to: 46)
+		declaredAt: (41 to: 46)
+		by: issues.
+	#_coverageTracker5116629_
+		coverAll:
+			{48 to: 51}
+		evaluating: [
+			receiver2 add:
+				[ | receiver1 |
+				receiver1 _ #_coverageTracker5116629_
+					coverAll:
+						{54 to: 75}
+					by: TypeCheckerDragonAlert.
+				#_coverageTracker5116629_
+					coverAll:
+						{77 to: 80. 93 to: 104}
+					evaluating: [
+						receiver1
+							for:
+								(#_coverageTracker5116629_
+									cover: (82 to: 91)
+									declaredAt: (82 to: 91)
+									by: methodNode)
+							withMessage:
+								(#_coverageTracker5116629_
+									cover: (106 to: 119)
+									declaredAt: (22 to: 35)
+									by: aStringMessage) ]
+					thatSends: #for:withMessage:
+					to: receiver1 ] value ]
+		thatSends: #add:
+		to: receiver2 ] value.! !
+!Behavior method!
+for: aCompiledMethod collectingAlerts: anAlertCollection
+	#_coverageTracker5116641_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116641_
+		coverAll:
+			{62 to: 65}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116641_
+		coverAll:
+			{67 to: 69}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5116641_
+		coverAll:
+			{71 to: 84. 102 to: 118}
+		evaluating: [
+			receiver2
+				initializeFor:
+					(#_coverageTracker5116641_
+						cover: (86 to: 100)
+						declaredAt: (6 to: 20)
+						by: aCompiledMethod)
+				collectingIssues:
+					(#_coverageTracker5116641_
+						cover: (120 to: 136)
+						declaredAt: (40 to: 56)
+						by: anAlertCollection) ]
+		thatSends: #initializeFor:collectingIssues:
+		to: receiver2 ] value.! !
+!Behavior method!
+problemDescription
+	#_coverageTracker5116659_ markAsExecuted.
+	^ #_coverageTracker5116659_
+		cover: (22 to: 38)
+		declaredAt: (22 to: 38)
+		by: reasonDescription.! !
+!Behavior method!
+perform
+	#_coverageTracker5116664_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116664_
+		coverAll:
+			{10 to: 13}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116664_
+		coverAll:
+			{15 to: 23}
+		evaluating: [ receiver1 typeCheck ]
+		thatSends: #typeCheck
+		to: receiver1 ] value.
+	^ #_coverageTracker5116664_
+		coverAll:
+			{28 to: 31}
+		byLiteralOrPseudoVariable: self.! !
+!Behavior method!
+for: aCompiledMethod
+	#_coverageTracker5116670_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116670_
+		coverAll:
+			{25 to: 28}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116670_
+		coverAll:
+			{30 to: 32}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5116670_
+		coverAll:
+			{34 to: 47}
+		evaluating: [
+			receiver2 initializeFor:
+				(#_coverageTracker5116670_
+					cover: (49 to: 63)
+					declaredAt: (6 to: 20)
+					by: aCompiledMethod) ]
+		thatSends: #initializeFor:
+		to: receiver2 ] value.! !
+!Behavior method!
+incompleteInfoAlerts
+	#_coverageTracker5116679_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ #_coverageTracker5116679_
+		cover: (24 to: 29)
+		declaredAt: (24 to: 29)
+		by: issues.
+	#_coverageTracker5116679_
+		coverAll:
+			{31 to: 37}
+		evaluating: [
+			receiver2 select: [ :issue |
+				[ | receiver1 |
+				receiver1 _ #_coverageTracker5116679_
+					cover: (49 to: 53)
+					declaredAt: (41 to: 45)
+					by: issue.
+				#_coverageTracker5116679_
+					coverAll:
+						{55 to: 63}
+					evaluating: [
+						receiver1 isKindOf:
+							(#_coverageTracker5116679_
+								coverAll:
+									{65 to: 103}
+								by: TypeCheckingDragonIncompleteInformation) ]
+					thatSends: #isKindOf:
+					to: receiver1 ] value ]]
+		thatSends: #select:
+		to: receiver2 ] value.! !
+!Behavior method!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: description
+	#_coverageTracker5116688_ markAsExecuted.
+	self.
+	#_coverageTracker5116688_
+		cover: (94 to: 107)
+		declaredAt: (94 to: 107)
+		by:
+			(compiledMethod _ #_coverageTracker5116688_
+				cover: (112 to: 126)
+				declaredAt: (15 to: 29)
+				by: aCompiledMethod).
+	#_coverageTracker5116688_
+		cover: (131 to: 140)
+		declaredAt: (131 to: 140)
+		by:
+			(methodNode _ #_coverageTracker5116688_
+				cover: (145 to: 155)
+				declaredAt: (36 to: 46)
+				by: aMethodNode).
+	#_coverageTracker5116688_
+		cover: (159 to: 169)
+		declaredAt: (159 to: 169)
+		by:
+			(messageNode _ #_coverageTracker5116688_
+				cover: (174 to: 185)
+				declaredAt: (52 to: 63)
+				by: aMessageNode).! !
+!Behavior method!
+receiver
+	#_coverageTracker5116706_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116706_
+		coverAll:
+			{11 to: 14}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116706_
+		coverAll:
+			{16 to: 38}
+		evaluating: [
+			receiver1 shouldNotHappenBecause:
+				(#_coverageTracker5116706_
+					coverAll:
+						{40 to: 111}
+					byLiteralOrPseudoVariable: 'Method does not annotate types, there are no message nodes to evaluate') ]
+		thatSends: #shouldNotHappenBecause:
+		to: receiver1 ] value.! !
+!Behavior method!
+addWarning: anIncompleteTypeInfoError node: aMessageNode
+	#_coverageTracker5116743_ markAsExecuted.
+	[ | receiver3 |
+	receiver3 _ #_coverageTracker5116743_
+		cover: (62 to: 67)
+		declaredAt: (62 to: 67)
+		by: issues.
+	#_coverageTracker5116743_
+		coverAll:
+			{69 to: 72}
+		evaluating: [
+			receiver3 add:
+				[ | receiver2 |
+				receiver2 _ #_coverageTracker5116743_
+					coverAll:
+						{75 to: 99}
+					by: TypeCheckingDragonWarning.
+				#_coverageTracker5116743_
+					coverAll:
+						{101 to: 103. 120 to: 123. 136 to: 138. 153 to: 159}
+					evaluating: [
+						receiver2
+							on:
+								(#_coverageTracker5116743_
+									cover: (105 to: 118)
+									declaredAt: (105 to: 118)
+									by: compiledMethod)
+							for:
+								(#_coverageTracker5116743_
+									cover: (125 to: 134)
+									declaredAt: (125 to: 134)
+									by: methodNode)
+							by:
+								(#_coverageTracker5116743_
+									cover: (140 to: 151)
+									declaredAt: (45 to: 56)
+									by: aMessageNode)
+							reason:
+								[ | receiver1 |
+								receiver1 _ #_coverageTracker5116743_
+									cover: (161 to: 185)
+									declaredAt: (13 to: 37)
+									by: anIncompleteTypeInfoError.
+								#_coverageTracker5116743_
+									coverAll:
+										{187 to: 203}
+									evaluating: [ receiver1 reasonDescription ]
+									thatSends: #reasonDescription
+									to: receiver1 ] value ]
+					thatSends: #on:for:by:reason:
+					to: receiver2 ] value ]
+		thatSends: #add:
+		to: receiver3 ] value.! !
+!Behavior method!
+initializeFor: aCompiledMethod
+	#_coverageTracker5116753_ markAsExecuted.
+	#_coverageTracker5116753_
+		cover: (34 to: 47)
+		declaredAt: (34 to: 47)
+		by:
+			(compiledMethod _ #_coverageTracker5116753_
+				cover: (52 to: 66)
+				declaredAt: (16 to: 30)
+				by: aCompiledMethod).
+	#_coverageTracker5116753_
+		cover: (91 to: 96)
+		declaredAt: (91 to: 96)
+		by:
+			(issues _ [ | receiver1 |
+			receiver1 _ #_coverageTracker5116753_
+				coverAll:
+					{101 to: 117}
+				by: OrderedCollection.
+			#_coverageTracker5116753_
+				coverAll:
+					{119 to: 121}
+				evaluating: [ receiver1 new ]
+				thatSends: #new
+				to: receiver1 ] value).! !
+!Behavior method!
+problemDescription
+	#_coverageTracker5116759_ markAsExecuted.
+	^ #_coverageTracker5116759_
+		cover: (22 to: 39)
+		declaredAt: (22 to: 39)
+		by: problemDescription.! !
+!Behavior method!
+methodWithCollectionWithNoTypeError
+	| col |
+	#_coverageTracker5116771_ markAsExecuted.
+	#_coverageTracker5116771_
+		cover: (47 to: 49)
+		declaredAt: (40 to: 42)
+		by:
+			(col _ [ | receiver1 |
+			receiver1 _ #_coverageTracker5116771_
+				coverAll:
+					{53 to: 69}
+				by: OrderedCollection.
+			#_coverageTracker5116771_
+				coverAll:
+					{71 to: 75}
+				evaluating: [
+					receiver1 with:
+						(#_coverageTracker5116771_
+							coverAll:
+								{77 to: 77}
+							byLiteralOrPseudoVariable: 1) ]
+				thatSends: #with:
+				to: receiver1 ] value).
+	[ | receiver3 |
+	receiver3 _ #_coverageTracker5116771_
+		cover: (81 to: 83)
+		declaredAt: (40 to: 42)
+		by: col.
+	#_coverageTracker5116771_
+		coverAll:
+			{85 to: 87}
+		evaluating: [
+			receiver3 do: [ :item |
+				[ | receiver2 |
+				receiver2 _ #_coverageTracker5116771_
+					cover: (97 to: 100)
+					declaredAt: (90 to: 93)
+					by: item.
+				#_coverageTracker5116771_
+					coverAll:
+						{102 to: 110}
+					evaluating: [ receiver2 factorial ]
+					thatSends: #factorial
+					to: receiver2 ] value ]]
+		thatSends: #do:
+		to: receiver3 ] value.! !
+!Behavior method!
+hasWarnings
+	#_coverageTracker5116781_ markAsExecuted.
+	^ [ | receiver3 |
+	receiver3 _ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116781_
+		coverAll:
+			{15 to: 18}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116781_
+		coverAll:
+			{20 to: 27}
+		evaluating: [ receiver1 warnings ]
+		thatSends: #warnings
+		to: receiver1 ] value.
+	#_coverageTracker5116781_
+		coverAll:
+			{29 to: 32}
+		evaluating: [ receiver2 size ]
+		thatSends: #size
+		to: receiver2 ] value.
+	#_coverageTracker5116781_
+		coverAll:
+			{34 to: 34}
+		evaluating: [
+			receiver3 >
+				(#_coverageTracker5116781_
+					coverAll:
+						{36 to: 36}
+					byLiteralOrPseudoVariable: 0) ]
+		thatSends: #>
+		to: receiver3 ] value.! !
+!Behavior method!
+hasIssues
+	#_coverageTracker5116795_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116795_
+		cover: (13 to: 18)
+		declaredAt: (13 to: 18)
+		by: issues.
+	#_coverageTracker5116795_
+		coverAll:
+			{20 to: 23}
+		evaluating: [ receiver1 size ]
+		thatSends: #size
+		to: receiver1 ] value.
+	#_coverageTracker5116795_
+		coverAll:
+			{25 to: 25}
+		evaluating: [
+			receiver2 >
+				(#_coverageTracker5116795_
+					coverAll:
+						{27 to: 27}
+					byLiteralOrPseudoVariable: 0) ]
+		thatSends: #>
+		to: receiver2 ] value.! !
+!Behavior method!
+message
+	#_coverageTracker5116800_ markAsExecuted.
+	^ #_coverageTracker5116800_
+		cover: (11 to: 22)
+		declaredAt: (11 to: 22)
+		by: alertMessage.! !
+!Behavior method!
+methodTypedCorrectlyEnableTyping
+	"Actually, by default type checking will be enabled. Disable it manually from outside. Method name is for declarativity purposes"
+	#_coverageTracker5116804_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116804_
+		coverAll:
+			{166 to: 166}
+		byLiteralOrPseudoVariable: 1.
+	#_coverageTracker5116804_
+		coverAll:
+			{168 to: 168}
+		evaluating: [
+			receiver1 +
+				(#_coverageTracker5116804_
+					coverAll:
+						{170 to: 170}
+					byLiteralOrPseudoVariable: 1) ]
+		thatSends: #+
+		to: receiver1 ] value.! !
+!Behavior method!
+errors
+	#_coverageTracker5116810_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ #_coverageTracker5116810_
+		cover: (10 to: 15)
+		declaredAt: (10 to: 15)
+		by: issues.
+	#_coverageTracker5116810_
+		coverAll:
+			{17 to: 23}
+		evaluating: [
+			receiver2 select: [ :issue |
+				[ | receiver1 |
+				receiver1 _ #_coverageTracker5116810_
+					cover: (35 to: 39)
+					declaredAt: (27 to: 31)
+					by: issue.
+				#_coverageTracker5116810_
+					coverAll:
+						{41 to: 49}
+					evaluating: [
+						receiver1 isKindOf:
+							(#_coverageTracker5116810_
+								coverAll:
+									{51 to: 73}
+								by: TypeCheckingDragonError) ]
+					thatSends: #isKindOf:
+					to: receiver1 ] value ]]
+		thatSends: #select:
+		to: receiver2 ] value.! !
+!Behavior method!
+methodClass
+	#_coverageTracker5116823_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116823_
+		cover: (17 to: 30)
+		declaredAt: (17 to: 30)
+		by: compiledMethod.
+	#_coverageTracker5116823_
+		coverAll:
+			{32 to: 42}
+		evaluating: [ receiver1 methodClass ]
+		thatSends: #methodClass
+		to: receiver1 ] value.! !
+!Behavior method!
+addProblem: anIncompleteTypeInfoError node: aMessageNode
+	#_coverageTracker5116828_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116828_
+		coverAll:
+			{59 to: 62}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116828_
+		coverAll:
+			{64 to: 74. 102 to: 106}
+		evaluating: [
+			receiver1
+				addWarning:
+					(#_coverageTracker5116828_
+						cover: (76 to: 100)
+						declaredAt: (13 to: 37)
+						by: anIncompleteTypeInfoError)
+				node:
+					(#_coverageTracker5116828_
+						cover: (108 to: 119)
+						declaredAt: (45 to: 56)
+						by: aMessageNode) ]
+		thatSends: #addWarning:node:
+		to: receiver1 ] value.! !
+!Behavior method!
+methodWithMessageNestedNotUnderstoodOnReceiver
+	"The first message that visitor evaluates is the outer not sent to ('false' not) which is perfectly defined."
+	"The inner not message in the receiver it has a type problem, so this should force implement object recursion for receiver."
+	#_coverageTracker5116834_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116834_
+		coverAll:
+			{287 to: 293}
+		byLiteralOrPseudoVariable: 'false'.
+	#_coverageTracker5116834_
+		coverAll:
+			{295 to: 297}
+		evaluating: [ receiver1 not ]
+		thatSends: #not
+		to: receiver1 ] value.
+	#_coverageTracker5116834_
+		coverAll:
+			{299 to: 301}
+		evaluating: [ receiver2 not ]
+		thatSends: #not
+		to: receiver2 ] value.! !
+!Behavior method!
+m4
+	| temp |
+	#_coverageTracker5116838_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116838_
+		cover: (13 to: 16)
+		declaredAt: (6 to: 9)
+		by: temp.
+	#_coverageTracker5116838_
+		coverAll:
+			{18 to: 21}
+		evaluating: [ receiver1 size ]
+		thatSends: #size
+		to: receiver1 ] value.! !
+!Behavior method!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode description: description
+	#_coverageTracker5116843_ markAsExecuted.
+	#_coverageTracker5116843_
+		cover: (93 to: 106)
+		declaredAt: (93 to: 106)
+		by:
+			(compiledMethod _ #_coverageTracker5116843_
+				cover: (111 to: 125)
+				declaredAt: (15 to: 29)
+				by: aCompiledMethod).
+	#_coverageTracker5116843_
+		cover: (129 to: 138)
+		declaredAt: (129 to: 138)
+		by:
+			(methodNode _ #_coverageTracker5116843_
+				cover: (143 to: 153)
+				declaredAt: (36 to: 46)
+				by: aMethodNode).
+	#_coverageTracker5116843_
+		cover: (157 to: 167)
+		declaredAt: (157 to: 167)
+		by:
+			(messageNode _ #_coverageTracker5116843_
+				cover: (172 to: 183)
+				declaredAt: (52 to: 63)
+				by: aMessageNode).
+	#_coverageTracker5116843_
+		cover: (187 to: 204)
+		declaredAt: (187 to: 204)
+		by:
+			(problemDescription _ #_coverageTracker5116843_
+				cover: (209 to: 219)
+				declaredAt: (78 to: 88)
+				by: description).! !
+!Behavior method!
+methodWithVariableWithManyTypes
+	| v1 |
+	#_coverageTracker5116861_ markAsExecuted.
+	#_coverageTracker5116861_
+		cover: (40 to: 41)
+		declaredAt: (35 to: 36)
+		by:
+			(v1 _ [ | receiver1 |
+			receiver1 _ #_coverageTracker5116861_
+				coverAll:
+					{45 to: 61}
+				by: OrderedCollection.
+			#_coverageTracker5116861_
+				coverAll:
+					{63 to: 65}
+				evaluating: [ receiver1 new ]
+				thatSends: #new
+				to: receiver1 ] value).
+	#_coverageTracker5116861_
+		cover: (69 to: 70)
+		declaredAt: (35 to: 36)
+		by:
+			(v1 _ #_coverageTracker5116861_
+				coverAll:
+					{75 to: 80}
+				byLiteralOrPseudoVariable: 'true').
+	#_coverageTracker5116861_
+		cover: (84 to: 85)
+		declaredAt: (35 to: 36)
+		by:
+			(v1 _ #_coverageTracker5116861_
+				coverAll:
+					{90 to: 90}
+				byLiteralOrPseudoVariable: 5).
+	[ | receiver2 |
+	receiver2 _ #_coverageTracker5116861_
+		cover: (94 to: 95)
+		declaredAt: (35 to: 36)
+		by: v1.
+	#_coverageTracker5116861_
+		coverAll:
+			{97 to: 105}
+		evaluating: [ receiver2 factorial ]
+		thatSends: #factorial
+		to: receiver2 ] value.! !
+!Behavior method!
+typeCheckWhenDisabledTyping
+	#_coverageTracker5116869_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ #_coverageTracker5116869_
+		cover: (30 to: 35)
+		declaredAt: (30 to: 35)
+		by: issues.
+	#_coverageTracker5116869_
+		coverAll:
+			{37 to: 40}
+		evaluating: [
+			receiver2 add:
+				[ | receiver1 |
+				receiver1 _ #_coverageTracker5116869_
+					coverAll:
+						{43 to: 71}
+					by: MethodNotAnnotatingTypesIssue.
+				#_coverageTracker5116869_
+					coverAll:
+						{73 to: 76}
+					evaluating: [
+						receiver1 for:
+							(#_coverageTracker5116869_
+								cover: (78 to: 91)
+								declaredAt: (78 to: 91)
+								by: compiledMethod) ]
+					thatSends: #for:
+					to: receiver1 ] value ]
+		thatSends: #add:
+		to: receiver2 ] value.
+	^ #_coverageTracker5116869_
+		coverAll:
+			{97 to: 100}
+		byLiteralOrPseudoVariable: self.! !
+!Behavior method!
+classAndSelector
+	#_coverageTracker5116874_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116874_
+		cover: (22 to: 35)
+		declaredAt: (22 to: 35)
+		by: compiledMethod.
+	#_coverageTracker5116874_
+		coverAll:
+			{37 to: 52}
+		evaluating: [ receiver1 classAndSelector ]
+		thatSends: #classAndSelector
+		to: receiver1 ] value.! !
+!Behavior method!
+hasErrors
+	#_coverageTracker5116889_ markAsExecuted.
+	^ [ | receiver3 |
+	receiver3 _ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116889_
+		coverAll:
+			{13 to: 16}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116889_
+		coverAll:
+			{18 to: 23}
+		evaluating: [ receiver1 errors ]
+		thatSends: #errors
+		to: receiver1 ] value.
+	#_coverageTracker5116889_
+		coverAll:
+			{25 to: 28}
+		evaluating: [ receiver2 size ]
+		thatSends: #size
+		to: receiver2 ] value.
+	#_coverageTracker5116889_
+		coverAll:
+			{30 to: 30}
+		evaluating: [
+			receiver3 >
+				(#_coverageTracker5116889_
+					coverAll:
+						{32 to: 32}
+					byLiteralOrPseudoVariable: 0) ]
+		thatSends: #>
+		to: receiver3 ] value.! !
+!Behavior method!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverLiveType |
+	#_coverageTracker5116898_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116898_
+		cover: (75 to: 86)
+		declaredAt: (19 to: 30)
+		by: aMessageNode.
+	#_coverageTracker5116898_
+		coverAll:
+			{88 to: 95}
+		evaluating: [ receiver1 receiver ]
+		thatSends: #receiver
+		to: receiver1 ] value.
+	#_coverageTracker5116898_
+		coverAll:
+			{97 to: 103}
+		evaluating: [
+			receiver2 accept:
+				(#_coverageTracker5116898_
+					coverAll:
+						{105 to: 108}
+					byLiteralOrPseudoVariable: self) ]
+		thatSends: #accept:
+		to: receiver2 ] value.
+	#_coverageTracker5116898_
+		cover: (116 to: 133)
+		declaredAt: (35 to: 52)
+		by:
+			(incompleteTypeInfo _ [ | receiver3 |
+			receiver3 _ #_coverageTracker5116898_
+				coverAll:
+					{138 to: 154}
+				by: OrderedCollection.
+			#_coverageTracker5116898_
+				coverAll:
+					{156 to: 158}
+				evaluating: [ receiver3 new ]
+				thatSends: #new
+				to: receiver3 ] value).
+	#_coverageTracker5116898_
+		cover: (163 to: 178)
+		declaredAt: (54 to: 69)
+		by:
+			(receiverLiveType _ [ | receiver4 |
+			receiver4 _ #_coverageTracker5116898_
+				cover: (181 to: 192)
+				declaredAt: (19 to: 30)
+				by: aMessageNode.
+			#_coverageTracker5116898_
+				coverAll:
+					{194 to: 213. 231 to: 257}
+				evaluating: [
+					receiver4
+						receiverLiveTypesIn:
+							(#_coverageTracker5116898_
+								cover: (216 to: 229)
+								declaredAt: (216 to: 229)
+								by: compiledMethod)
+						addingIncompleteTypeInfoTo:
+							(#_coverageTracker5116898_
+								cover: (259 to: 276)
+								declaredAt: (35 to: 52)
+								by: incompleteTypeInfo) ]
+				thatSends: #receiverLiveTypesIn:addingIncompleteTypeInfoTo:
+				to: receiver4 ] value).
+	[ | receiver6 |
+	receiver6 _ #_coverageTracker5116898_
+		cover: (283 to: 300)
+		declaredAt: (35 to: 52)
+		by: incompleteTypeInfo.
+	#_coverageTracker5116898_
+		coverAll:
+			{302 to: 304}
+		evaluating: [
+			receiver6 do: [ :anIncompleteTypeInfoReason |
+				[ | receiver5 |
+				receiver5 _ #_coverageTracker5116898_
+					cover: (338 to: 363)
+					declaredAt: (309 to: 334)
+					by: anIncompleteTypeInfoReason.
+				#_coverageTracker5116898_
+					coverAll:
+						{365 to: 370}
+					evaluating: [
+						receiver5 addTo:
+							(#_coverageTracker5116898_
+								coverAll:
+									{372 to: 375}
+								byLiteralOrPseudoVariable: self) ]
+					thatSends: #addTo:
+					to: receiver5 ] value ]]
+		thatSends: #do:
+		to: receiver6 ] value.
+	[ | receiver13 |
+	receiver13 _ [ | receiver9 |
+	receiver9 _ [ | receiver7 |
+	receiver7 _ #_coverageTracker5116898_
+		cover: (385 to: 400)
+		declaredAt: (54 to: 69)
+		by: receiverLiveType.
+	#_coverageTracker5116898_
+		coverAll:
+			{402 to: 412}
+		evaluating: [ receiver7 isEmptyType ]
+		thatSends: #isEmptyType
+		to: receiver7 ] value.
+	#_coverageTracker5116898_
+		coverAll:
+			{414 to: 417}
+		evaluating: [
+			receiver9 and: [
+				[ | receiver8 |
+				receiver8 _ #_coverageTracker5116898_
+					cover: (421 to: 438)
+					declaredAt: (35 to: 52)
+					by: incompleteTypeInfo.
+				#_coverageTracker5116898_
+					coverAll:
+						{440 to: 446}
+					evaluating: [ receiver8 isEmpty ]
+					thatSends: #isEmpty
+					to: receiver8 ] value ]]
+		thatSends: #and:
+		to: receiver9 ] value.
+	#_coverageTracker5116898_
+		coverAll:
+			{452 to: 458. 592 to: 599}
+		evaluating: [
+			receiver13
+				ifTrue: [
+					[ | receiver11 |
+					receiver11 _ #_coverageTracker5116898_
+						cover: (461 to: 466)
+						declaredAt: (461 to: 466)
+						by: issues.
+					#_coverageTracker5116898_
+						coverAll:
+							{468 to: 471}
+						evaluating: [
+							receiver11 add:
+								[ | receiver10 |
+								receiver10 _ #_coverageTracker5116898_
+									coverAll:
+										{474 to: 512}
+									by: TypeCheckingDragonIncompleteInformation.
+								#_coverageTracker5116898_
+									coverAll:
+										{514 to: 538. 555 to: 558. 571 to: 573}
+									evaluating: [
+										receiver10
+											forReceiverWithNoTypesOn:
+												(#_coverageTracker5116898_
+													cover: (540 to: 553)
+													declaredAt: (216 to: 229)
+													by: compiledMethod)
+											for:
+												(#_coverageTracker5116898_
+													cover: (560 to: 569)
+													declaredAt: (560 to: 569)
+													by: methodNode)
+											by:
+												(#_coverageTracker5116898_
+													cover: (575 to: 586)
+													declaredAt: (19 to: 30)
+													by: aMessageNode) ]
+									thatSends: #forReceiverWithNoTypesOn:for:by:
+									to: receiver10 ] value ]
+						thatSends: #add:
+						to: receiver11 ] value ]
+				ifFalse: [
+					[ | receiver12 |
+					receiver12 _ #_coverageTracker5116898_
+						coverAll:
+							{603 to: 606}
+						byLiteralOrPseudoVariable: self.
+					#_coverageTracker5116898_
+						coverAll:
+							{608 to: 626. 641 to: 656}
+						evaluating: [
+							receiver12
+								checkMessageSentIn:
+									(#_coverageTracker5116898_
+										cover: (628 to: 639)
+										declaredAt: (19 to: 30)
+										by: aMessageNode)
+								isImplementedIn:
+									(#_coverageTracker5116898_
+										cover: (658 to: 673)
+										declaredAt: (54 to: 69)
+										by: receiverLiveType) ]
+						thatSends: #checkMessageSentIn:isImplementedIn:
+						to: receiver12 ] value ]]
+		thatSends: #ifTrue:ifFalse:
+		to: receiver13 ] value.
+	[ | receiver16 |
+	receiver16 _ [ | receiver14 |
+	receiver14 _ #_coverageTracker5116898_
+		cover: (681 to: 692)
+		declaredAt: (19 to: 30)
+		by: aMessageNode.
+	#_coverageTracker5116898_
+		coverAll:
+			{694 to: 719}
+		evaluating: [ receiver14 argumentsInEvaluationOrder ]
+		thatSends: #argumentsInEvaluationOrder
+		to: receiver14 ] value.
+	#_coverageTracker5116898_
+		coverAll:
+			{721 to: 723}
+		evaluating: [
+			receiver16 do: [ :argumentBlock |
+				[ | receiver15 |
+				receiver15 _ #_coverageTracker5116898_
+					cover: (743 to: 755)
+					declaredAt: (727 to: 739)
+					by: argumentBlock.
+				#_coverageTracker5116898_
+					coverAll:
+						{757 to: 763}
+					evaluating: [
+						receiver15 accept:
+							(#_coverageTracker5116898_
+								coverAll:
+									{765 to: 768}
+								byLiteralOrPseudoVariable: self) ]
+					thatSends: #accept:
+					to: receiver15 ] value ]]
+		thatSends: #do:
+		to: receiver16 ] value.! !
+!Behavior method!
+for: aCompiledMethod
+	#_coverageTracker5116935_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116935_
+		coverAll:
+			{27 to: 30}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116935_
+		coverAll:
+			{32 to: 34}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5116935_
+		coverAll:
+			{36 to: 49}
+		evaluating: [
+			receiver2 initializeFor:
+				(#_coverageTracker5116935_
+					cover: (51 to: 65)
+					declaredAt: (6 to: 20)
+					by: aCompiledMethod) ]
+		thatSends: #initializeFor:
+		to: receiver2 ] value.! !
+!Behavior method!
+receiver
+	#_coverageTracker5116951_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116951_
+		cover: (12 to: 22)
+		declaredAt: (12 to: 22)
+		by: messageNode.
+	#_coverageTracker5116951_
+		coverAll:
+			{24 to: 31}
+		evaluating: [ receiver1 receiver ]
+		thatSends: #receiver
+		to: receiver1 ] value.! !
+!Behavior method!
+methodInstanceNotIndexable
+	#_coverageTracker5116955_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116955_
+		coverAll:
+			{29 to: 30}
+		byLiteralOrPseudoVariable: 15.
+	#_coverageTracker5116955_
+		coverAll:
+			{32 to: 35}
+		evaluating: [ receiver1 size ]
+		thatSends: #size
+		to: receiver1 ] value.! !
+!Behavior method!
+accept
+	#_coverageTracker5116966_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5116966_
+		coverAll:
+			{9 to: 12}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116966_
+		coverAll:
+			{14 to: 29}
+		evaluating: [
+			receiver1 visitMethodNode:
+				(#_coverageTracker5116966_
+					cover: (31 to: 40)
+					declaredAt: (31 to: 40)
+					by: methodNode) ]
+		thatSends: #visitMethodNode:
+		to: receiver1 ] value.! !
+!Behavior method!
+initializeFor: aCompiledMethod
+	#_coverageTracker5116977_ markAsExecuted.
+	#_coverageTracker5116977_
+		cover: (34 to: 47)
+		declaredAt: (34 to: 47)
+		by:
+			(compiledMethod _ #_coverageTracker5116977_
+				cover: (52 to: 66)
+				declaredAt: (16 to: 30)
+				by: aCompiledMethod).! !
+!Behavior method!
+method
+	#_coverageTracker5116989_ markAsExecuted.
+	^ #_coverageTracker5116989_
+		cover: (10 to: 23)
+		declaredAt: (10 to: 23)
+		by: compiledMethod.! !
+!Behavior method!
+hasIncompleteInfoAlerts
+	#_coverageTracker5116995_ markAsExecuted.
+	^ [ | receiver3 |
+	receiver3 _ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5116995_
+		coverAll:
+			{27 to: 30}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5116995_
+		coverAll:
+			{32 to: 51}
+		evaluating: [ receiver1 incompleteInfoAlerts ]
+		thatSends: #incompleteInfoAlerts
+		to: receiver1 ] value.
+	#_coverageTracker5116995_
+		coverAll:
+			{53 to: 56}
+		evaluating: [ receiver2 size ]
+		thatSends: #size
+		to: receiver2 ] value.
+	#_coverageTracker5116995_
+		coverAll:
+			{58 to: 58}
+		evaluating: [
+			receiver3 >
+				(#_coverageTracker5116995_
+					coverAll:
+						{60 to: 60}
+					byLiteralOrPseudoVariable: 0) ]
+		thatSends: #>
+		to: receiver3 ] value.! !
+!Behavior method!
+methodSelector
+	#_coverageTracker5117010_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117010_
+		cover: (20 to: 33)
+		declaredAt: (20 to: 33)
+		by: compiledMethod.
+	#_coverageTracker5117010_
+		coverAll:
+			{35 to: 42}
+		evaluating: [ receiver1 selector ]
+		thatSends: #selector
+		to: receiver1 ] value.! !
+!Behavior method!
+showResultsWith: aLabelTrail
+	#_coverageTracker5117013_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117013_
+		coverAll:
+			{31 to: 34}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117013_
+		coverAll:
+			{36 to: 54}
+		evaluating: [ receiver1 shouldBeImplemented ]
+		thatSends: #shouldBeImplemented
+		to: receiver1 ] value.! !
+!Behavior method!
+warnings
+	#_coverageTracker5117025_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ #_coverageTracker5117025_
+		cover: (12 to: 17)
+		declaredAt: (12 to: 17)
+		by: issues.
+	#_coverageTracker5117025_
+		coverAll:
+			{19 to: 25}
+		evaluating: [
+			receiver2 select: [ :issue |
+				[ | receiver1 |
+				receiver1 _ #_coverageTracker5117025_
+					cover: (37 to: 41)
+					declaredAt: (29 to: 33)
+					by: issue.
+				#_coverageTracker5117025_
+					coverAll:
+						{43 to: 51}
+					evaluating: [
+						receiver1 isKindOf:
+							(#_coverageTracker5117025_
+								coverAll:
+									{53 to: 77}
+								by: TypeCheckingDragonWarning) ]
+					thatSends: #isKindOf:
+					to: receiver1 ] value ]]
+		thatSends: #select:
+		to: receiver2 ] value.! !
+!Behavior method!
+methodWithMessageWithNoReturnTypes
+	#_coverageTracker5117037_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117037_
+		coverAll:
+			{38 to: 41}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117037_
+		coverAll:
+			{43 to: 59. 63 to: 76}
+		evaluating: [
+			receiver1
+				methodSumsNumber:
+					(#_coverageTracker5117037_
+						coverAll:
+							{61 to: 61}
+						byLiteralOrPseudoVariable: 1)
+				anotherNumber:
+					(#_coverageTracker5117037_
+						coverAll:
+							{78 to: 78}
+						byLiteralOrPseudoVariable: 1) ]
+		thatSends: #methodSumsNumber:anotherNumber:
+		to: receiver1 ] value.
+	#_coverageTracker5117037_
+		coverAll:
+			{81 to: 89}
+		evaluating: [ receiver2 factorial ]
+		thatSends: #factorial
+		to: receiver2 ] value.! !
+!Behavior method!
+selector
+	#_coverageTracker5117059_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117059_
+		coverAll:
+			{11 to: 14}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117059_
+		coverAll:
+			{16 to: 38}
+		evaluating: [
+			receiver1 shouldNotHappenBecause:
+				(#_coverageTracker5117059_
+					coverAll:
+						{40 to: 111}
+					byLiteralOrPseudoVariable: 'Method does not annotate types, there are no message nodes to evaluate') ]
+		thatSends: #shouldNotHappenBecause:
+		to: receiver1 ] value.! !
+!Behavior method!
+methodWithMessageArgumentToResolve
+	#_coverageTracker5117064_ markAsExecuted.
+	[ | receiver3 |
+	receiver3 _ #_coverageTracker5117064_
+		coverAll:
+			{37 to: 40}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117064_
+		coverAll:
+			{42 to: 58. 77 to: 90}
+		evaluating: [
+			receiver3
+				methodSumsNumber:
+					[ | receiver1 |
+					receiver1 _ #_coverageTracker5117064_
+						coverAll:
+							{61 to: 64}
+						byLiteralOrPseudoVariable: '10'.
+					#_coverageTracker5117064_
+						coverAll:
+							{66 to: 74}
+						evaluating: [ receiver1 factorial ]
+						thatSends: #factorial
+						to: receiver1 ] value
+				anotherNumber:
+					[ | receiver2 |
+					receiver2 _ #_coverageTracker5117064_
+						coverAll:
+							{93 to: 95}
+						byLiteralOrPseudoVariable: '5'.
+					#_coverageTracker5117064_
+						coverAll:
+							{97 to: 105}
+						evaluating: [ receiver2 factorial ]
+						thatSends: #factorial
+						to: receiver2 ] value ]
+		thatSends: #methodSumsNumber:anotherNumber:
+		to: receiver3 ] value.! !
+!Behavior method!
+printASTOn: aCompiledMethod
+	| stream |
+	#_coverageTracker5117069_ markAsExecuted.
+	#_coverageTracker5117069_
+		cover: (45 to: 50)
+		declaredAt: (35 to: 40)
+		by:
+			(stream _ [ | receiver1 |
+			receiver1 _ #_coverageTracker5117069_
+				coverAll:
+					{55 to: 60}
+				by: String.
+			#_coverageTracker5117069_
+				coverAll:
+					{62 to: 72}
+				evaluating: [ receiver1 writeStream ]
+				thatSends: #writeStream
+				to: receiver1 ] value).
+	[ | receiver3 |
+	receiver3 _ [ | receiver2 |
+	receiver2 _ #_coverageTracker5117069_
+		cover: (78 to: 92)
+		declaredAt: (13 to: 27)
+		by: aCompiledMethod.
+	#_coverageTracker5117069_
+		coverAll:
+			{94 to: 103}
+		evaluating: [ receiver2 methodNode ]
+		thatSends: #methodNode
+		to: receiver2 ] value.
+	#_coverageTracker5117069_
+		coverAll:
+			{105 to: 116. 125 to: 131}
+		evaluating: [
+			receiver3
+				nodePrintOn:
+					(#_coverageTracker5117069_
+						cover: (118 to: 123)
+						declaredAt: (35 to: 40)
+						by: stream)
+				indent:
+					(#_coverageTracker5117069_
+						coverAll:
+							{133 to: 133}
+						byLiteralOrPseudoVariable: 0) ]
+		thatSends: #nodePrintOn:indent:
+		to: receiver3 ] value.
+	^ #_coverageTracker5117069_
+		cover: (138 to: 143)
+		declaredAt: (35 to: 40)
+		by: stream.! !
+!Behavior method!
+initializeFor: aCompiledMethod withMessage: anAlertMessage
+	#_coverageTracker5117083_ markAsExecuted.
+	#_coverageTracker5117083_
+		cover: (62 to: 75)
+		declaredAt: (62 to: 75)
+		by:
+			(compiledMethod _ #_coverageTracker5117083_
+				cover: (80 to: 94)
+				declaredAt: (16 to: 30)
+				by: aCompiledMethod).
+	#_coverageTracker5117083_
+		cover: (98 to: 109)
+		declaredAt: (98 to: 109)
+		by:
+			(alertMessage _ #_coverageTracker5117083_
+				cover: (114 to: 127)
+				declaredAt: (45 to: 58)
+				by: anAlertMessage).! !
+!Behavior method!
+selector
+	#_coverageTracker5117088_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117088_
+		cover: (12 to: 22)
+		declaredAt: (12 to: 22)
+		by: messageNode.
+	#_coverageTracker5117088_
+		coverAll:
+			{24 to: 31}
+		evaluating: [ receiver1 selector ]
+		thatSends: #selector
+		to: receiver1 ] value.! !
+!Behavior method!
+methodWithMessageNotUnderstood
+	#_coverageTracker5117104_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117104_
+		coverAll:
+			{33 to: 39}
+		byLiteralOrPseudoVariable: 'false'.
+	#_coverageTracker5117104_
+		coverAll:
+			{41 to: 43}
+		evaluating: [ receiver1 not ]
+		thatSends: #not
+		to: receiver1 ] value.! !
+!Behavior method!
+emptyMethodPrimitive
+	#_coverageTracker5117109_ markAsExecuted.! !
+!Behavior method!
+methodWithManyMessageNotUnderstood
+	"The first message that visitor evaluates is factorial which is not understood by receiver that has also type problems"
+	"The inner not message in the receiver it has a type problem, so this should force implement object recursion for receiver."
+	#_coverageTracker5117112_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117112_
+		coverAll:
+			{285 to: 291}
+		byLiteralOrPseudoVariable: 'false'.
+	#_coverageTracker5117112_
+		coverAll:
+			{293 to: 295}
+		evaluating: [ receiver1 not ]
+		thatSends: #not
+		to: receiver1 ] value.
+	#_coverageTracker5117112_
+		coverAll:
+			{297 to: 305}
+		evaluating: [ receiver2 factorial ]
+		thatSends: #factorial
+		to: receiver2 ] value.! !
+!Behavior method!
+problemDescription
+	#_coverageTracker5117116_ markAsExecuted.
+	^ #_coverageTracker5117116_
+		coverAll:
+			{23 to: 54}
+		byLiteralOrPseudoVariable: 'Method is not annotating types'.! !
+!Behavior method!
+m3
+	#_coverageTracker5117128_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117128_
+		coverAll:
+			{5 to: 6}
+		byLiteralOrPseudoVariable: 45.
+	#_coverageTracker5117128_
+		coverAll:
+			{8 to: 8}
+		evaluating: [
+			receiver1 +
+				(#_coverageTracker5117128_
+					coverAll:
+						{10 to: 15}
+					byLiteralOrPseudoVariable: 'hola') ]
+		thatSends: #+
+		to: receiver1 ] value.! !
+!Behavior method!
+initializeFor: aCompiledMethod collectingIssues: anIssuesCollection
+	#_coverageTracker5117143_ markAsExecuted.
+	#_coverageTracker5117143_
+		cover: (70 to: 83)
+		declaredAt: (70 to: 83)
+		by:
+			(compiledMethod _ #_coverageTracker5117143_
+				cover: (88 to: 102)
+				declaredAt: (16 to: 30)
+				by: aCompiledMethod).
+	#_coverageTracker5117143_
+		cover: (106 to: 115)
+		declaredAt: (106 to: 115)
+		by:
+			(methodNode _ [ | receiver1 |
+			receiver1 _ #_coverageTracker5117143_
+				cover: (120 to: 133)
+				declaredAt: (70 to: 83)
+				by: compiledMethod.
+			#_coverageTracker5117143_
+				coverAll:
+					{135 to: 144}
+				evaluating: [ receiver1 methodNode ]
+				thatSends: #methodNode
+				to: receiver1 ] value).
+	#_coverageTracker5117143_
+		cover: (149 to: 154)
+		declaredAt: (149 to: 154)
+		by:
+			(issues _ #_coverageTracker5117143_
+				cover: (159 to: 176)
+				declaredAt: (50 to: 67)
+				by: anIssuesCollection).! !
+!Behavior method!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode
+	#_coverageTracker5117159_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117159_
+		coverAll:
+			{82 to: 85}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117159_
+		coverAll:
+			{87 to: 89}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5117159_
+		coverAll:
+			{91 to: 103. 121 to: 124. 138 to: 140. 155 to: 166}
+		evaluating: [
+			receiver2
+				initializeOn:
+					(#_coverageTracker5117159_
+						cover: (105 to: 119)
+						declaredAt: (27 to: 41)
+						by: aCompiledMethod)
+				for:
+					(#_coverageTracker5117159_
+						cover: (126 to: 136)
+						declaredAt: (48 to: 58)
+						by: aMethodNode)
+				by:
+					(#_coverageTracker5117159_
+						cover: (142 to: 153)
+						declaredAt: (64 to: 75)
+						by: aMessageNode)
+				description:
+					(#_coverageTracker5117159_
+						coverAll:
+							{168 to: 190}
+						byLiteralOrPseudoVariable: 'Receiver has no types') ]
+		thatSends: #initializeOn:for:by:description:
+		to: receiver2 ] value.! !
+!Behavior method!
+selector
+	#_coverageTracker5117165_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117165_
+		cover: (12 to: 22)
+		declaredAt: (12 to: 22)
+		by: messageNode.
+	#_coverageTracker5117165_
+		coverAll:
+			{24 to: 31}
+		evaluating: [ receiver1 selector ]
+		thatSends: #selector
+		to: receiver1 ] value.! !
+!Behavior method!
+initializeOn: aCompiledMethod for: aMethodNode by: aMessageNode reason: aReasonDescription
+	#_coverageTracker5117172_ markAsExecuted.
+	#_coverageTracker5117172_
+		cover: (94 to: 107)
+		declaredAt: (94 to: 107)
+		by:
+			(compiledMethod _ #_coverageTracker5117172_
+				cover: (112 to: 126)
+				declaredAt: (15 to: 29)
+				by: aCompiledMethod).
+	#_coverageTracker5117172_
+		cover: (130 to: 139)
+		declaredAt: (130 to: 139)
+		by:
+			(methodNode _ #_coverageTracker5117172_
+				cover: (144 to: 154)
+				declaredAt: (36 to: 46)
+				by: aMethodNode).
+	#_coverageTracker5117172_
+		cover: (158 to: 168)
+		declaredAt: (158 to: 168)
+		by:
+			(messageNode _ #_coverageTracker5117172_
+				cover: (173 to: 184)
+				declaredAt: (52 to: 63)
+				by: aMessageNode).
+	#_coverageTracker5117172_
+		cover: (188 to: 204)
+		declaredAt: (188 to: 204)
+		by:
+			(reasonDescription _ #_coverageTracker5117172_
+				cover: (209 to: 226)
+				declaredAt: (73 to: 90)
+				by: aReasonDescription).! !
+!Behavior method!
+methodReference
+	#_coverageTracker5117177_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117177_
+		cover: (21 to: 34)
+		declaredAt: (21 to: 34)
+		by: compiledMethod.
+	#_coverageTracker5117177_
+		coverAll:
+			{36 to: 52}
+		evaluating: [ receiver1 asMethodReference ]
+		thatSends: #asMethodReference
+		to: receiver1 ] value.! !
+!Behavior method!
+methodSumsNumber: aNumber anotherNumber: anotherNumber
+	#_coverageTracker5117193_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117193_
+		cover: (60 to: 72)
+		declaredAt: (42 to: 54)
+		by: anotherNumber.
+	#_coverageTracker5117193_
+		coverAll:
+			{74 to: 74}
+		evaluating: [
+			receiver1 +
+				(#_coverageTracker5117193_
+					cover: (76 to: 82)
+					declaredAt: (19 to: 25)
+					by: aNumber) ]
+		thatSends: #+
+		to: receiver1 ] value.! !
+!Behavior method!
+methodWithReceiverWithNoTypes
+	#_coverageTracker5117199_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117199_
+		cover: (32 to: 52)
+		declaredAt: (32 to: 52)
+		by: nilVariableWithNoType.
+	#_coverageTracker5117199_
+		coverAll:
+			{54 to: 57}
+		evaluating: [ receiver1 size ]
+		thatSends: #size
+		to: receiver1 ] value.! !
+!Behavior method!
+issues
+	#_coverageTracker5117203_ markAsExecuted.
+	^ #_coverageTracker5117203_
+		cover: (10 to: 15)
+		declaredAt: (10 to: 15)
+		by: issues.! !
+!Behavior method!
+typeCheckWhenEnabledTyping
+	#_coverageTracker5117207_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117207_
+		coverAll:
+			{30 to: 59}
+		by: TypeCheckerDragonMethodVisitor.
+	#_coverageTracker5117207_
+		coverAll:
+			{61 to: 64. 81 to: 97}
+		evaluating: [
+			receiver1
+				for:
+					(#_coverageTracker5117207_
+						cover: (66 to: 79)
+						declaredAt: (66 to: 79)
+						by: compiledMethod)
+				collectingAlerts:
+					(#_coverageTracker5117207_
+						cover: (99 to: 104)
+						declaredAt: (99 to: 104)
+						by: issues) ]
+		thatSends: #for:collectingAlerts:
+		to: receiver1 ] value.
+	#_coverageTracker5117207_
+		coverAll:
+			{107 to: 112}
+		evaluating: [ receiver2 accept ]
+		thatSends: #accept
+		to: receiver2 ] value.
+	^ #_coverageTracker5117207_
+		coverAll:
+			{117 to: 120}
+		byLiteralOrPseudoVariable: self.! !
+!Behavior method!
+checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType
+	| implementorsFinder |
+	#_coverageTracker5117212_ markAsExecuted.
+	#_coverageTracker5117212_
+		cover: (98 to: 115)
+		declaredAt: (74 to: 91)
+		by:
+			(implementorsFinder _ [ | receiver2 |
+			receiver2 _ #_coverageTracker5117212_
+				coverAll:
+					{120 to: 145}
+				by: AllActualLocalImplementors.
+			#_coverageTracker5117212_
+				coverAll:
+					{147 to: 149. 179 to: 185}
+				evaluating: [
+					receiver2
+						of:
+							[ | receiver1 |
+							receiver1 _ #_coverageTracker5117212_
+								cover: (151 to: 162)
+								declaredAt: (21 to: 32)
+								by: aMessageNode.
+							#_coverageTracker5117212_
+								coverAll:
+									{164 to: 177}
+								evaluating: [ receiver1 selectorSymbol ]
+								thatSends: #selectorSymbol
+								to: receiver1 ] value
+						forAll:
+							(#_coverageTracker5117212_
+								cover: (187 to: 202)
+								declaredAt: (51 to: 66)
+								by: receiverLiveType) ]
+				thatSends: #of:forAll:
+				to: receiver2 ] value).
+	[ | receiver3 |
+	receiver3 _ #_coverageTracker5117212_
+		cover: (206 to: 223)
+		declaredAt: (74 to: 91)
+		by: implementorsFinder.
+	#_coverageTracker5117212_
+		coverAll:
+			{225 to: 237}
+		evaluating: [ receiver3 LiveTypeValue ]
+		thatSends: #LiveTypeValue
+		to: receiver3 ] value.
+	[ | receiver7 |
+	receiver7 _ [ | receiver4 |
+	receiver4 _ #_coverageTracker5117212_
+		cover: (243 to: 260)
+		declaredAt: (74 to: 91)
+		by: implementorsFinder.
+	#_coverageTracker5117212_
+		coverAll:
+			{262 to: 282}
+		evaluating: [ receiver4 notImplementedIsEmpty ]
+		thatSends: #notImplementedIsEmpty
+		to: receiver4 ] value.
+	#_coverageTracker5117212_
+		coverAll:
+			{284 to: 291}
+		evaluating: [
+			receiver7 ifFalse: [
+				[ | receiver6 |
+				receiver6 _ #_coverageTracker5117212_
+					cover: (299 to: 304)
+					declaredAt: (299 to: 304)
+					by: issues.
+				#_coverageTracker5117212_
+					coverAll:
+						{306 to: 309}
+					evaluating: [
+						receiver6 add:
+							[ | receiver5 |
+							receiver5 _ #_coverageTracker5117212_
+								coverAll:
+									{312 to: 334}
+								by: TypeCheckingDragonError.
+							#_coverageTracker5117212_
+								coverAll:
+									{336 to: 360. 377 to: 380. 393 to: 395}
+								evaluating: [
+									receiver5
+										forReceiverWithNoTypesOn:
+											(#_coverageTracker5117212_
+												cover: (362 to: 375)
+												declaredAt: (362 to: 375)
+												by: compiledMethod)
+										for:
+											(#_coverageTracker5117212_
+												cover: (382 to: 391)
+												declaredAt: (382 to: 391)
+												by: methodNode)
+										by:
+											(#_coverageTracker5117212_
+												cover: (397 to: 408)
+												declaredAt: (21 to: 32)
+												by: aMessageNode) ]
+								thatSends: #forReceiverWithNoTypesOn:for:by:
+								to: receiver5 ] value ]
+					thatSends: #add:
+					to: receiver6 ] value ]]
+		thatSends: #ifFalse:
+		to: receiver7 ] value.! !
+!Behavior method!
+selector
+	#_coverageTracker5117236_ markAsExecuted.
+	^ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117236_
+		cover: (12 to: 22)
+		declaredAt: (12 to: 22)
+		by: messageNode.
+	#_coverageTracker5117236_
+		coverAll:
+			{24 to: 31}
+		evaluating: [ receiver1 selector ]
+		thatSends: #selector
+		to: receiver1 ] value.! !
+!Behavior method!
+problemDescription
+	#_coverageTracker5117241_ markAsExecuted.
+	[ | receiver1 |
+	receiver1 _ #_coverageTracker5117241_
+		coverAll:
+			{21 to: 24}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117241_
+		coverAll:
+			{26 to: 44}
+		evaluating: [ receiver1 shouldBeImplemented ]
+		thatSends: #shouldBeImplemented
+		to: receiver1 ] value.! !
+!Behavior method!
+for: aCompiledMethod withMessage: anAlertMessage
+	#_coverageTracker5117244_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117244_
+		coverAll:
+			{53 to: 56}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117244_
+		coverAll:
+			{58 to: 60}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5117244_
+		coverAll:
+			{62 to: 75. 93 to: 104}
+		evaluating: [
+			receiver2
+				initializeFor:
+					(#_coverageTracker5117244_
+						cover: (77 to: 91)
+						declaredAt: (6 to: 20)
+						by: aCompiledMethod)
+				withMessage:
+					(#_coverageTracker5117244_
+						cover: (106 to: 119)
+						declaredAt: (35 to: 48)
+						by: anAlertMessage) ]
+		thatSends: #initializeFor:withMessage:
+		to: receiver2 ] value.! !
+!Behavior method!
+typeCheck
+	#_coverageTracker5117250_ markAsExecuted.
+	[ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117250_
+		cover: (12 to: 25)
+		declaredAt: (12 to: 25)
+		by: compiledMethod.
+	#_coverageTracker5117250_
+		coverAll:
+			{27 to: 37}
+		evaluating: [ receiver1 isPrimitive ]
+		thatSends: #isPrimitive
+		to: receiver1 ] value.
+	#_coverageTracker5117250_
+		coverAll:
+			{39 to: 45}
+		evaluating: [ receiver2 ifTrue: [ ^ #_coverageTracker5117250_
+					coverAll:
+						{49 to: 52}
+					byLiteralOrPseudoVariable: self ]]
+		thatSends: #ifTrue:
+		to: receiver2 ] value.
+	[ | receiver6 |
+	receiver6 _ [ | receiver3 |
+	receiver3 _ #_coverageTracker5117250_
+		cover: (57 to: 70)
+		declaredAt: (12 to: 25)
+		by: compiledMethod.
+	#_coverageTracker5117250_
+		coverAll:
+			{72 to: 88}
+		evaluating: [ receiver3 isAnnotatingTypes ]
+		thatSends: #isAnnotatingTypes
+		to: receiver3 ] value.
+	#_coverageTracker5117250_
+		coverAll:
+			{93 to: 99. 138 to: 145}
+		evaluating: [
+			receiver6
+				ifTrue: [
+					[ | receiver4 |
+					receiver4 _ #_coverageTracker5117250_
+						coverAll:
+							{102 to: 105}
+						byLiteralOrPseudoVariable: self.
+					#_coverageTracker5117250_
+						coverAll:
+							{107 to: 132}
+						evaluating: [ receiver4 typeCheckWhenEnabledTyping ]
+						thatSends: #typeCheckWhenEnabledTyping
+						to: receiver4 ] value ]
+				ifFalse: [
+					[ | receiver5 |
+					receiver5 _ #_coverageTracker5117250_
+						coverAll:
+							{149 to: 152}
+						byLiteralOrPseudoVariable: self.
+					#_coverageTracker5117250_
+						coverAll:
+							{154 to: 180}
+						evaluating: [ receiver5 typeCheckWhenDisabledTyping ]
+						thatSends: #typeCheckWhenDisabledTyping
+						to: receiver5 ] value ]]
+		thatSends: #ifTrue:ifFalse:
+		to: receiver6 ] value.! !
+!Behavior method!
+forReceiverWithNoTypesOn: aCompiledMethod for: aMethodNode by: aMessageNode
+	#_coverageTracker5117268_ markAsExecuted.
+	^ [ | receiver2 |
+	receiver2 _ [ | receiver1 |
+	receiver1 _ #_coverageTracker5117268_
+		coverAll:
+			{80 to: 83}
+		byLiteralOrPseudoVariable: self.
+	#_coverageTracker5117268_
+		coverAll:
+			{85 to: 87}
+		evaluating: [ receiver1 new ]
+		thatSends: #new
+		to: receiver1 ] value.
+	#_coverageTracker5117268_
+		coverAll:
+			{89 to: 101. 119 to: 122. 136 to: 138. 153 to: 164}
+		evaluating: [
+			receiver2
+				initializeOn:
+					(#_coverageTracker5117268_
+						cover: (103 to: 117)
+						declaredAt: (27 to: 41)
+						by: aCompiledMethod)
+				for:
+					(#_coverageTracker5117268_
+						cover: (124 to: 134)
+						declaredAt: (48 to: 58)
+						by: aMethodNode)
+				by:
+					(#_coverageTracker5117268_
+						cover: (140 to: 151)
+						declaredAt: (64 to: 75)
+						by: aMessageNode)
+				description:
+					(#_coverageTracker5117268_
+						coverAll:
+							{166 to: 208}
+						byLiteralOrPseudoVariable: 'No type information on receiver collected') ]
+		thatSends: #initializeOn:for:by:description:
+		to: receiver2 ] value.! !
+!Behavior method!
+method
+	#_coverageTracker5117275_ markAsExecuted.
+	^ #_coverageTracker5117275_
+		cover: (10 to: 23)
+		declaredAt: (10 to: 23)
+		by: compiledMethod.! !
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:25:26'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:25:26'!
+PASSED!
+!TypeCheckerDragonMethodVisitor methodsFor: 'visiting' stamp: 'JFGO 2/5/2024 19:27:16' prior: 50537824 overrides: 16919345!
+visitMessageNode: aMessageNode
+	| incompleteTypeInfo receiverLiveType  |
+	aMessageNode receiver accept: self.
+	
+	
+	incompleteTypeInfo := OrderedCollection new. 
+	receiverLiveType:=aMessageNode receiverLiveTypesIn:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+		
+	incompleteTypeInfo do: [ :anIncompleteTypeInfoReason | anIncompleteTypeInfoReason addTo: self node: aMessageNode ].
+	
+	(receiverLiveType isEmptyType and: [ incompleteTypeInfo isEmpty])
+		ifTrue: [issues add: (TypeCheckingDragonIncompleteInformation forReceiverWithNoTypesOn: compiledMethod for: methodNode by: aMessageNode)]
+		ifFalse: [ self checkMessageSentIn: aMessageNode isImplementedIn: receiverLiveType ].
+	
+	aMessageNode argumentsInEvaluationOrder do: [:argumentBlock | argumentBlock accept: self].! !
+
+!methodRemoval: IncompleteTypeInfoError #addTo: stamp: 'JFGO 2/5/2024 19:28:32'!
+addTo: aMethodTypeCheckerVisitor
+	
+	aMethodTypeCheckerVisitor addWarning: self node: messageNode .!
+
+!methodRemoval: IncompleteTypeInfoWarning #addTo: stamp: 'JFGO 2/5/2024 19:28:50'!
+addTo: aMethodTypeCheckerVisitor 
+	"TODO. After removing Hernan's Type Checker, rename the message below to addIssue: or addNonDeductibleTypeIssue:. Julian"
+	aMethodTypeCheckerVisitor addProblem: self node: messageNode !
+
+!methodRemoval: IncompleteTypeInfoError class #dueToMissingImplementationOf:node: stamp: 'JFGO 2/5/2024 19:31:13'!
+dueToMissingImplementationOf: aMethodReference node: aMessageNode 
+	
+	^self of: aMethodReference describedAs: (self missingImplementationDescriptionOf: aMethodReference) node: aMessageNode.!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 2/5/2024 19:31:36' prior: 50536687!
+test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts
+	
+	self typeCheckWithSelector: #methodWithManyMessageNotUnderstood andAssert: [:typeChecker :methodChecked | | warning error |
+		self assert: 2 equals: typeChecker issues size.
+		self assert: 1 equals: typeChecker errors size.
+		self assert: 1 equals: typeChecker warnings size.
+		error := typeChecker errors anyOne .
+		"self assert: '#not not implemented in String' equals: error problemDescription .	" "TODO"
+		self assert: (error method) equals: methodChecked .
+		self assert: (error receiver key) equals: 'false'.
+		self assert: (error selector key) equals: #not.
+		warning := typeChecker warnings anyOne .
+		self assert: '#not not implemented in String' equals: warning problemDescription .	
+		self assert: (warning method) equals: methodChecked .
+		self assert: (warning receiver key) equals: 'false not'.
+		self assert: (warning selector key) equals: #factorial.
+	]. 
+	
+	
+	
+	! !
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:31:38'!
+ERROR!
+!MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 2/5/2024 19:33:12' prior: 50537185 overrides: 50534673!
+liveTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier storingGenericsInfoIn: aStorage
+	
+	| messageReturnTypes sentSelector receiverTypes  |
+
+	sentSelector := self selectorSymbol.
+	receiverTypes := aTypeCastApplier receiverLiveTypesFor: self in: aCompiledMethod addingIncompleteTypeInfoTo:  incompleteTypeInfoReasons storingGenericsInfoIn: aStorage.
+	
+	messageReturnTypes := Set new.
+	receiverTypes liveTypesDo: [:aReceiverType | | currentReceiverClass currentMethodRef | 								
+			currentReceiverClass := aReceiverType liveClass.
+			currentMethodRef := (MethodReference class: currentReceiverClass selector: sentSelector).
+			(aStorage genericTypeConstructorFrom: currentMethodRef) 
+				ifNil: [
+					(currentReceiverClass lookupSelector: sentSelector) 
+						ifNil: [ incompleteTypeInfoReasons add: (	IncompleteTypeInfoError dueToMissingImplementationOf: currentMethodRef ) ]
+						ifNotNil: [ :implementor |
+							self returnTypesOf: implementor 
+								from: aReceiverType 
+								receiving: sentSelector 
+								in: aCompiledMethod
+								addingReturnTypesTo: messageReturnTypes 
+								addingIncompleteTypeInfoTo: incompleteTypeInfoReasons 
+								storingGenericsInfoIn: aStorage
+							].
+				] 
+				ifNotNil: [:aGenericTypeConstructor | 
+					messageReturnTypes add: (aGenericTypeConstructor in: aCompiledMethod forArguments: self argumentsInEvaluationOrder storingGenericsInfoIn: aStorage).
+				].
+			
+			].
+		
+	^RawToLiveTypesAdapter new adapt: messageReturnTypes.! !
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:33:14'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:34:26'!
+ERROR!
+
+aMessageNode!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:36:45'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:37:01'!
+ERROR!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:37:01'!
+ERROR!
+
+self receiver!
+
+self receiver key!
+
+self receiver!
+
+self = {'false' not}!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 2/5/2024 19:39:11' prior: 50539843!
+test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts
+	
+	self typeCheckWithSelector: #methodWithManyMessageNotUnderstood andAssert: [:typeChecker :methodChecked | | warning error |
+		self assert: 2 equals: typeChecker issues size.
+		self assert: 1 equals: typeChecker errors size.
+		self assert: 1 equals: typeChecker warnings size.
+		error := typeChecker errors anyOne .
+		"self assert: '#not not implemented in String' equals: error problemDescription .	" "TODO"
+		self assert: (error method) equals: methodChecked .
+		self assert: (error receiver key) equals: 'false'.
+		self assert: (error selector key) equals: #not.
+		warning := typeChecker warnings anyOne .
+		self assert: '#not not implemented in String' equals: warning problemDescription .	
+		self assert: (warning method) equals: methodChecked .
+		self assert: (warning receiver receiver) equals: 'false'.
+		self assert: (warning receiver selector) equals: #not.
+		self assert: (warning selector key) equals: #factorial.
+	]. 
+	
+	
+	
+	! !
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:39:16'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:39:16'!
+FAILURE!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 2/5/2024 19:39:37' prior: 50539957!
+test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts
+	
+	self typeCheckWithSelector: #methodWithManyMessageNotUnderstood andAssert: [:typeChecker :methodChecked | | warning error |
+		self assert: 2 equals: typeChecker issues size.
+		self assert: 1 equals: typeChecker errors size.
+		self assert: 1 equals: typeChecker warnings size.
+		error := typeChecker errors anyOne .
+		"self assert: '#not not implemented in String' equals: error problemDescription .	" "TODO"
+		self assert: (error method) equals: methodChecked .
+		self assert: (error receiver key) equals: 'false'.
+		self assert: (error selector key) equals: #not.
+		warning := typeChecker warnings anyOne .
+		self assert: '#not not implemented in String' equals: warning problemDescription .	
+		self assert: (warning method) equals: methodChecked .
+		self assert: (warning receiver receiver key) equals: 'false'.
+		self assert: (warning receiver selector key) equals: #not.
+		self assert: (warning selector key) equals: #factorial.
+	]. 
+	
+	
+	
+	! !
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:39:42'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:40:04'!
+FAILURE!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 19:40:04'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:40:04'!
+FAILURE!
+
+self receiver!
+
+self receiver !
+
+self receiver key!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 2/5/2024 19:42:04' prior: 50536785!
+test10MessageSentToMethodWithNoReturnTypeGeneratesIssue
+	
+		
+	self typeCheckWithSelector: #methodWithMessageWithNoReturnTypes andAssert: [:typeChecker :methodChecked | | warning | 
+		self assert: typeChecker hasWarnings .
+		self assert: typeChecker warnings size equals: 1.
+		warning := typeChecker warnings anyOne .
+		self assert: (warning method) equals: methodChecked .
+		self assert: (warning selector key) equals: #factorial.
+		
+	]. 
+	
+	
+	! !
+
+self receiver!
+
+self receiver!
+
+self receiver selector key!
+!TypeCheckerDragonTest methodsFor: 'tests for methods without branches' stamp: 'JFGO 2/5/2024 19:43:24' prior: 50540096!
+test10MessageSentToMethodWithNoReturnTypeGeneratesIssue
+	
+		
+	self typeCheckWithSelector: #methodWithMessageWithNoReturnTypes andAssert: [:typeChecker :methodChecked | | warning | 
+		self assert: typeChecker hasWarnings .
+		self assert: typeChecker warnings size equals: 1.
+		warning := typeChecker warnings anyOne .
+		self assert: (warning method) equals: methodChecked .
+		self assert: (warning receiver selector key) equals: #methodSumsNumber:anotherNumber:.
+		self assert: (warning selector key) equals: #factorial.
+		
+	]. 
+	
+	
+	! !
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:43:30'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 19:43:32'!
+PASSED!
+!MessageNode methodsFor: '*LiveTypingTypeChecker' stamp: 'JFGO 2/5/2024 19:44:07' prior: 50537258!
+returnTypesOf: implementor from: aReceiverType receiving: sentSelector in: aCompiledMethod addingReturnTypesTo: messageReturnTypes addingIncompleteTypeInfoTo: incompleteTypeInfoReasons storingGenericsInfoIn: aStorage
+
+	| returnTypes |
+
+	"generic getter case"
+	((aReceiverType isGenericType) and: [aStorage getterMethodsFor: aReceiverType includes: sentSelector]) ifTrue: [
+		| parameterIndex |
+		parameterIndex := (aStorage getterMethodsFor: aReceiverType) at: sentSelector.
+		messageReturnTypes addAll: (aReceiverType generics at: parameterIndex).
+		^self.
+	].
+	
+	"generic setter case"
+	(((aStorage tracedMethodsFor: aReceiverType liveClass) includesKey: sentSelector)
+		or: [(aStorage tracedMethodsFromParametersFor: aReceiverType liveClass) includesKey: sentSelector])
+		ifTrue: [ | lastArgument argumentType |
+		"setters need to receive the object from where the type will be set, then there's at least one argument - Adrian"
+		lastArgument := self argumentsInEvaluationOrder last.
+		argumentType := lastArgument 
+						liveTypesIn: aCompiledMethod 
+						addingIncompleteTypeInfoTo: incompleteTypeInfoReasons 
+						storingGenericsInfoIn: aStorage.
+						
+		messageReturnTypes add: argumentType.
+		^self.	
+	].
+	
+	"general case"
+	returnTypes := implementor returnLiveTypesForReceiver: aReceiverType liveClass usingStorage: aStorage.
+	(returnTypes isEmpty or: [returnTypes allSatisfy:[:item | item isEmptyType]])
+		ifTrue: [ incompleteTypeInfoReasons add: (IncompleteTypeInfoWarning dueToNoReturnTypeOf: implementor methodReference) ]
+		ifFalse: [
+			returnTypes := returnTypes collect: [ :aType | aType asTypeFor: aReceiverType liveClass].
+			messageReturnTypes addAll: returnTypes.
+		].! !
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 19:44:18'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+!testRun: #TypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 2/5/2024 19:44:21'!
+PASSED!
+
+----SNAPSHOT----(5 February 2024 19:45:41) CuisUniversity-6169.image priorSource: 6608202!
+
+----SNAPSHOT----(5 February 2024 19:49:15) CuisUniversity-6169.image priorSource: 6678210!
