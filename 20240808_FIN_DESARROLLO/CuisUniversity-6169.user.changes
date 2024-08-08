@@ -1,0 +1,3299 @@
+
+
+----STARTUP---- (8 August 2024 18:29:42) as C:\Users\juli_\Tesis\TESIS-INTEGRATION-FINAL\windows64\CuisUniversity-6169.image!
+
+
+----End fileIn of C:\Users\juli_\Tesis\TESIS-INTEGRATION-FINAL\windows64\LiveTypingGenerics.pck.st----!
+
+----End fileIn of C:\Users\juli_\Tesis\TESIS-INTEGRATION-FINAL\windows64\LiveTypingTypeChecker.pck.st----!
+
+!testRun: #FlowGraphCreationTest #test01onVarToVarAssigmentAssignorFlowsToAssignee stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test02ThereIsAlwaysANodeForReturnValue stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test03onAssigmentToAssigmentAllVarsAreLinked stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test04onVarReturnItFlowsToReturnNode stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test05CanTrackAMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test06TrackedMethodIsLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test07CanTrackMultipleMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test08TrackedMethodsAreLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test09InstVarsAreAlwaysAddedToGraph stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test10WhenVarIsConnectedToReturnValueItsNeighborsAreAlsoConnected stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test01CanAddAGenericType stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test02GenericsDoesNotRepeat stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test03GenericsCannotBeAlteredFromOuterScope stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test04CanSaveASelectorForAGeneric stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test05TracedMethodsCanBeRecovered stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test06TracedMethodsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test07ATracedMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test08AGenericCanBeDeleted stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test09CanSaveAGetterSelectorForAGeneric stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test10GetterSelectorsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test11CanStoreAndRetrieveTracedMethodRefs stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test12CanStoreAndRetrieveMultipleTracedMethodRefs stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test13AnalysisCanBeInitializedRecursively stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test14RecursiveAnalysisHasRecursiveTracedMethods stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test15GraphsAreDeletedWhenAllAnalysisFinish stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test16CanStoreGenericTypeConstructors stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test17SaveASelectorForAGenericWithMultipleParams stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #GAStorageTest #test18AGetterMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test01GenericClassesAreReplacedByGenericTypeInstances stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test02GenericClassesAreMergedWithTheirGenericTypes stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test03LiteralCollectionOneLiteralElement stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test04LiteralCollectionLiteralElementsOfDifferentType stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test05LiteralCollectionElementsFromVariable stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test06LiteralCollectionElementsFromMethodCall stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test07LiteralCollectionElementsFromMethodCallWithArgumentsTypesFromContext stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test08LiteralCollectionElementsFromRecursiveMethod stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test09LiteralCollectionFlowingInMultipleVariables stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test10LiteralCollectionFlowingInMultipleVariablesArgumentInMethod stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test11LiteralCollectionFlowingInMultipleVariablesEachReceivingMessages stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test12LiteralCollectionFlowingInMultipleVariablesEachReceivingMessagesBeforeAndAfterAssigment stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test13LiteralCollectionFlowingInMultipleVariablesArgumentInMultipleMethod stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test14LiteralCollectionFlowingInMultipleVariablesMultipleArgumentsInMethod stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test15LiteralCollectionFlowingToNonSelfMethod stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test16LiteralCollectionFlowingToSuperMethod stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test17GenericTypeReturningParameterFromGetter stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test18MethodReturningGenericType stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test19InstanceVariableUsedOnlyWithinCurrentClass stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test20InstanceVariableExposedByGetterAssignToVariable stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test21InstanceVariableExposedByMultipleGettersAssignToVariable stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test22InstanceVariableMessageSendsToGetters stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test23InstanceVariableGettersUsedAsArguments stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test24InstanceVariableFlowingToOtherVariables stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test25CollectionContainingAnotherCollection stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test26CollectionContainingMultipleCollections stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test27CollectionAssignedFromMethodCallAndNotUsedAfter stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test28ReturnResultOfMethodCall stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test29MethodCallOnMultipleClassesWithSameProtocol stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test30MethodCallInsideGenericClasses stamp: 'JFGO 8/8/2024 18:33:39'!
+PASSED!
+
+!testRun: #InferenceTest #test31CascadeMessageSends stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test32ArgumentCollectsInfoFromCalls stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test33ArgumentCollectsInfoFromCallsAndCurrentMethod stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test34GenericTypeConstructorFromArguments stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test35GenericTypeConstructorFromArgumentParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test36TraceReturnValueWhenMethodReturnsArgument stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test37AddingFromOtherCollectionParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test38CollectionFromLiteralNode stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test39CollectionWithMultipleParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test40GetterForGenericWithMultipleParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test41ArgumentCollectsInfoFromCallsWithMultipleParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test42ArgumentCollectsInfoFromCallsAndCurrentMethodWithMultipleParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test43ReturnTypeOfSetterMethodIsLastArgument stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test44CollectionIsDetectedWhenReturnedFromMethodAndAssignedToVariable stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #InferenceTest #test45ArgumentCollectsInfoCurrentMethodWithNoCallers stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test001SameType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test002DifferentType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test003SameHierarchy stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test004CommonSupertypeIsObject stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test005SameGeneric stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test006SameGenericDifferentOrder stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test007GenericsHandleSystemTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test008NestedGenerics stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test009GenericSupertypeWithSameGenerics stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test010GenericSupertypeWithCommonGenerics stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test011FixedAgainstGenericType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test012FixedAgainstGenericTypeInList stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test013GenericAgainstFixedTypeInList stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test014NestedGenerics stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test015NestedGenericsWithDifferentDepth stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test016EmptyTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test017EmptyTypeAgainstFixedType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test018EmptyTypeAgainstGenericType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test019UnionTypeCollectsTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test020UnionTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test021UnionTypeAgainstInnerElement stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test022ConvertionAccordingToReceiver stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test023ConvertionToArray stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test024EnumeratingClassTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test025EnumeratingLiveTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #LiveTypeTests #test026EnumeratingLiveAndClassTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test001EmptyRawTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test002AllClasses stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test003AnEmptyCollectionsContentType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test004ClassesAndCollectionsContentType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test005ACollectionsContentTypeWithTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test006SeveralCollectionsContentTypesWithTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test007CreateFixedType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test008CreateEmptyType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test009CreateGenericType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test010CreateGenericNestedType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test011CreateGenericNonEmptyType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test012CreateGenericMultipleNestedType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test001TooltipForEmptyCollection stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test002TooltipForSingleItemCollection stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test003TooltipForTwoItemsWhenSupertypeIsObject stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test004TooltipForTwoItemsWithCommonSupertype stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test005TooltipForVariableWithCollectionAndSomeOtherType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test006TooltipForMergedCollections stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test007TooltipForSameCollectionsWithSameTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test008TooltipForSameCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test009TooltipForSameCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test010TooltipForCommonSuperCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test011TooltipForNestedCollections stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test012TooltipForCommonSuperCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test013TooltipForCommonSuperCollectionsRepeatedWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test014TooltipForCommonSuperCollectionsWithEmptyCollections stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test015TooltipForCommonSuperCollectionsWithAnEmptyCollection stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test016TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test017TooltipForCommonSuperTypeAndNoCommonType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test018TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test019TooltipForNestedCollectionsOneOfThemEmpty stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test020TooltipForNestedCollectionsBothSameTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test021TooltipForNestedCollectionsEachNoCommonInnerType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test022TooltipForNestedCommonSuperCollectionsNoCommonInnerType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test023TooltipForNestedNoCommonSupertype stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test024TooltipForNestedRepeatedTypeDifferentInners stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test025TooltipForNestedCommonTypesAndIntruder stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test026TooltipForNestedCommontTypesWithTwoLevelIntruder stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test027TooltipForAwfullyComplexInnerCollections stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test028TooltipOnlyOneType stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test029TooltipCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test030TooltipNoTypes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test031TooltipNoCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TooltipTests #test032TooltipForCollectionWithTwoParameters stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test01IsCreatedEmpty stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test02AddingANodeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test03AddingAnEdgeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test04CannotLinkInexistantNodes stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test05CanAccessNodesButCantDirectlyAddToResult stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test06CheckingConnectionOnAssociatedUndirectedGraph stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test001Empty stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test002Fixed stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test003GenericSingleValue stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test004MultipleFixed stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test005GenericMultipleValues stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test006MultipleFixedWithNoCommonSupertype stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test007MultipleGenerics stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test008GenericEmptyValue stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test009MultipleGenericsEmptyValue stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #TypeNodeTests #test010EmptyAndFixed stamp: 'JFGO 8/8/2024 18:33:40'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test01ManyMethodsCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:33:43'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test02ClassesCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test03MethodsWithoutTypeAnnotationsLogsAProblem stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test04AlertsDetectIfNone stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test05AlertsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test06WarningsCollectsAllTypeCheckersWarnings stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test07ErrorsDetectIfNone stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test08ErrorsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test09ProblemsCollectsTypeCheckersProblems stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test10WarningsDetectIfNone stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test11WarningsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test12HasErrorsReturnsTrueIfATypeCheckerHasErrors stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test13HasErrorsReturnsFalseWhenNoErrorFound stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test14ErrorsCollectsAllTypeCheckersErrors stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test15HasErrorsOrWarnings stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test13TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test14TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test15TypeCastIfTrueIfFalseCorrectlyAppliesAndRejectsCastedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test16TypeCastNestedRejectionsRejectsEachLevelCastedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test17TypeCastManyVariablesNestedRejectionsRejectsEachLevelCastedTypeForEachVariable stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test01TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test03TypeCastIfFalseNestedReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test04TypeCastIfFalseIfTrueReturnsTypesCorrectlyForEachBlock stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test05TypeCastIfTrueIfFalseReturnsAllTypesWhenVariableIsNotAffectedByCondition stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test06TypeCastIfTrueIfFalseOverDifferentNodesGivesRightContextToEach stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test07TypeCastAppliesCorrectlyToParseNodeClass stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test08TypeCastAppliesCorrectlyToMessageNodeSelector stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test09TypeCastAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test10TypeCastDistinctIfTrueReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test11TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test12TypeCastNegatedIfFalseCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test13TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test14TypeCastDistinctNegatedIfTrueReturnsCastedType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test15TypeCastDistinctNegatedAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16TypeCastManyNegationsCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_1TypeCastObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_2TypeCastObjectClassSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_3TypeCastObjectClassToUnexistentSymbolDontApplyContext stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_4TypeCastClassNameToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_5TypeCastClassSymbolToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_6TypeCastClassNameDistinctToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_7TypeCastObjectClassDistinctSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test17BranchesAsMessageReceiverAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test18BranchesAsMessageArgumentAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test19ObjectEqualsToLiteralIfFalseReturnsPreviousTypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test20ObjectEqualsToLiteralIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test21ObjectDistinctToLiteralCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test22LiteralEqualsToObjectIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test23LiteralDistinctToObjectCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test24WhenConditionIsNotCastingPreservePreviousTypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test25IsKindOfForChildTypesFixesType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test26IsKindOfCastingSupertypeKeepsSubtypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test27IsKindOfRejectingSupertypeExcludeAllSubtypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28IsIsTypeMessageCastType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28_1IsIsTypeMessageReturnsOriginalTypesWhenSubclassesOfCastType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test29IsIsTypeMessageWhenRejectingTypeShouldFilter stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test30IsIsTypeMessageOnDIfferentVariableShouldntFilter stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31IsIsTypeMessageOnDIfferentTypesShouldRemoveAll stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test32IsNilMessageIfTrueCastToNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test33ObjectEqualsToNilCastToNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test34ObjectEqualsToNilIfFalseRejectsNilType stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test35NilEqualsToObjectCastToNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test36ObjectDistinctToNilCastOnFalseRejectsOnTrue stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test37IsNilMessageIfFalseRejectsNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test38notNilMessageIfTrueRejectsNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test39NotNilMessageIfFalseCastToNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test40IfNilMessageCastToNil stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test41IfNotNilKeepsPreviousTypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test42DisjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test44NegatedDisjunctionRejectsCastedTypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test45ConjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test46NegatedConjunctionAllowsAllPreviousTypes stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test47ManyDisjunctionCollectsEachOneAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test48ManyConjunctionCollectsCommonTypesAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test49ConjunctionOnlyOnOneSideAffectingContextIgnoreOtherside stamp: 'JFGO 8/8/2024 18:33:44'!
+PASSED!
+
+Object subclass: #TypeCheckingDragonAlertToMethodReferenceAdapter
+	instanceVariableNames: 'typeCheckingProblem prefix'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classDefinition: #TypeCheckingDragonAlertToMethodReferenceAdapter category: #'LiveTyping-TypeChecking' stamp: 'JFGO 8/8/2024 18:34:34'!
+Object subclass: #TypeCheckingDragonAlertToMethodReferenceAdapter
+	instanceVariableNames: 'typeCheckingProblem prefix'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+TypeCheckingDragonAlertToMethodReferenceAdapter class
+	instanceVariableNames: ''!
+
+!classDefinition: 'TypeCheckingDragonAlertToMethodReferenceAdapter class' category: #'LiveTyping-TypeChecking' stamp: 'JFGO 8/8/2024 18:34:34'!
+TypeCheckingDragonAlertToMethodReferenceAdapter class
+	instanceVariableNames: ''!
+!TypeCheckingDragonAlertToMethodReferenceAdapter methodsFor: 'method reference protocol' stamp: 'JFGO 8/8/2024 18:34:34'!
+actualClass
+	
+	^typeCheckingProblem method actualClass! !
+!TypeCheckingDragonAlertToMethodReferenceAdapter methodsFor: 'method reference protocol' stamp: 'JFGO 8/8/2024 18:34:34'!
+methodSymbol
+	
+	^typeCheckingProblem method methodSymbol ! !
+!TypeCheckingDragonAlertToMethodReferenceAdapter methodsFor: 'method reference protocol' stamp: 'JFGO 8/8/2024 18:34:34'!
+sourceCodeRange
+	
+	^typeCheckingProblem sourceCodeRange ! !
+!TypeCheckingDragonAlertToMethodReferenceAdapter methodsFor: 'printing' stamp: 'JFGO 8/8/2024 18:34:34' overrides: 16914685!
+displayStringOrText
+
+	^prefix, typeCheckingProblem displayStringOrText! !
+!TypeCheckingDragonAlertToMethodReferenceAdapter methodsFor: 'initialization' stamp: 'JFGO 8/8/2024 18:34:34'!
+initializeOf: aTypeCheckingProblem prefixing: aHeader
+
+	typeCheckingProblem := aTypeCheckingProblem.
+	prefix := aHeader ! !
+!TypeCheckingDragonAlertToMethodReferenceAdapter class methodsFor: 'instance creation' stamp: 'JFGO 8/8/2024 18:34:34'!
+of: aTypeCheckingProblem
+
+	^self of: aTypeCheckingProblem prefixing: ''! !
+!TypeCheckingDragonAlertToMethodReferenceAdapter class methodsFor: 'instance creation' stamp: 'JFGO 8/8/2024 18:34:34'!
+of: aTypeCheckingProblem prefixing: aHeader
+
+	^self new initializeOf: aTypeCheckingProblem prefixing: aHeader
+
+! !
+
+Object subclass: #TypeCheckingDragonAlertToMethodReferenceAdapter
+	instanceVariableNames: 'typeCheckingProblem prefix'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+
+!classDefinition: #TypeCheckingDragonAlertToMethodReferenceAdapter category: #'LiveTypingTypeChecker-TypeCheckingDragon' stamp: 'JFGO 8/8/2024 18:34:44'!
+Object subclass: #TypeCheckingDragonAlertToMethodReferenceAdapter
+	instanceVariableNames: 'typeCheckingProblem prefix'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-TypeCheckingDragon'!
+!MethodTypeCheckerDragon methodsFor: 'resultWindow-listIssues' stamp: 'JFGO 8/8/2024 18:35:32' prior: 50538963!
+addMethodReferencesOf: aTypeCheckingProblemCollection prefixing: aPrefix to: methodReferencesCollection 
+	aTypeCheckingProblemCollection do: [ :aTypeCheckingProblem |
+		methodReferencesCollection add: (TypeCheckingDragonAlertToMethodReferenceAdapter of: aTypeCheckingProblem prefixing: aPrefix) ].
+	
+	^methodReferencesCollection ! !
+
+!classRenamed: #TypeCheckingDragonAlertToMethodReferenceAdapter as: #TypeCheckingDragonIssueToMethodReferenceAdapter stamp: 'JFGO 8/8/2024 18:36:59'!
+Smalltalk renameClassNamed: #TypeCheckingDragonAlertToMethodReferenceAdapter as: #TypeCheckingDragonIssueToMethodReferenceAdapter!
+!MethodTypeCheckerDragon methodsFor: 'as yet unclassified' stamp: 'JFGO 8/8/2024 18:36:59' prior: 50542573!
+addMethodReferencesOf: aTypeCheckingProblemCollection prefixing: aPrefix to: methodReferencesCollection 
+	aTypeCheckingProblemCollection do: [ :aTypeCheckingProblem |
+		methodReferencesCollection add: (TypeCheckingDragonIssueToMethodReferenceAdapter of: aTypeCheckingProblem prefixing: aPrefix) ].
+	
+	^methodReferencesCollection ! !
+
+!testRun: #FlowGraphCreationTest #test01onVarToVarAssigmentAssignorFlowsToAssignee stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test02ThereIsAlwaysANodeForReturnValue stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test03onAssigmentToAssigmentAllVarsAreLinked stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test04onVarReturnItFlowsToReturnNode stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test05CanTrackAMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test06TrackedMethodIsLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test07CanTrackMultipleMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test08TrackedMethodsAreLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test09InstVarsAreAlwaysAddedToGraph stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test10WhenVarIsConnectedToReturnValueItsNeighborsAreAlsoConnected stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test01CanAddAGenericType stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test02GenericsDoesNotRepeat stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test03GenericsCannotBeAlteredFromOuterScope stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test04CanSaveASelectorForAGeneric stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test05TracedMethodsCanBeRecovered stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test06TracedMethodsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test07ATracedMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test08AGenericCanBeDeleted stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test09CanSaveAGetterSelectorForAGeneric stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test10GetterSelectorsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test11CanStoreAndRetrieveTracedMethodRefs stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test12CanStoreAndRetrieveMultipleTracedMethodRefs stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test13AnalysisCanBeInitializedRecursively stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test14RecursiveAnalysisHasRecursiveTracedMethods stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test15GraphsAreDeletedWhenAllAnalysisFinish stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test16CanStoreGenericTypeConstructors stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test17SaveASelectorForAGenericWithMultipleParams stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #GAStorageTest #test18AGetterMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test01GenericClassesAreReplacedByGenericTypeInstances stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test02GenericClassesAreMergedWithTheirGenericTypes stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test03LiteralCollectionOneLiteralElement stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test04LiteralCollectionLiteralElementsOfDifferentType stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test05LiteralCollectionElementsFromVariable stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test06LiteralCollectionElementsFromMethodCall stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test07LiteralCollectionElementsFromMethodCallWithArgumentsTypesFromContext stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test08LiteralCollectionElementsFromRecursiveMethod stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test09LiteralCollectionFlowingInMultipleVariables stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test10LiteralCollectionFlowingInMultipleVariablesArgumentInMethod stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test11LiteralCollectionFlowingInMultipleVariablesEachReceivingMessages stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test12LiteralCollectionFlowingInMultipleVariablesEachReceivingMessagesBeforeAndAfterAssigment stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test13LiteralCollectionFlowingInMultipleVariablesArgumentInMultipleMethod stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test14LiteralCollectionFlowingInMultipleVariablesMultipleArgumentsInMethod stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test15LiteralCollectionFlowingToNonSelfMethod stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test16LiteralCollectionFlowingToSuperMethod stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test17GenericTypeReturningParameterFromGetter stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test18MethodReturningGenericType stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test19InstanceVariableUsedOnlyWithinCurrentClass stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test20InstanceVariableExposedByGetterAssignToVariable stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test21InstanceVariableExposedByMultipleGettersAssignToVariable stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test22InstanceVariableMessageSendsToGetters stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test23InstanceVariableGettersUsedAsArguments stamp: 'JFGO 8/8/2024 18:37:33'!
+PASSED!
+
+!testRun: #InferenceTest #test24InstanceVariableFlowingToOtherVariables stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test25CollectionContainingAnotherCollection stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test26CollectionContainingMultipleCollections stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test27CollectionAssignedFromMethodCallAndNotUsedAfter stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test28ReturnResultOfMethodCall stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test29MethodCallOnMultipleClassesWithSameProtocol stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test30MethodCallInsideGenericClasses stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test31CascadeMessageSends stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test32ArgumentCollectsInfoFromCalls stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test33ArgumentCollectsInfoFromCallsAndCurrentMethod stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test34GenericTypeConstructorFromArguments stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test35GenericTypeConstructorFromArgumentParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test36TraceReturnValueWhenMethodReturnsArgument stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test37AddingFromOtherCollectionParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test38CollectionFromLiteralNode stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test39CollectionWithMultipleParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test40GetterForGenericWithMultipleParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test41ArgumentCollectsInfoFromCallsWithMultipleParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test42ArgumentCollectsInfoFromCallsAndCurrentMethodWithMultipleParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test43ReturnTypeOfSetterMethodIsLastArgument stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test44CollectionIsDetectedWhenReturnedFromMethodAndAssignedToVariable stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #InferenceTest #test45ArgumentCollectsInfoCurrentMethodWithNoCallers stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test001SameType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test002DifferentType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test003SameHierarchy stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test004CommonSupertypeIsObject stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test005SameGeneric stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test006SameGenericDifferentOrder stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test007GenericsHandleSystemTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test008NestedGenerics stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test009GenericSupertypeWithSameGenerics stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test010GenericSupertypeWithCommonGenerics stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test011FixedAgainstGenericType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test012FixedAgainstGenericTypeInList stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test013GenericAgainstFixedTypeInList stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test014NestedGenerics stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test015NestedGenericsWithDifferentDepth stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test016EmptyTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test017EmptyTypeAgainstFixedType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test018EmptyTypeAgainstGenericType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test019UnionTypeCollectsTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test020UnionTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test021UnionTypeAgainstInnerElement stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test022ConvertionAccordingToReceiver stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test023ConvertionToArray stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test024EnumeratingClassTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test025EnumeratingLiveTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #LiveTypeTests #test026EnumeratingLiveAndClassTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test001EmptyRawTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test002AllClasses stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test003AnEmptyCollectionsContentType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test004ClassesAndCollectionsContentType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test005ACollectionsContentTypeWithTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test006SeveralCollectionsContentTypesWithTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test007CreateFixedType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test008CreateEmptyType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test009CreateGenericType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test010CreateGenericNestedType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test011CreateGenericNonEmptyType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test012CreateGenericMultipleNestedType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test001TooltipForEmptyCollection stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test002TooltipForSingleItemCollection stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test003TooltipForTwoItemsWhenSupertypeIsObject stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test004TooltipForTwoItemsWithCommonSupertype stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test005TooltipForVariableWithCollectionAndSomeOtherType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test006TooltipForMergedCollections stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test007TooltipForSameCollectionsWithSameTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test008TooltipForSameCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test009TooltipForSameCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test010TooltipForCommonSuperCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test011TooltipForNestedCollections stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test012TooltipForCommonSuperCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test013TooltipForCommonSuperCollectionsRepeatedWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test014TooltipForCommonSuperCollectionsWithEmptyCollections stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test015TooltipForCommonSuperCollectionsWithAnEmptyCollection stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test016TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test017TooltipForCommonSuperTypeAndNoCommonType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test018TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test019TooltipForNestedCollectionsOneOfThemEmpty stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test020TooltipForNestedCollectionsBothSameTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test021TooltipForNestedCollectionsEachNoCommonInnerType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test022TooltipForNestedCommonSuperCollectionsNoCommonInnerType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test023TooltipForNestedNoCommonSupertype stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test024TooltipForNestedRepeatedTypeDifferentInners stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test025TooltipForNestedCommonTypesAndIntruder stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test026TooltipForNestedCommontTypesWithTwoLevelIntruder stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test027TooltipForAwfullyComplexInnerCollections stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test028TooltipOnlyOneType stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test029TooltipCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test030TooltipNoTypes stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test031TooltipNoCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TooltipTests #test032TooltipForCollectionWithTwoParameters stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test01IsCreatedEmpty stamp: 'JFGO 8/8/2024 18:37:34'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test02AddingANodeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test03AddingAnEdgeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test04CannotLinkInexistantNodes stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test05CanAccessNodesButCantDirectlyAddToResult stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test06CheckingConnectionOnAssociatedUndirectedGraph stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test001Empty stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test002Fixed stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test003GenericSingleValue stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test004MultipleFixed stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test005GenericMultipleValues stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test006MultipleFixedWithNoCommonSupertype stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test007MultipleGenerics stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test008GenericEmptyValue stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test009MultipleGenericsEmptyValue stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #TypeNodeTests #test010EmptyAndFixed stamp: 'JFGO 8/8/2024 18:37:35'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test01ManyMethodsCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test02ClassesCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test03MethodsWithoutTypeAnnotationsLogsAProblem stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test04AlertsDetectIfNone stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test05AlertsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test06WarningsCollectsAllTypeCheckersWarnings stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test07ErrorsDetectIfNone stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test08ErrorsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test09ProblemsCollectsTypeCheckersProblems stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test10WarningsDetectIfNone stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test11WarningsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test12HasErrorsReturnsTrueIfATypeCheckerHasErrors stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test13HasErrorsReturnsFalseWhenNoErrorFound stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test14ErrorsCollectsAllTypeCheckersErrors stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test15HasErrorsOrWarnings stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test13TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test14TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test15TypeCastIfTrueIfFalseCorrectlyAppliesAndRejectsCastedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test16TypeCastNestedRejectionsRejectsEachLevelCastedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test17TypeCastManyVariablesNestedRejectionsRejectsEachLevelCastedTypeForEachVariable stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test01TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test03TypeCastIfFalseNestedReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test04TypeCastIfFalseIfTrueReturnsTypesCorrectlyForEachBlock stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test05TypeCastIfTrueIfFalseReturnsAllTypesWhenVariableIsNotAffectedByCondition stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test06TypeCastIfTrueIfFalseOverDifferentNodesGivesRightContextToEach stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test07TypeCastAppliesCorrectlyToParseNodeClass stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test08TypeCastAppliesCorrectlyToMessageNodeSelector stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test09TypeCastAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test10TypeCastDistinctIfTrueReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test11TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test12TypeCastNegatedIfFalseCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test13TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test14TypeCastDistinctNegatedIfTrueReturnsCastedType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test15TypeCastDistinctNegatedAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16TypeCastManyNegationsCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_1TypeCastObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_2TypeCastObjectClassSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_3TypeCastObjectClassToUnexistentSymbolDontApplyContext stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_4TypeCastClassNameToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_5TypeCastClassSymbolToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_6TypeCastClassNameDistinctToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_7TypeCastObjectClassDistinctSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test17BranchesAsMessageReceiverAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test18BranchesAsMessageArgumentAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test19ObjectEqualsToLiteralIfFalseReturnsPreviousTypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test20ObjectEqualsToLiteralIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test21ObjectDistinctToLiteralCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test22LiteralEqualsToObjectIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test23LiteralDistinctToObjectCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test24WhenConditionIsNotCastingPreservePreviousTypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test25IsKindOfForChildTypesFixesType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test26IsKindOfCastingSupertypeKeepsSubtypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test27IsKindOfRejectingSupertypeExcludeAllSubtypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28IsIsTypeMessageCastType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28_1IsIsTypeMessageReturnsOriginalTypesWhenSubclassesOfCastType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test29IsIsTypeMessageWhenRejectingTypeShouldFilter stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test30IsIsTypeMessageOnDIfferentVariableShouldntFilter stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31IsIsTypeMessageOnDIfferentTypesShouldRemoveAll stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test32IsNilMessageIfTrueCastToNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test33ObjectEqualsToNilCastToNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test34ObjectEqualsToNilIfFalseRejectsNilType stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test35NilEqualsToObjectCastToNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test36ObjectDistinctToNilCastOnFalseRejectsOnTrue stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test37IsNilMessageIfFalseRejectsNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test38notNilMessageIfTrueRejectsNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test39NotNilMessageIfFalseCastToNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test40IfNilMessageCastToNil stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test41IfNotNilKeepsPreviousTypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test42DisjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test44NegatedDisjunctionRejectsCastedTypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test45ConjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test46NegatedConjunctionAllowsAllPreviousTypes stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test47ManyDisjunctionCollectsEachOneAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test48ManyConjunctionCollectsCommonTypesAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test49ConjunctionOnlyOnOneSideAffectingContextIgnoreOtherside stamp: 'JFGO 8/8/2024 18:37:37'!
+PASSED!
+!MethodTypeCheckerDragon methodsFor: 'resultWindow-listIssues' stamp: 'JFGO 8/8/2024 18:38:10' prior: 50542596!
+addMethodReferencesOf: aTypeCheckingResultsIssueCollection prefixing: aPrefix to: methodReferencesCollection 
+	aTypeCheckingResultsIssueCollection do: [ :aTypeCheckingProblem |
+		methodReferencesCollection add: (TypeCheckingDragonIssueToMethodReferenceAdapter of: aTypeCheckingProblem prefixing: aPrefix) ].
+	
+	^methodReferencesCollection ! !
+!MethodTypeCheckerDragon methodsFor: 'resultWindow-listIssues' stamp: 'JFGO 8/8/2024 18:38:20' prior: 50543532!
+addMethodReferencesOf: aTypeCheckingResultsIssueCollection prefixing: aPrefix to: methodReferencesCollection 
+	aTypeCheckingResultsIssueCollection do: [ :aTypeCheckingIssue |
+		methodReferencesCollection add: (TypeCheckingDragonIssueToMethodReferenceAdapter of: aTypeCheckingIssue prefixing: aPrefix) ].
+	
+	^methodReferencesCollection ! !
+
+!testRun: #FlowGraphCreationTest #test01onVarToVarAssigmentAssignorFlowsToAssignee stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test02ThereIsAlwaysANodeForReturnValue stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test03onAssigmentToAssigmentAllVarsAreLinked stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test04onVarReturnItFlowsToReturnNode stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test05CanTrackAMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test06TrackedMethodIsLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test07CanTrackMultipleMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test08TrackedMethodsAreLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test09InstVarsAreAlwaysAddedToGraph stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test10WhenVarIsConnectedToReturnValueItsNeighborsAreAlsoConnected stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test01CanAddAGenericType stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test02GenericsDoesNotRepeat stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test03GenericsCannotBeAlteredFromOuterScope stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test04CanSaveASelectorForAGeneric stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test05TracedMethodsCanBeRecovered stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test06TracedMethodsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test07ATracedMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test08AGenericCanBeDeleted stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test09CanSaveAGetterSelectorForAGeneric stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test10GetterSelectorsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test11CanStoreAndRetrieveTracedMethodRefs stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test12CanStoreAndRetrieveMultipleTracedMethodRefs stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test13AnalysisCanBeInitializedRecursively stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test14RecursiveAnalysisHasRecursiveTracedMethods stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test15GraphsAreDeletedWhenAllAnalysisFinish stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test16CanStoreGenericTypeConstructors stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test17SaveASelectorForAGenericWithMultipleParams stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #GAStorageTest #test18AGetterMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test01GenericClassesAreReplacedByGenericTypeInstances stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test02GenericClassesAreMergedWithTheirGenericTypes stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test03LiteralCollectionOneLiteralElement stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test04LiteralCollectionLiteralElementsOfDifferentType stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test05LiteralCollectionElementsFromVariable stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test06LiteralCollectionElementsFromMethodCall stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test07LiteralCollectionElementsFromMethodCallWithArgumentsTypesFromContext stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test08LiteralCollectionElementsFromRecursiveMethod stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test09LiteralCollectionFlowingInMultipleVariables stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test10LiteralCollectionFlowingInMultipleVariablesArgumentInMethod stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test11LiteralCollectionFlowingInMultipleVariablesEachReceivingMessages stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test12LiteralCollectionFlowingInMultipleVariablesEachReceivingMessagesBeforeAndAfterAssigment stamp: 'JFGO 8/8/2024 18:51:18'!
+PASSED!
+
+!testRun: #InferenceTest #test13LiteralCollectionFlowingInMultipleVariablesArgumentInMultipleMethod stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test14LiteralCollectionFlowingInMultipleVariablesMultipleArgumentsInMethod stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test15LiteralCollectionFlowingToNonSelfMethod stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test16LiteralCollectionFlowingToSuperMethod stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test17GenericTypeReturningParameterFromGetter stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test18MethodReturningGenericType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test19InstanceVariableUsedOnlyWithinCurrentClass stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test20InstanceVariableExposedByGetterAssignToVariable stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test21InstanceVariableExposedByMultipleGettersAssignToVariable stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test22InstanceVariableMessageSendsToGetters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test23InstanceVariableGettersUsedAsArguments stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test24InstanceVariableFlowingToOtherVariables stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test25CollectionContainingAnotherCollection stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test26CollectionContainingMultipleCollections stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test27CollectionAssignedFromMethodCallAndNotUsedAfter stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test28ReturnResultOfMethodCall stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test29MethodCallOnMultipleClassesWithSameProtocol stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test30MethodCallInsideGenericClasses stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test31CascadeMessageSends stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test32ArgumentCollectsInfoFromCalls stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test33ArgumentCollectsInfoFromCallsAndCurrentMethod stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test34GenericTypeConstructorFromArguments stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test35GenericTypeConstructorFromArgumentParameters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test36TraceReturnValueWhenMethodReturnsArgument stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test37AddingFromOtherCollectionParameters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test38CollectionFromLiteralNode stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test39CollectionWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test40GetterForGenericWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test41ArgumentCollectsInfoFromCallsWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test42ArgumentCollectsInfoFromCallsAndCurrentMethodWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test43ReturnTypeOfSetterMethodIsLastArgument stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test44CollectionIsDetectedWhenReturnedFromMethodAndAssignedToVariable stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #InferenceTest #test45ArgumentCollectsInfoCurrentMethodWithNoCallers stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test001SameType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test002DifferentType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test003SameHierarchy stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test004CommonSupertypeIsObject stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test005SameGeneric stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test006SameGenericDifferentOrder stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test007GenericsHandleSystemTypes stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test008NestedGenerics stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test009GenericSupertypeWithSameGenerics stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test010GenericSupertypeWithCommonGenerics stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test011FixedAgainstGenericType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test012FixedAgainstGenericTypeInList stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test013GenericAgainstFixedTypeInList stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test014NestedGenerics stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test015NestedGenericsWithDifferentDepth stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test016EmptyTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test017EmptyTypeAgainstFixedType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test018EmptyTypeAgainstGenericType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test019UnionTypeCollectsTypes stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test020UnionTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test021UnionTypeAgainstInnerElement stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test022ConvertionAccordingToReceiver stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test023ConvertionToArray stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test024EnumeratingClassTypes stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test025EnumeratingLiveTypes stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #LiveTypeTests #test026EnumeratingLiveAndClassTypes stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test001EmptyRawTypes stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test002AllClasses stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test003AnEmptyCollectionsContentType stamp: 'JFGO 8/8/2024 18:51:19'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test004ClassesAndCollectionsContentType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test005ACollectionsContentTypeWithTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test006SeveralCollectionsContentTypesWithTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test007CreateFixedType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test008CreateEmptyType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test009CreateGenericType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test010CreateGenericNestedType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test011CreateGenericNonEmptyType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test012CreateGenericMultipleNestedType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test001TooltipForEmptyCollection stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test002TooltipForSingleItemCollection stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test003TooltipForTwoItemsWhenSupertypeIsObject stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test004TooltipForTwoItemsWithCommonSupertype stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test005TooltipForVariableWithCollectionAndSomeOtherType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test006TooltipForMergedCollections stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test007TooltipForSameCollectionsWithSameTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test008TooltipForSameCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test009TooltipForSameCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test010TooltipForCommonSuperCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test011TooltipForNestedCollections stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test012TooltipForCommonSuperCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test013TooltipForCommonSuperCollectionsRepeatedWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test014TooltipForCommonSuperCollectionsWithEmptyCollections stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test015TooltipForCommonSuperCollectionsWithAnEmptyCollection stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test016TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test017TooltipForCommonSuperTypeAndNoCommonType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test018TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test019TooltipForNestedCollectionsOneOfThemEmpty stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test020TooltipForNestedCollectionsBothSameTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test021TooltipForNestedCollectionsEachNoCommonInnerType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test022TooltipForNestedCommonSuperCollectionsNoCommonInnerType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test023TooltipForNestedNoCommonSupertype stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test024TooltipForNestedRepeatedTypeDifferentInners stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test025TooltipForNestedCommonTypesAndIntruder stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test026TooltipForNestedCommontTypesWithTwoLevelIntruder stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test027TooltipForAwfullyComplexInnerCollections stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test028TooltipOnlyOneType stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test029TooltipCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test030TooltipNoTypes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test031TooltipNoCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TooltipTests #test032TooltipForCollectionWithTwoParameters stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test01IsCreatedEmpty stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test02AddingANodeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test03AddingAnEdgeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test04CannotLinkInexistantNodes stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test05CanAccessNodesButCantDirectlyAddToResult stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test06CheckingConnectionOnAssociatedUndirectedGraph stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test001Empty stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test002Fixed stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test003GenericSingleValue stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test004MultipleFixed stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test005GenericMultipleValues stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test006MultipleFixedWithNoCommonSupertype stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test007MultipleGenerics stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test008GenericEmptyValue stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test009MultipleGenericsEmptyValue stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #TypeNodeTests #test010EmptyAndFixed stamp: 'JFGO 8/8/2024 18:51:20'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test01ManyMethodsCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test02ClassesCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test03MethodsWithoutTypeAnnotationsLogsAProblem stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test04AlertsDetectIfNone stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test05AlertsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test06WarningsCollectsAllTypeCheckersWarnings stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test07ErrorsDetectIfNone stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test08ErrorsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test09ProblemsCollectsTypeCheckersProblems stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test10WarningsDetectIfNone stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test11WarningsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test12HasErrorsReturnsTrueIfATypeCheckerHasErrors stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test13HasErrorsReturnsFalseWhenNoErrorFound stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test14ErrorsCollectsAllTypeCheckersErrors stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test15HasErrorsOrWarnings stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test13TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test14TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test15TypeCastIfTrueIfFalseCorrectlyAppliesAndRejectsCastedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test16TypeCastNestedRejectionsRejectsEachLevelCastedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test17TypeCastManyVariablesNestedRejectionsRejectsEachLevelCastedTypeForEachVariable stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test01TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test03TypeCastIfFalseNestedReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test04TypeCastIfFalseIfTrueReturnsTypesCorrectlyForEachBlock stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test05TypeCastIfTrueIfFalseReturnsAllTypesWhenVariableIsNotAffectedByCondition stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test06TypeCastIfTrueIfFalseOverDifferentNodesGivesRightContextToEach stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test07TypeCastAppliesCorrectlyToParseNodeClass stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test08TypeCastAppliesCorrectlyToMessageNodeSelector stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test09TypeCastAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test10TypeCastDistinctIfTrueReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test11TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test12TypeCastNegatedIfFalseCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test13TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test14TypeCastDistinctNegatedIfTrueReturnsCastedType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test15TypeCastDistinctNegatedAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16TypeCastManyNegationsCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_1TypeCastObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_2TypeCastObjectClassSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_3TypeCastObjectClassToUnexistentSymbolDontApplyContext stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_4TypeCastClassNameToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_5TypeCastClassSymbolToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_6TypeCastClassNameDistinctToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_7TypeCastObjectClassDistinctSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test17BranchesAsMessageReceiverAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test18BranchesAsMessageArgumentAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test19ObjectEqualsToLiteralIfFalseReturnsPreviousTypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test20ObjectEqualsToLiteralIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test21ObjectDistinctToLiteralCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test22LiteralEqualsToObjectIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test23LiteralDistinctToObjectCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test24WhenConditionIsNotCastingPreservePreviousTypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test25IsKindOfForChildTypesFixesType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test26IsKindOfCastingSupertypeKeepsSubtypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test27IsKindOfRejectingSupertypeExcludeAllSubtypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28IsIsTypeMessageCastType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28_1IsIsTypeMessageReturnsOriginalTypesWhenSubclassesOfCastType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test29IsIsTypeMessageWhenRejectingTypeShouldFilter stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test30IsIsTypeMessageOnDIfferentVariableShouldntFilter stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31IsIsTypeMessageOnDIfferentTypesShouldRemoveAll stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test32IsNilMessageIfTrueCastToNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test33ObjectEqualsToNilCastToNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test34ObjectEqualsToNilIfFalseRejectsNilType stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test35NilEqualsToObjectCastToNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test36ObjectDistinctToNilCastOnFalseRejectsOnTrue stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test37IsNilMessageIfFalseRejectsNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test38notNilMessageIfTrueRejectsNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test39NotNilMessageIfFalseCastToNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test40IfNilMessageCastToNil stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test41IfNotNilKeepsPreviousTypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test42DisjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test44NegatedDisjunctionRejectsCastedTypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test45ConjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test46NegatedConjunctionAllowsAllPreviousTypes stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test47ManyDisjunctionCollectsEachOneAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test48ManyConjunctionCollectsCommonTypesAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test49ConjunctionOnlyOnOneSideAffectingContextIgnoreOtherside stamp: 'JFGO 8/8/2024 18:51:23'!
+PASSED!
+
+!classRemoval: #TypeCheckerTestMethods stamp: 'JFGO 8/8/2024 18:51:37'!
+Object subclass: #TypeCheckerTestMethods
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking-Tests'!
+
+!classRemoval: #MethodTypeCheckerTest stamp: 'JFGO 8/8/2024 18:51:37'!
+TestCase subclass: #MethodTypeCheckerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking-Tests'!
+
+!classRemoval: #ManyMethodsTypeCheckerTest stamp: 'JFGO 8/8/2024 18:51:38'!
+TestCase subclass: #ManyMethodsTypeCheckerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking-Tests'!
+
+!classRemoval: #TypeCheckingWarning stamp: 'JFGO 8/8/2024 18:51:38'!
+TypeCheckingIssue subclass: #TypeCheckingWarning
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingProblem stamp: 'JFGO 8/8/2024 18:51:38'!
+TypeCheckingIssue subclass: #TypeCheckingProblem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingIssue stamp: 'JFGO 8/8/2024 18:51:38'!
+TypeCheckingResult subclass: #TypeCheckingIssue
+	instanceVariableNames: 'method messageNode reason methodNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingError stamp: 'JFGO 8/8/2024 18:51:38'!
+TypeCheckingResult subclass: #TypeCheckingError
+	instanceVariableNames: 'method messageNode notImplemented methodNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #MethodNotAnnotatingTypesProblem stamp: 'JFGO 8/8/2024 18:51:38'!
+TypeCheckingResult subclass: #MethodNotAnnotatingTypesProblem
+	instanceVariableNames: 'method'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingResult stamp: 'JFGO 8/8/2024 18:51:38'!
+Object subclass: #TypeCheckingResult
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingProblemToMethodReferenceAdapter stamp: 'JFGO 8/8/2024 18:51:38'!
+Object subclass: #TypeCheckingProblemToMethodReferenceAdapter
+	instanceVariableNames: 'typeCheckingProblem prefix'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #MethodTypeChecker stamp: 'JFGO 8/8/2024 18:51:39'!
+TypeChecker subclass: #MethodTypeChecker
+	instanceVariableNames: 'method errors warnings problems'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #ManyMethodsTypeChecker stamp: 'JFGO 8/8/2024 18:51:39'!
+TypeChecker subclass: #ManyMethodsTypeChecker
+	instanceVariableNames: 'methodsToCheck typeCheckers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeChecker stamp: 'JFGO 8/8/2024 18:51:39'!
+Object subclass: #TypeChecker
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #NoTypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:39'!
+TypeCastApplierBuilder subclass: #NoTypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfTypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:39'!
+OneTypeCastApplierBuilder subclass: #IsKindOfTypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EqualsTypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:39'!
+OneTypeCastApplierBuilder subclass: #EqualsTypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #OneTypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:39'!
+EffectiveTypeCastApplierBuilder subclass: #OneTypeCastApplierBuilder
+	instanceVariableNames: 'castType'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfManyTypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:39'!
+EffectiveTypeCastApplierBuilder subclass: #IsKindOfManyTypeCastApplierBuilder
+	instanceVariableNames: 'typesToCastTo typesToReject'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EffectiveTypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:39'!
+TypeCastApplierBuilder subclass: #EffectiveTypeCastApplierBuilder
+	instanceVariableNames: 'castingBlock rejectingBlock objectToCast afterMessageTypeCasts'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCastApplierBuilder stamp: 'JFGO 8/8/2024 18:51:40'!
+Object subclass: #TypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #NoTypeCastApplier stamp: 'JFGO 8/8/2024 18:51:40'!
+TypeCastApplier subclass: #NoTypeCastApplier
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EffectiveTypeCastApplier stamp: 'JFGO 8/8/2024 18:51:40'!
+TypeCastApplier subclass: #EffectiveTypeCastApplier
+	instanceVariableNames: 'previous casts rejections'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCastApplier stamp: 'JFGO 8/8/2024 18:51:40'!
+Object subclass: #TypeCastApplier
+	instanceVariableNames: 'receiverTypes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfTypeReject stamp: 'JFGO 8/8/2024 18:51:40'!
+OneTypeCast subclass: #IsKindOfTypeReject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfTypeCast stamp: 'JFGO 8/8/2024 18:51:40'!
+OneTypeCast subclass: #IsKindOfTypeCast
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EqualTypeReject stamp: 'JFGO 8/8/2024 18:51:40'!
+OneTypeCast subclass: #EqualTypeReject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EqualTypeCast stamp: 'JFGO 8/8/2024 18:51:40'!
+OneTypeCast subclass: #EqualTypeCast
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #OneTypeCast stamp: 'JFGO 8/8/2024 18:51:40'!
+TypeCast subclass: #OneTypeCast
+	instanceVariableNames: 'typeToCastTo'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #ManyTypesCast stamp: 'JFGO 8/8/2024 18:51:40'!
+TypeCast subclass: #ManyTypesCast
+	instanceVariableNames: 'typesToCastTo typesToReject'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCast stamp: 'JFGO 8/8/2024 18:51:41'!
+Object subclass: #TypeCast
+	instanceVariableNames: 'objetToCast'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingResultWindow stamp: 'JFGO 8/8/2024 18:51:41'!
+MessageSetWindow subclass: #TypeCheckingResultWindow
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #MethodTypeCheckerVisitor stamp: 'JFGO 8/8/2024 18:51:41'!
+ParseNodeVisitor subclass: #MethodTypeCheckerVisitor
+	instanceVariableNames: 'errors warnings methodNode actualMethod problems methodReference blockCastingApplier castingApplierBuilder'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingResultSet stamp: 'JFGO 8/8/2024 18:51:41'!
+MessageSet subclass: #TypeCheckingResultSet
+	instanceVariableNames: 'methodTypeChecker showProblems'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!testRun: #FlowGraphCreationTest #test01onVarToVarAssigmentAssignorFlowsToAssignee stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test02ThereIsAlwaysANodeForReturnValue stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test03onAssigmentToAssigmentAllVarsAreLinked stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test04onVarReturnItFlowsToReturnNode stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test05CanTrackAMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test06TrackedMethodIsLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test07CanTrackMultipleMethodThroughMessageSends stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test08TrackedMethodsAreLinkedToVarsOnAssigment stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test09InstVarsAreAlwaysAddedToGraph stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test10WhenVarIsConnectedToReturnValueItsNeighborsAreAlsoConnected stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test01CanAddAGenericType stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test02GenericsDoesNotRepeat stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test03GenericsCannotBeAlteredFromOuterScope stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test04CanSaveASelectorForAGeneric stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test05TracedMethodsCanBeRecovered stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test06TracedMethodsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test07ATracedMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test08AGenericCanBeDeleted stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test09CanSaveAGetterSelectorForAGeneric stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test10GetterSelectorsCantBeModifiedExternally stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test11CanStoreAndRetrieveTracedMethodRefs stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test12CanStoreAndRetrieveMultipleTracedMethodRefs stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test13AnalysisCanBeInitializedRecursively stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test14RecursiveAnalysisHasRecursiveTracedMethods stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test15GraphsAreDeletedWhenAllAnalysisFinish stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test16CanStoreGenericTypeConstructors stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test17SaveASelectorForAGenericWithMultipleParams stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #GAStorageTest #test18AGetterMethodCanBeDeleted stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test01GenericClassesAreReplacedByGenericTypeInstances stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test02GenericClassesAreMergedWithTheirGenericTypes stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test03LiteralCollectionOneLiteralElement stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test04LiteralCollectionLiteralElementsOfDifferentType stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test05LiteralCollectionElementsFromVariable stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test06LiteralCollectionElementsFromMethodCall stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test07LiteralCollectionElementsFromMethodCallWithArgumentsTypesFromContext stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test08LiteralCollectionElementsFromRecursiveMethod stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test09LiteralCollectionFlowingInMultipleVariables stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test10LiteralCollectionFlowingInMultipleVariablesArgumentInMethod stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test11LiteralCollectionFlowingInMultipleVariablesEachReceivingMessages stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test12LiteralCollectionFlowingInMultipleVariablesEachReceivingMessagesBeforeAndAfterAssigment stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test13LiteralCollectionFlowingInMultipleVariablesArgumentInMultipleMethod stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test14LiteralCollectionFlowingInMultipleVariablesMultipleArgumentsInMethod stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test15LiteralCollectionFlowingToNonSelfMethod stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test16LiteralCollectionFlowingToSuperMethod stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test17GenericTypeReturningParameterFromGetter stamp: 'JFGO 8/8/2024 18:51:44'!
+PASSED!
+
+!testRun: #InferenceTest #test18MethodReturningGenericType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test19InstanceVariableUsedOnlyWithinCurrentClass stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test20InstanceVariableExposedByGetterAssignToVariable stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test21InstanceVariableExposedByMultipleGettersAssignToVariable stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test22InstanceVariableMessageSendsToGetters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test23InstanceVariableGettersUsedAsArguments stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test24InstanceVariableFlowingToOtherVariables stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test25CollectionContainingAnotherCollection stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test26CollectionContainingMultipleCollections stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test27CollectionAssignedFromMethodCallAndNotUsedAfter stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test28ReturnResultOfMethodCall stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test29MethodCallOnMultipleClassesWithSameProtocol stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test30MethodCallInsideGenericClasses stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test31CascadeMessageSends stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test32ArgumentCollectsInfoFromCalls stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test33ArgumentCollectsInfoFromCallsAndCurrentMethod stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test34GenericTypeConstructorFromArguments stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test35GenericTypeConstructorFromArgumentParameters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test36TraceReturnValueWhenMethodReturnsArgument stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test37AddingFromOtherCollectionParameters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test38CollectionFromLiteralNode stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test39CollectionWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test40GetterForGenericWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test41ArgumentCollectsInfoFromCallsWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test42ArgumentCollectsInfoFromCallsAndCurrentMethodWithMultipleParameters stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test43ReturnTypeOfSetterMethodIsLastArgument stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test44CollectionIsDetectedWhenReturnedFromMethodAndAssignedToVariable stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #InferenceTest #test45ArgumentCollectsInfoCurrentMethodWithNoCallers stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test001SameType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test002DifferentType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test003SameHierarchy stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test004CommonSupertypeIsObject stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test005SameGeneric stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test006SameGenericDifferentOrder stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test007GenericsHandleSystemTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test008NestedGenerics stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test009GenericSupertypeWithSameGenerics stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test010GenericSupertypeWithCommonGenerics stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test011FixedAgainstGenericType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test012FixedAgainstGenericTypeInList stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test013GenericAgainstFixedTypeInList stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test014NestedGenerics stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test015NestedGenericsWithDifferentDepth stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test016EmptyTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test017EmptyTypeAgainstFixedType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test018EmptyTypeAgainstGenericType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test019UnionTypeCollectsTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test020UnionTypeAgainstSelf stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test021UnionTypeAgainstInnerElement stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test022ConvertionAccordingToReceiver stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test023ConvertionToArray stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test024EnumeratingClassTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test025EnumeratingLiveTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #LiveTypeTests #test026EnumeratingLiveAndClassTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test001EmptyRawTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test002AllClasses stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test003AnEmptyCollectionsContentType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test004ClassesAndCollectionsContentType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test005ACollectionsContentTypeWithTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test006SeveralCollectionsContentTypesWithTypes stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test007CreateFixedType stamp: 'JFGO 8/8/2024 18:51:45'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test008CreateEmptyType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test009CreateGenericType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test010CreateGenericNestedType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test011CreateGenericNonEmptyType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test012CreateGenericMultipleNestedType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test001TooltipForEmptyCollection stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test002TooltipForSingleItemCollection stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test003TooltipForTwoItemsWhenSupertypeIsObject stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test004TooltipForTwoItemsWithCommonSupertype stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test005TooltipForVariableWithCollectionAndSomeOtherType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test006TooltipForMergedCollections stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test007TooltipForSameCollectionsWithSameTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test008TooltipForSameCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test009TooltipForSameCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test010TooltipForCommonSuperCollectionsWithCommonSuperTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test011TooltipForNestedCollections stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test012TooltipForCommonSuperCollectionsWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test013TooltipForCommonSuperCollectionsRepeatedWithNoSuperTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test014TooltipForCommonSuperCollectionsWithEmptyCollections stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test015TooltipForCommonSuperCollectionsWithAnEmptyCollection stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test016TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test017TooltipForCommonSuperTypeAndNoCommonType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test018TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test019TooltipForNestedCollectionsOneOfThemEmpty stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test020TooltipForNestedCollectionsBothSameTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test021TooltipForNestedCollectionsEachNoCommonInnerType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test022TooltipForNestedCommonSuperCollectionsNoCommonInnerType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test023TooltipForNestedNoCommonSupertype stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test024TooltipForNestedRepeatedTypeDifferentInners stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test025TooltipForNestedCommonTypesAndIntruder stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test026TooltipForNestedCommontTypesWithTwoLevelIntruder stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test027TooltipForAwfullyComplexInnerCollections stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test028TooltipOnlyOneType stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test029TooltipCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test030TooltipNoTypes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test031TooltipNoCommonSuperTypeSingleClasses stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TooltipTests #test032TooltipForCollectionWithTwoParameters stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test01IsCreatedEmpty stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test02AddingANodeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test03AddingAnEdgeIncreasesTheirCount stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test04CannotLinkInexistantNodes stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test05CanAccessNodesButCantDirectlyAddToResult stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test06CheckingConnectionOnAssociatedUndirectedGraph stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test001Empty stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test002Fixed stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test003GenericSingleValue stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test004MultipleFixed stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test005GenericMultipleValues stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test006MultipleFixedWithNoCommonSupertype stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test007MultipleGenerics stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test008GenericEmptyValue stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test009MultipleGenericsEmptyValue stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #TypeNodeTests #test010EmptyAndFixed stamp: 'JFGO 8/8/2024 18:51:46'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test01ManyMethodsCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test02ClassesCanBeTypeChecked stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test03MethodsWithoutTypeAnnotationsLogsAProblem stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test04AlertsDetectIfNone stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test05AlertsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test06WarningsCollectsAllTypeCheckersWarnings stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test07ErrorsDetectIfNone stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test08ErrorsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test09ProblemsCollectsTypeCheckersProblems stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test10WarningsDetectIfNone stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test11WarningsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test12HasErrorsReturnsTrueIfATypeCheckerHasErrors stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test13HasErrorsReturnsFalseWhenNoErrorFound stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test14ErrorsCollectsAllTypeCheckersErrors stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test15HasErrorsOrWarnings stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test13TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test14TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test15TypeCastIfTrueIfFalseCorrectlyAppliesAndRejectsCastedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test16TypeCastNestedRejectionsRejectsEachLevelCastedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test17TypeCastManyVariablesNestedRejectionsRejectsEachLevelCastedTypeForEachVariable stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test01TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test03TypeCastIfFalseNestedReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test04TypeCastIfFalseIfTrueReturnsTypesCorrectlyForEachBlock stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test05TypeCastIfTrueIfFalseReturnsAllTypesWhenVariableIsNotAffectedByCondition stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test06TypeCastIfTrueIfFalseOverDifferentNodesGivesRightContextToEach stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test07TypeCastAppliesCorrectlyToParseNodeClass stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test08TypeCastAppliesCorrectlyToMessageNodeSelector stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test09TypeCastAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test10TypeCastDistinctIfTrueReturnsAllTypesButRejected stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test11TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test12TypeCastNegatedIfFalseCorrectlyAppliesCastedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test13TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test14TypeCastDistinctNegatedIfTrueReturnsCastedType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test15TypeCastDistinctNegatedAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16TypeCastManyNegationsCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_1TypeCastObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_2TypeCastObjectClassSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_3TypeCastObjectClassToUnexistentSymbolDontApplyContext stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_4TypeCastClassNameToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_5TypeCastClassSymbolToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_6TypeCastClassNameDistinctToObjectClassNameCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_7TypeCastObjectClassDistinctSymbolCastCorrectly stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test17BranchesAsMessageReceiverAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test18BranchesAsMessageArgumentAreCorrectlyCasted stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test19ObjectEqualsToLiteralIfFalseReturnsPreviousTypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test20ObjectEqualsToLiteralIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test21ObjectDistinctToLiteralCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test22LiteralEqualsToObjectIfTrueReturnsLiteralType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test23LiteralDistinctToObjectCastCorrectlyBothBranches stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test24WhenConditionIsNotCastingPreservePreviousTypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test25IsKindOfForChildTypesFixesType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test26IsKindOfCastingSupertypeKeepsSubtypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test27IsKindOfRejectingSupertypeExcludeAllSubtypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28IsIsTypeMessageCastType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28_1IsIsTypeMessageReturnsOriginalTypesWhenSubclassesOfCastType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test29IsIsTypeMessageWhenRejectingTypeShouldFilter stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test30IsIsTypeMessageOnDIfferentVariableShouldntFilter stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31IsIsTypeMessageOnDIfferentTypesShouldRemoveAll stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test32IsNilMessageIfTrueCastToNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test33ObjectEqualsToNilCastToNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test34ObjectEqualsToNilIfFalseRejectsNilType stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test35NilEqualsToObjectCastToNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test36ObjectDistinctToNilCastOnFalseRejectsOnTrue stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test37IsNilMessageIfFalseRejectsNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test38notNilMessageIfTrueRejectsNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test39NotNilMessageIfFalseCastToNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test40IfNilMessageCastToNil stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test41IfNotNilKeepsPreviousTypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test42DisjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test44NegatedDisjunctionRejectsCastedTypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test45ConjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test46NegatedConjunctionAllowsAllPreviousTypes stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test47ManyDisjunctionCollectsEachOneAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:48'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test48ManyConjunctionCollectsCommonTypesAndRejectsRemaining stamp: 'JFGO 8/8/2024 18:51:49'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test49ConjunctionOnlyOnOneSideAffectingContextIgnoreOtherside stamp: 'JFGO 8/8/2024 18:51:49'!
+PASSED!
+Morphic view for MessageSet models. See category 'GUI building'.!
+Morphic view for MessageSet models. See category 'GUI building'.!
+Morphic view for MessageSet models. See category 'GUI building'.!
+
+----QUIT----(8 August 2024 18:53:27) CuisUniversity-6169.image priorSource: 6245038!
