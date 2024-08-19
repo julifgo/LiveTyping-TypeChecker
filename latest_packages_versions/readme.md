@@ -13,8 +13,5 @@ Estos son:
 - MessageNode >> receiverTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
 - MessageNode >> typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
 
-Luego, este metodo debe ser cambiado:
-- Behavior >> typeCheck : Tiene una referencia a ManyMethodTypeChecker cuando deberia ser a ManyMethodTypeCheckerDragon, que es la nueva version de TypeChecker y todos sus derivados.
-
 
 Finalmente, se puede verificar que todos los tests de LiveTyping (294), todos los de Generics (159) y todos los de TypeChecker (88) siguen pasando correctamente y la funcionalidad typeCheck puede ser utilizada desde cualquiera de sus opciones en los menus contextuales.
