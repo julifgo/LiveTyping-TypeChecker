@@ -1,0 +1,6 @@
+"1. Agregar self en visitBlockNode de visitor de context appliers"
+"2. TypeContextAppliers -> is: aBlockNode asRejectingArgumentIn: aMessageNode, cambiar orden booleano"
+"3. Renombrar blockNode en initialize de context visitor"
+"4. Cambiar por shouldUpdateFor... en TypeContextAppliers"
+"5. Sacar codigo repetido de shouldFilterType"
+"6. En LogicalContextApplier, iterar desde 1 y no 2"
