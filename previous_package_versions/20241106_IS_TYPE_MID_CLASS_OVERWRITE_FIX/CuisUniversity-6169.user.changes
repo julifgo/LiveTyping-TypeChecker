@@ -1,0 +1,3801 @@
+
+
+----STARTUP---- (6 November 2024 16:41:15) as C:\Users\juli_\Tesis\TO_UPLOAD\windows64\CuisUniversity-6169.image!
+
+
+----End fileIn of C:\Users\juli_\Tesis\TO_UPLOAD\windows64\LiveTypingGenerics.pck.st----!
+
+----End fileIn of C:\Users\juli_\Tesis\TO_UPLOAD\windows64\LiveTypingTypeChecker.pck.st----!
+
+!methodRemoval: AssignmentNode #typesIn:addingIncompleteTypeInfoTo:castingWith: stamp: 'JFGO 11/6/2024 16:55:58'!
+typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
+
+	^value typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
+!
+
+!methodRemoval: ParseNode #typesIn:addingIncompleteTypeInfoTo:castingWith: stamp: 'JFGO 11/6/2024 16:56:06'!
+typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
+
+	^aTypeCastApplier applyTo: self with: (self typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons)!
+
+!classRemoval: #TypeCheckerTestMethods stamp: 'JFGO 11/6/2024 16:56:52'!
+Object subclass: #TypeCheckerTestMethods
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking-Tests'!
+
+!classRemoval: #MethodTypeCheckerTest stamp: 'JFGO 11/6/2024 16:56:53'!
+TestCase subclass: #MethodTypeCheckerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking-Tests'!
+
+!classRemoval: #ManyMethodsTypeCheckerTest stamp: 'JFGO 11/6/2024 16:56:53'!
+TestCase subclass: #ManyMethodsTypeCheckerTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking-Tests'!
+
+!classRemoval: #TypeCheckingWarning stamp: 'JFGO 11/6/2024 16:56:54'!
+TypeCheckingIssue subclass: #TypeCheckingWarning
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingProblem stamp: 'JFGO 11/6/2024 16:56:54'!
+TypeCheckingIssue subclass: #TypeCheckingProblem
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingIssue stamp: 'JFGO 11/6/2024 16:56:54'!
+TypeCheckingResult subclass: #TypeCheckingIssue
+	instanceVariableNames: 'method messageNode reason methodNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingError stamp: 'JFGO 11/6/2024 16:56:54'!
+TypeCheckingResult subclass: #TypeCheckingError
+	instanceVariableNames: 'method messageNode notImplemented methodNode'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #MethodNotAnnotatingTypesProblem stamp: 'JFGO 11/6/2024 16:56:54'!
+TypeCheckingResult subclass: #MethodNotAnnotatingTypesProblem
+	instanceVariableNames: 'method'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingResult stamp: 'JFGO 11/6/2024 16:56:55'!
+Object subclass: #TypeCheckingResult
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingProblemToMethodReferenceAdapter stamp: 'JFGO 11/6/2024 16:56:55'!
+Object subclass: #TypeCheckingProblemToMethodReferenceAdapter
+	instanceVariableNames: 'typeCheckingProblem prefix'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #MethodTypeChecker stamp: 'JFGO 11/6/2024 16:56:55'!
+TypeChecker subclass: #MethodTypeChecker
+	instanceVariableNames: 'method errors warnings problems'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #ManyMethodsTypeChecker stamp: 'JFGO 11/6/2024 16:56:55'!
+TypeChecker subclass: #ManyMethodsTypeChecker
+	instanceVariableNames: 'methodsToCheck typeCheckers'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeChecker stamp: 'JFGO 11/6/2024 16:56:55'!
+Object subclass: #TypeChecker
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #NoTypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:56'!
+TypeCastApplierBuilder subclass: #NoTypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfTypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:56'!
+OneTypeCastApplierBuilder subclass: #IsKindOfTypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EqualsTypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:56'!
+OneTypeCastApplierBuilder subclass: #EqualsTypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #OneTypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:56'!
+EffectiveTypeCastApplierBuilder subclass: #OneTypeCastApplierBuilder
+	instanceVariableNames: 'castType'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfManyTypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:57'!
+EffectiveTypeCastApplierBuilder subclass: #IsKindOfManyTypeCastApplierBuilder
+	instanceVariableNames: 'typesToCastTo typesToReject'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EffectiveTypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:57'!
+TypeCastApplierBuilder subclass: #EffectiveTypeCastApplierBuilder
+	instanceVariableNames: 'castingBlock rejectingBlock objectToCast afterMessageTypeCasts'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCastApplierBuilder stamp: 'JFGO 11/6/2024 16:56:57'!
+Object subclass: #TypeCastApplierBuilder
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #NoTypeCastApplier stamp: 'JFGO 11/6/2024 16:56:57'!
+TypeCastApplier subclass: #NoTypeCastApplier
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EffectiveTypeCastApplier stamp: 'JFGO 11/6/2024 16:56:58'!
+TypeCastApplier subclass: #EffectiveTypeCastApplier
+	instanceVariableNames: 'previous casts rejections'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCastApplier stamp: 'JFGO 11/6/2024 16:56:58'!
+Object subclass: #TypeCastApplier
+	instanceVariableNames: 'receiverTypes'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfTypeReject stamp: 'JFGO 11/6/2024 16:56:58'!
+OneTypeCast subclass: #IsKindOfTypeReject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #IsKindOfTypeCast stamp: 'JFGO 11/6/2024 16:56:58'!
+OneTypeCast subclass: #IsKindOfTypeCast
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EqualTypeReject stamp: 'JFGO 11/6/2024 16:56:59'!
+OneTypeCast subclass: #EqualTypeReject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #EqualTypeCast stamp: 'JFGO 11/6/2024 16:56:59'!
+OneTypeCast subclass: #EqualTypeCast
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #OneTypeCast stamp: 'JFGO 11/6/2024 16:56:59'!
+TypeCast subclass: #OneTypeCast
+	instanceVariableNames: 'typeToCastTo'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #ManyTypesCast stamp: 'JFGO 11/6/2024 16:56:59'!
+TypeCast subclass: #ManyTypesCast
+	instanceVariableNames: 'typesToCastTo typesToReject'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCast stamp: 'JFGO 11/6/2024 16:57:00'!
+Object subclass: #TypeCast
+	instanceVariableNames: 'objetToCast'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingResultWindow stamp: 'JFGO 11/6/2024 16:57:00'!
+MessageSetWindow subclass: #TypeCheckingResultWindow
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #MethodTypeCheckerVisitor stamp: 'JFGO 11/6/2024 16:57:00'!
+ParseNodeVisitor subclass: #MethodTypeCheckerVisitor
+	instanceVariableNames: 'errors warnings methodNode actualMethod problems methodReference blockCastingApplier castingApplierBuilder'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!classRemoval: #TypeCheckingResultSet stamp: 'JFGO 11/6/2024 16:57:00'!
+MessageSet subclass: #TypeCheckingResultSet
+	instanceVariableNames: 'methodTypeChecker showProblems'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTyping-TypeChecking'!
+
+!methodRemoval: MessageNode #receiverTypesIn:addingIncompleteTypeInfoTo:castingWith: stamp: 'JFGO 11/6/2024 16:57:17'!
+receiverTypesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
+	
+	^self receiverOrCascadeReceiver typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier !
+
+!methodRemoval: MessageNode #typesIn:addingIncompleteTypeInfoTo:castingWith: stamp: 'JFGO 11/6/2024 16:57:20'!
+typesIn: aCompiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfoReasons castingWith: aTypeCastApplier 
+	
+	| types sentSelector receiverTypes  |
+
+	sentSelector := self selectorSymbol.
+	receiverTypes := aTypeCastApplier receiverTypesFor: self in: aCompiledMethod addingIncompleteTypeInfoTo:  incompleteTypeInfoReasons.
+	
+	types := receiverTypes
+		inject: Set new
+		into: [ :messageReturnTypes :aReceiverType | 								
+			(aReceiverType lookupSelector: sentSelector) 
+				ifNil: [ incompleteTypeInfoReasons add: (
+					IncompleteTypeInfoError dueToMissingImplementationOf: (MethodReference class: aReceiverType selector: sentSelector)) ]
+				ifNotNil: [ :implementor | | returnTypes |
+					returnTypes := implementor returnTypes.
+					returnTypes isEmpty
+						ifTrue: [ incompleteTypeInfoReasons add: (IncompleteTypeInfoWarning dueToNoReturnTypeOf: implementor methodReference) ]
+						ifFalse: [ messageReturnTypes addAll: (returnTypes collect: [ :aType | aType asTypeFor: aReceiverType])]].
+			messageReturnTypes ].
+		
+	^types!
+
+!testRun: #ActualImplementorsTest #test01WhenIsImplementedOnlyInRootReturnsThatImplementorOnly stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test02ReturnsImplementorsOfSuperclasses stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test03IfNotImplementedInRootOrSuperclassesDoesNotIncludeSubclassesImplementations stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test04IncludesSubclassesImplementations stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test05DoesNotIncludeImplementorsOfSubclassesNotDefinedInSuperclass stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test06DoesNotIncludeImplementorsOfSiblingsWhenNotDefinedInSuperclass stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test07ReturnsAllSubclassesImplementorsOfTheHighestImplementorClass stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test08highestClassImplementingSelectorReturnsHighgestClass stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualImplementorsTest #test09WhenNoHighestClassImplementingSelectorIfNoneBlockIsEvaluated stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test01SurelyRecognizeTypeSenderWhenSentToInstanceVariable stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test02SurelyRecognizeTypeSenderWhenSentToTemporaryVariable stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test03SurelyRecognizeTypeSenderInACollaboration stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test04RecognizeTypeSendersToInstancesOfSubClasses stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test05RecognizeTypeSendersToLiteralTrue stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test06RecognizeTypeSendersToLiteralFalse stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test07RecognizeTypeSendersToThisContext stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test08RecognizeTypeSendersToSelf stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test09RecognizeTypeSendersToSuper stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test09_01 stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test10RecognizeTypeSendersToSelfOfMessageImplementedInSuperclass stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test11RecognizeTypeSendersToReturnsOfMessageSend stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test12RecognizeTypeSendersOfChainedMessageSends stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test13RecognizeTypeSendersToReturnOfMessageSendNoMatterThePrecedence stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test14RecognizeTypeSendersToClasses stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test15RecognizeTypeSendersToVariablesReferencingClasses stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test16RecognizeTypeSendersToAnyLiteral stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test17CanRecognizePossibleTypeSenders stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test18RecognizeTypeSendersWhenReturnTypeIsSelfType stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test19RecognizeTypeSendersWhenReturnTypeIsClassType stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test20SurelySendWhenReceiverTypeIsSuperclassOfImplementorType stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test21ActualSendersWorksWithCascadeMessageSends stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!testRun: #ActualSendersTest #test22ActualSendersDoesNotHangWhenReceiverIsTempVarInMethodWithoutTypes stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:29'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29'!
+m3 | x | self m1. false ifTrue: [ x m1 ]! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29' prior: 50542272!
+m3 | x | self m1: 1. false ifTrue: [ x m1 ]! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:29'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test01DoesNotChangePossibleMessageSendWhenInstructedToDoSo stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:29'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:29'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29'!
+m1: p1 m3: p3! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29'!
+m3 | x | self m1: 1 m3: 3. false ifTrue: [ x m1: 1 m3: 3 ]! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29'!
+m1: p1 m2: p2 m3: p3! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:29' prior: 50542313!
+m3 | x | self m1: 1 m2: 2 m3: 3. false ifTrue: [ x m1: 1 m3: 3 ]! !
+
+!methodRemoval: ClassToAddParameter #m1:m3: stamp: 'JFGO 11/6/2024 16:57:29'!
+m1: p1 m3: p3!
+
+!testRun: #AddParameterWithActualScopeTest #test01_01_DoesNotChangePossibleMessageSendWhenInstructedToDoSoWithKeywordMessages stamp: 'JFGO 11/6/2024 16:57:29'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:30'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:30'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:30'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:30'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:30'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:30'!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+
+!testRun: #AddParameterWithActualScopeTest #test02CanNotAddParameterWithReceiverTypeOfMessageSendNotIncludedInImplementors stamp: 'JFGO 11/6/2024 16:57:30'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:30'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:31'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:31'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:31'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31'!
+m1: p1 m3: p3! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31'!
+m1: p1 m3: p3! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31'!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1 m3: 3! !
+
+!testRun: #AddParameterWithActualScopeTest #test02_01_CanNotAddParameterWithReceiverTypeOfMessageSendNotIncludedInImplementorsForKeywordMessage stamp: 'JFGO 11/6/2024 16:57:31'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:31'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:31'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:31'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:31'!
+ClassToAddParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31'!
+m3 | x | x := ClassOfSender new. x m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:31' prior: 50542463!
+m3 | x | x := ClassOfSender new. x m1: 1! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:31'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test03AddParameterWhenReceiverTypeOfMessageSendIsSubtypeOfImplementorsType stamp: 'JFGO 11/6/2024 16:57:31'!
+PASSED!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:32'!
+ClassToAddParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:32'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:32'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:32'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:32'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:32'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:32'!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:32'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:32'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:32' prior: 50542522!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:32'!
+m1!
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:32'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test04AddParameterWhenReceiverTypeOfMessageSendIsEqualToImplementorsTypes stamp: 'JFGO 11/6/2024 16:57:32'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:33'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:33'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:33'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:33'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:33'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:33'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:33'!
+m3 | x y | x := self. y := ClassOfSender new. x m1. y m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:33'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:33'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:33' prior: 50542586!
+m3 | x y | x := self. y := ClassOfSender new. x m1: 1. y m1: 1! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:33'!
+m1!
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:33'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test05AddParameterInDifferentMessageSendsWithReceiverTypeIsIncludedInImplementorsType stamp: 'JFGO 11/6/2024 16:57:33'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:33'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:34'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:34'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:34'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m3 | x y | x := y:= self. x := y := ClassOfSender new. x m1. y m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34' prior: 50542651!
+m3 | x y | x := y:= self. x := y := ClassOfSender new. x m1: 1. y m1: 1! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:34'!
+m1!
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:34'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test06AddParameterInDifferentMessageSendsWithReceiverTypeEqualToImplementorsType stamp: 'JFGO 11/6/2024 16:57:34'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:34'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:34'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:34'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m3 | x | self m1. false ifTrue: [ x m1 ]! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:34' prior: 50542705!
+m3 | x | self m1: 1. false ifTrue: [ x m1: 1 ]! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:34'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test07AddParameterToPossibleMessageSendIfInstructedToDoSo stamp: 'JFGO 11/6/2024 16:57:34'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:35'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:35'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:35'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:35'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:35'!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:35'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:35' prior: 50542753!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1! !
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:35'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test08AddParameterWithReceiverTypeOfMessageSendNotIncludedInImplementorsButSelectorNotImplementedInTypeHierarchy stamp: 'JFGO 11/6/2024 16:57:35'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:35'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:36'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:36'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:36'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m3 self m1. ClassOfSender new m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36' prior: 50542813!
+m3 self m1: 1. ClassOfSender new m1! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:36'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test09AddParameterOnlyToValidMessageSendWhenMoreSendsInSameMethod stamp: 'JFGO 11/6/2024 16:57:36'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:36'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:36'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:36'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m3 |x| self m1. x m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:36' prior: 50542859!
+m3 |x| self m1: 1. x m1! !
+
+!methodRemoval: ClassToAddParameter #m1 stamp: 'JFGO 11/6/2024 16:57:36'!
+m1!
+
+!testRun: #AddParameterWithActualScopeTest #test10UsesTheModifiedSourceCodeWhenAddingParameterToMethodWithSureAndPossibleSenders stamp: 'JFGO 11/6/2024 16:57:36'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:37'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:37'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:37'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:37'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:37'!
+m1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:37'!
+m3 | x | x := self. x := ClassOfSender new. x m1; printString! !
+
+!testRun: #AddParameterWithActualScopeTest #test11CanNotAddParameterWithReceiverTypeOfCascadeMessageSendNotIncludedInImplementors stamp: 'JFGO 11/6/2024 16:57:37'!
+PASSED!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:37'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:37'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!testRun: #AddParameterWithActualScopeTest #test12SuperclassInstanceCreationMessagesShouldNotBeUsed stamp: 'JFGO 11/6/2024 16:57:37'!
+PASSED!
+
+!classDefinition: #ClassToAddParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:38'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:38'!
+ClassToAddParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:38'!
+m1: p1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:38'!
+m3 self m1: 1! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:38'!
+m1: p1 m2: p2 ! !
+!ClassToAddParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:38' prior: 50542961!
+m3 self m1: 1 m2: 2! !
+
+!methodRemoval: ClassToAddParameter #m1: stamp: 'JFGO 11/6/2024 16:57:38'!
+m1: p1!
+
+!testRun: #AddParameterWithActualScopeTest #test13AddLastParameterCorrectly stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:38'!
+ClassToAddParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassToAddParameter stamp: 'JFGO 11/6/2024 16:57:38'!
+RefactoringClassTestData subclass: #ClassToAddParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!testRun: #AdditionalMethodStateTest #test01topBlockTempsMapReturnsTheTempsMapOfTheMethod stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test02MethodWithNoParametersNoTemporariesAreInitializedCorrectly stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test03MethodWithOnlyOneArgumentAreInitializedCorrectly stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test04rawTypesOfInvalidVariableNameEvaluatesIfAbsentBlock stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test05MethodWithOnlyOneTempTwoArgumentsAreInitializedCorrectly stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test06MethodWithRemoveVectorVariablesAreInitializedCorrectly stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test07RemoteVectorRawTypesIsNilWhenMethodHasNoVariableInRemoteVector stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test08VariableRawTypesIsNilWhenMethodHasNoVariableButHasInRemoteVector stamp: 'JFGO 11/6/2024 16:57:38'!
+PASSED!
+
+!testRun: #AdditionalMethodStateTest #test09CanGetRawTypesWhenMethodHasNoVariableButHasInRemoteVector stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #ClosureVariablesTest #testOneArrayForTypesIsCreatedWhenAMethodHasNoClosures stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test01TypeConvertionForAClassReturnsSameClass stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test02TypeConvertionForSelfTypeReturnsReceiversType stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test03TypeConvertionForClassTypeReturnsReceiversTypeClass stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test04ClassMessageSendChainsClassType stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test05TypeConvertionForInstanceTypeReturnsMetaclassSoleInstance stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test06newTypeIsMetaclassSoleInstance stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test07InstanceTypeReturnsClassWhenIsKindOfOfBehaviorButNotMeta stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test08InstanceTypeErrorsWhenUsedWithNoBehavior stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #DynamicTypesTest #test09ClassTypeForMetamodelIsMetaclass stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test01TypeCollectionOfInstanceVariableDefinedInLeafClassDoesNotTraverseHierarchy stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test02TypeCollectionIncludesSubclasses stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test03TypeCollectionDoesNotIncludeSuperclassesAndSiblings stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test05TypeCollectionIncludesAllSubclasses stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test06IsNotMegamorphicIfTypesSizeIsLessToTheMaxOfWithAllSubclassesRawTypesSize stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test07IsMegamorphicIfTypesSizeIsEqualToTheMaxOfWithAllSubclassesRawTypesSize stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test08IsNotMegamorphicIfDoesNotFillRawTypesForLocalTypeInfo stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test09IsMegamorphicIfFillsRawTypesOfDefiningClassForLocalTypeInfo stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test10IsMegamorphicIfFillsRawTypesOfNotDefiningClassForLocalTypeInfo stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test11IsTypesEmptyOfNonLocalTypeInfoTakesCareOfHierarchy stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test12IsTypesEmptyForLocalTypeInfoOnlyCheckOnLocalRawTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!classDefinition: #LiveTypingClassToBeRemoved category: #'__LiveTyping-TestData__' stamp: 'JFGO 11/6/2024 16:57:39'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!classRemoval: #LiveTypingClassToBeRemoved stamp: 'JFGO 11/6/2024 16:57:39'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!testRun: #InstanceVariableTypeInfoTest #test13RemovingAClassRemovesItAndItsClassFromInstanceVariableRawTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariableTypeInfoTest #test14InstVarAtPutKeepTypeInfo stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test01InstanceVariablesTypesIsInitializedWithAnArrayOfClassInstSize stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test02InitializeInstanceVariablesTypesWithAllInstancesStoreCurrentClassInstancesTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test03TypesOfDifferentInstVarsAreStoredCorrectly stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test04MoreThanOneTypeAreStoredCorrectlyInDifferentInstVars stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test05TypesAreStoredUpToInstVarTypesSize stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test06NoTypesAreStoredWhenInstVarTypesIsNil stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test07CommonSupertypeOfReturnsSupertypeOfStoredTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test08CommonSupertypeIfNoTypesEvaluatesAlternativeBlockWhenNoTypeHasBeenStore stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #InstanceVariablesTypesTest #test09EvaluatesIfAbsentBlockWhenAskTypeInfoForNonExistingInstVar stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test01KeepTypesOfLocalTemporariesI stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test02KeepTypesOfRemoteTemporaries stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test03KeepTypesOfParameters stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test04KeepReturnTopTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test05KeepReturnConstantTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test06KeepReturnReceiverTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test07KeepReturnFromClosureTypes stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test08KeepReturnTypeWhenUnwind stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test09BlockReturnDoesNotAffectMethodReturn stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test10KeepTypesOfParametersWhenSendingValueWithArguments stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingCodeSimulationTest #test11BlockWithParametersDoNotAffectMethodParameters stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test000_AutocompletesMessagesFor_GlobalVariables_WithSelectorsFromTheirClasses stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test001_AutocompletesMessagesFor_Self_WithSelectorsFromTheBrowsedClass stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test002_AutocompletesMessagesFor_Super_WithSelectorsFromTheBrowsedClass stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test003_AutocompletesMessagesFor_Super_WithSelectorsForUnknownClassesWhenTheBrowsedClassDoesNotHaveASuperclass stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test004_AutocompletesMessagesFor_True_WithSelectorsFromTrue stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test005_AutocompletesMessagesFor_False_WithSelectorsFromFalse stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test006_AutocompletesMessagesFor_Nil_WithSelectorsFromUndefinedObject stamp: 'JFGO 11/6/2024 16:57:39'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test007_AutocompletesMessagesFor_Characters_WithSelectorsFromCharacter stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test008_AutocompletesMessagesFor_Numbers_WithSelectorsFromTheirClass stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test009_AutocompletesMessagesFor_Strings_WithSelectorsFromString stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test010_AutocompletesMessagesFor_Symbols_WithSelectorsFromSymbol stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test011_AutocompletesMessagesFor_StringSymbol_WithSelectorsFromSymbol stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test012_AutocompletesMessagesFor_InstanceVariables stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test012_AutocompletesMessagesFor_InstanceVariables_WithSelectorsOfInstVarTypes stamp: 'JFGO 11/6/2024 16:57:40'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test013_AutocompletesMessagesFor_MethodArguments_WithSelectorsForUnknownClasses stamp: 'JFGO 11/6/2024 16:57:41'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test014_AutocompletesMessagesFor_TemporaryVariables_WithSelectorsForUnknownClasses stamp: 'JFGO 11/6/2024 16:57:41'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test014_AutocompletesMessagesFor_TemporaryVariables_WithSelectorsOfTempVarTypes stamp: 'JFGO 11/6/2024 16:57:41'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test015_AutocompletesMessagesFor_BlockArguments_WithSelectorsForUnknownClasses stamp: 'JFGO 11/6/2024 16:57:41'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test016_AutocompletesMessagesFor_BlockTemporaryVariables_WithSelectorsForUnknownClasses stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test017_AutocompletesMessagesFor_NilWorkspaceVariables_WithSelectorsForUnknownClasses stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test017_AutocompletesMessagesFor_NonNilWorkspaceVariables_WithSelectorsFromTheirClasses stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test018_AutocompletesMessagesFor_ThisContext_WithSelectorsFromMethodContext stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test019_AutocompletesMessagesFor_ClassVariables_WithSelectorsFromTheirClasses stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test020_AutocompletesMessagesFor_PoolConstants_WithSelectorsFromTheirClasses stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test021_AutocompletesMessagesFor_BlockEndings_WithSelectorsFromBlockClosure stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test022_AutocompletesMessagesFor_ArrayEnds_WithSelectorsFromArray stamp: 'JFGO 11/6/2024 16:57:42'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test023_AutocompletesMessagesFor_RightBraces_WithSelectorsFromArray stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test023_AutocompletingMessagesFor_UnaryMessages stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test024_AutocompletingMessagesFor_RightParenthesis stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test025_AutocompletesMessagesFor_UnknownIdentifiers_WithSelectorsForUnknownClasses stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test026_AutocompletingMessagesFor_Cascade stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test027_AutocompletesEntriesFor_GlobalVariables_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test028_AutocompletesEntriesFor_PoolConstants_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test029_AutocompletesEntriesFor_WorkspaceVariables_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test030_AutocompletesEntriesFor_ClassVariables_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test031_AutocompletesEntriesFor_InstanceVariables_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test032_AutocompletesEntriesFor_MethodArguments_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test033_AutocompletesEntriesFor_TemporaryVariables_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test034_AutocompletesEntriesFor_BlockArguments_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test035_AutocompletesEntriesFor_BlockTemporaryVariables_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test036_AutocompletesEntriesFor_IncompleteIdentifiers_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test037_AutocompletesEntriesFor_ReservedNames_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test038_DoesNotAutocompleteEntriesFor_UndefinedIdentifiers stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test039_AutocompletesEntriesFor_BinaryMessages_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test040_AutocompletesEntriesFor_IncompleteBinaryMessages_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test041_AutocompletesEntriesFor_UnaryMessages_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test042_AutocompletesEntriesFor_IncompleteUnaryMessages_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test043_AutocompletesEntriesFor_KeywordMessages_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test044_AutocompletesEntriesFor_IncompleteKeywordMessages_WithIdentifiersBegginingWithThem stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test045_AutocompletesEntriesFor_patternUnary_containsExactlyTwoMethods stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test046_AutocompletesEntriesFor_patternUnary_notContainsAnyMethod stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test047_AutocompletesEntriesFor_patternUnary_doesNotAutocompleteMethodOfSameClass stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test048_AutocompletesEntriesFor_patternKeyword_containsExactlyOneMethod stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test049_AutocompletesEntriesFor_patternKeyword_notContainsAnyMethod stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test050_AutocompletesEntriesFor_patternKeyword_doesNotAutocompleteMethodOfSameClass stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test051_AutocompletesEntriesFor_patternBinary_containsExactlyOneMethod stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test052_AutocompletesEntriesFor_patternBinary_notContainsAnyMethod stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test053_AutocompletesEntriesFor_patternBinary_doestNotAutocompleteMethodOfSameClass stamp: 'JFGO 11/6/2024 16:57:43'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #testMessages stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_ArrayWithArrayAndOtherObjects stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndArray stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndArrayOfArray stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndArrayWithManyElements stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndBinaryInParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndBlock stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndBlockOfBlock stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndBlockOfEvaluatedBlock stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndExpresionInParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndLiteralArray stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndMoreThanOneUnaryAfterExpresionInParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndOneUnaryAfterBlock stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndOneUnaryAfterBrace stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndOneUnaryAfterCharacter stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndOneUnaryAfterLiteralArray stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndOneUnaryAfterStringSymbol stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndOneUnaryAfterSymbol stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndUnaryInProtoObject stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndUncompleteKeywordAfterParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndUncompleteKeywordAfterUnary stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryAndUncompleteMessageAfterUnary stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryInParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryWithMoreThanOneUnary stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_BinaryWithOneUnary stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_ClosedAndUnclosedParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_ExpressionInManyParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_ExpressionWithMoreThanOneParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_LFBeforeParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_SpaceBeforeParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_UnaryAfterExpresionInParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_UnclosedArrayAfterClosedArray stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_UnclosedBlockAfterBlock stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_UnclosedDoubleParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Browser_selfInProtoObject stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Workspace_ExpresionInParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Workspace_MoreThanOneUnaryMessage stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #LiveTypingSmalltalkCompleterTest #test_Workspace_OnlyRightParenthesis stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #MethodNotAnnotatingTypesTest #test01CanSignalItWithAMethod stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!testRun: #MethodNotAnnotatingTypesTest #test02IsResumable stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!classDefinition: #LiveTypingClassToBeRemoved category: #'__LiveTyping-TestData__' stamp: 'JFGO 11/6/2024 16:57:44'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!classRemoval: #LiveTypingClassToBeRemoved stamp: 'JFGO 11/6/2024 16:57:44'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!testRun: #MethodVariableTypeInfoTest #test01RemovingAClassRemovesItFromMethodVariableRawTypesForParameter stamp: 'JFGO 11/6/2024 16:57:44'!
+PASSED!
+
+!classDefinition: #LiveTypingClassToBeRemoved category: #'__LiveTyping-TestData__' stamp: 'JFGO 11/6/2024 16:57:44'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!classRemoval: #LiveTypingClassToBeRemoved stamp: 'JFGO 11/6/2024 16:57:45'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!testRun: #MethodVariableTypeInfoTest #test02RemovingAClassRemovesItsClassFromMethodVariableRawTypesForParameter stamp: 'JFGO 11/6/2024 16:57:45'!
+PASSED!
+
+!classDefinition: #LiveTypingClassToBeRemoved category: #'__LiveTyping-TestData__' stamp: 'JFGO 11/6/2024 16:57:45'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!classRemoval: #LiveTypingClassToBeRemoved stamp: 'JFGO 11/6/2024 16:57:45'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!testRun: #MethodVariableTypeInfoTest #test03RemovingAClassRemovesItFromMethodVariablesRawTypes stamp: 'JFGO 11/6/2024 16:57:45'!
+PASSED!
+
+!classDefinition: #LiveTypingClassToBeRemoved category: #'__LiveTyping-TestData__' stamp: 'JFGO 11/6/2024 16:57:45'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!classRemoval: #LiveTypingClassToBeRemoved stamp: 'JFGO 11/6/2024 16:57:45'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!testRun: #MethodVariableTypeInfoTest #test04RemovingAClassRemovesItFromMethodVariableRemoteVectorRawTypes stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test01ActualSendersIsEmpty stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test02CategoryIsNil stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test03CompiledMethodSignalsError stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test04CompiledMethodIfAbsentEvaluatesIfAbsentBlock stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test05doesOnlySurelySendReturnsFalse stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test06dynamicTypingAutoCompleterDocumentationReturnsEmptyText stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test07IsNotValid stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test08liveTypingAutoCompleterDocumentationReturnsEmptyText stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test09rangesOASentSelectorWhenSendToReceiverTypesIsEmpty stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test10FailsWhenAsItsSourceCode stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #NotImplementedMethodTest #test11StringVersionStartsWithNotImplemented stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!testRun: #PossibleSenderTest #test01StringVersionBeginsWithPossible stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:46'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46'!
+m3 | x | self m1: 1. false ifTrue: [ x m1: 1 ]! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46' prior: 50543824!
+m3 | x | self m1. false ifTrue: [ x m1: 1 ]! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:46'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test01DoesNotChangePossibleMessageSendWhenInstructedToDoSo stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:46'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:46'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:46'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:46'!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1! !
+
+!testRun: #RemoveParameterWithActualScopeTest #test02CanNotRemoveParameterWithReceiverTypeOfMessageSendNotIncludedInImplementors stamp: 'JFGO 11/6/2024 16:57:46'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:47'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:47'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:47'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:47'!
+ClassToRemoveParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m3 | x | x := ClassOfSender new. x m1: 1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47' prior: 50543923!
+m3 | x | x := ClassOfSender new. x m1! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:47'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test03RemovesParameterWhenReceiverTypeOfMessageSendIsSubtypeOfImplementorsType stamp: 'JFGO 11/6/2024 16:57:47'!
+PASSED!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:47'!
+ClassToRemoveParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:47'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:47'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:47'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:47' prior: 50543984!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:47'!
+m1: p1!
+
+!methodRemoval: ClassOfSender #m1: stamp: 'JFGO 11/6/2024 16:57:47'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test04RemovesParameterWhenReceiverTypeOfMessageSendIsEqualToImplementorsTypes stamp: 'JFGO 11/6/2024 16:57:47'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:48'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:48'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:48'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:48'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:48'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:48'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:48'!
+m3 | x y | x := self. y := ClassOfSender new. x m1: 1. y m1: 1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:48'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:48'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:48' prior: 50544050!
+m3 | x y | x := self. y := ClassOfSender new. x m1. y m1! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:48'!
+m1: p1!
+
+!methodRemoval: ClassOfSender #m1: stamp: 'JFGO 11/6/2024 16:57:48'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test05RemovesParameterInDifferentMessageSendsWithReceiverTypeIsIncludedInImplementorsType stamp: 'JFGO 11/6/2024 16:57:48'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:49'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:49'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:49'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:49'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:49'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:49'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:49'!
+m3 | x y | x := y:= self. x := y := ClassOfSender new. x m1: 1. y m1: 1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:49'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:49'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:49' prior: 50544117!
+m3 | x y | x := y:= self. x := y := ClassOfSender new. x m1. y m1! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:49'!
+m1: p1!
+
+!methodRemoval: ClassOfSender #m1: stamp: 'JFGO 11/6/2024 16:57:49'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test06RemovesParameterInDifferentMessageSendsWithReceiverTypeEqualToImplementorsType stamp: 'JFGO 11/6/2024 16:57:49'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:49'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:50'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:50'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50'!
+m3 | x | self m1: 1. false ifTrue: [ x m1: 1]! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50' prior: 50544174!
+m3 | x | self m1. false ifTrue: [ x m1]! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:50'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test07RemovesParameterToPossibleMessageSendIfInstructedToDoSo stamp: 'JFGO 11/6/2024 16:57:50'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:50'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:50'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:50'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50'!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:50' prior: 50544224!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+
+!methodRemoval: ClassOfSender #m1: stamp: 'JFGO 11/6/2024 16:57:50'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test08RemovesParameterWithReceiverTypeOfMessageSendNotIncludedInImplementorsButSelectorNotImplementedInTypeHierarchy stamp: 'JFGO 11/6/2024 16:57:50'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:50'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:51'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:51'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:51'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m3 self m1: 1. ClassOfSender new m1: 1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51' prior: 50544286!
+m3 self m1. ClassOfSender new m1: 1! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:51'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test09RemovesParameterOnlyToValidMessageSendWhenMoreSendsInSameMethod stamp: 'JFGO 11/6/2024 16:57:51'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:51'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:51'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:51'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m3 |x| self m1: 1. x m1: 1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51'!
+m1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:51' prior: 50544335!
+m3 |x| self m1. x m1: 1! !
+
+!methodRemoval: ClassToRemoveParameter #m1: stamp: 'JFGO 11/6/2024 16:57:51'!
+m1: p1!
+
+!testRun: #RemoveParameterWithActualScopeTest #test10UsesTheModifiedSourceCodeWhenRemovingParameterToMethodWithSureAndPossibleSenders stamp: 'JFGO 11/6/2024 16:57:51'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:52'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:52'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:52'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:52'!
+m1: p1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:52'!
+m1: p1! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:52'!
+m3 | x | x := self. x := ClassOfSender new. x m1: 1; printString! !
+
+!testRun: #RemoveParameterWithActualScopeTest #test11CanNotRemoveParameterWithReceiverTypeOfCascadeMessageSendNotIncludedInImplementors stamp: 'JFGO 11/6/2024 16:57:52'!
+PASSED!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:52'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:52'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!testRun: #RemoveParameterWithActualScopeTest #test12SuperclassInstanceCreationMessagesShouldNotBeUsed stamp: 'JFGO 11/6/2024 16:57:53'!
+PASSED!
+
+!classDefinition: #ClassToRemoveParameter category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:53'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:53'!
+ClassToRemoveParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53'!
+m1: p1 m2: p2! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53'!
+m3 self m1: 1 m2: 2! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53'!
+m2: p2! !
+!ClassToRemoveParameter methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53' prior: 50544439!
+m3 self m2: 2! !
+
+!methodRemoval: ClassToRemoveParameter #m1:m2: stamp: 'JFGO 11/6/2024 16:57:53'!
+m1: p1 m2: p2!
+
+!testRun: #RemoveParameterWithActualScopeTest #test13RemovesOtherThanLastParameterCorrectly stamp: 'JFGO 11/6/2024 16:57:53'!
+PASSED!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:53'!
+ClassToRemoveParameter subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassToRemoveParameter stamp: 'JFGO 11/6/2024 16:57:53'!
+RefactoringClassTestData subclass: #ClassToRemoveParameter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:53'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53'!
+m3 | x | self m1. false ifTrue: [ x m1 ]! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:53' prior: 50544486!
+m3 | x | self m2. false ifTrue: [ x m1 ]! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:53'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test01DoesNotRenamesPossibleMessageSendWhenInstructedToDoSo stamp: 'JFGO 11/6/2024 16:57:53'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:54'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:54'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:54'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54'!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+
+!testRun: #RenameSelectorWithActualScopeTest #test02CanNotRenameWithReceiverTypeOfMessageSendNotIncludedInImplementors stamp: 'JFGO 11/6/2024 16:57:54'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:54'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:54'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:54'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:54'!
+ClassToRenameSelector subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54'!
+m3 | x | x := ClassOfSender new. x m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:54' prior: 50544585!
+m3 | x | x := ClassOfSender new. x m2! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:54'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test03RenamesWhenReceiverTypeOfMessageSendIsSubtypeOfImplementorsType stamp: 'JFGO 11/6/2024 16:57:54'!
+PASSED!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:55'!
+ClassToRenameSelector subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:55'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:55'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:55'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:55'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:55'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:55'!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:55'!
+m2! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:55'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:55' prior: 50544645!
+m3 | x | x := self. x := ClassOfSender new. x m2! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:55'!
+m1!
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:55'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test04RenamesWhenReceiverTypeOfMessageSendIsEqualToImplementorsTypes stamp: 'JFGO 11/6/2024 16:57:55'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56'!
+m3 | x y | x := self. y := ClassOfSender new. x m1. y m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56'!
+m2! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56' prior: 50544711!
+m3 | x y | x := self. y := ClassOfSender new. x m2. y m2! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:56'!
+m1!
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:56'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test05RenamesDifferentMessageSendsWithReceiverTypeIsIncludedInImplementorsType stamp: 'JFGO 11/6/2024 16:57:56'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:56'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:56'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m3 | x y | x := y:= self. x := y := ClassOfSender new. x m1. y m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m2! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57' prior: 50544777!
+m3 | x y | x := y:= self. x := y := ClassOfSender new. x m2. y m2! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:57'!
+m1!
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:57'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test06RenamesDifferentMessageSendsWithReceiverTypeEqualToImplementorsType stamp: 'JFGO 11/6/2024 16:57:57'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:57'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:57'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:57'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m3 | x | self m1. false ifTrue: [ x m1 ]! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:57' prior: 50544832!
+m3 | x | self m2. false ifTrue: [ x m2 ]! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:57'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test07RenamePossibleMessageSendIfInstructedToDoSo stamp: 'JFGO 11/6/2024 16:57:57'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m3 | x | x := self. x := ClassOfSender new. x m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58' prior: 50544881!
+m3 | x | x := self. x := ClassOfSender new. x m2! !
+
+!methodRemoval: ClassOfSender #m1 stamp: 'JFGO 11/6/2024 16:57:58'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test08RenamesWithReceiverTypeOfMessageSendNotIncludedInImplementorsButSelectorNotImplementedInTypeHierarchy stamp: 'JFGO 11/6/2024 16:57:58'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:58'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m3 self m1. ClassOfSender new m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:58' prior: 50544942!
+m3 self m2. ClassOfSender new m1! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:58'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test09RenamesOnlyValidMessageSendWhenMoreSendsInSameMethod stamp: 'JFGO 11/6/2024 16:57:58'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:57:59'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:57:59'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:57:59'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:59'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:59'!
+m3 |x| self m1. x m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:59'!
+m2! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:57:59' prior: 50544989!
+m3 |x| self m2. x m1! !
+
+!methodRemoval: ClassToRenameSelector #m1 stamp: 'JFGO 11/6/2024 16:57:59'!
+m1!
+
+!testRun: #RenameSelectorWithActualScopeTest #test10UsesTheModifiedSourceCodeWhenRenamingAMethodWithSureAndPossibleSenders stamp: 'JFGO 11/6/2024 16:57:59'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:58:00'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassToRenameSelector category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:58:00'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classDefinition: #ClassOfSender category: #'__Refactoring-TestData__' stamp: 'JFGO 11/6/2024 16:58:00'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:58:00'!
+m1! !
+!ClassOfSender methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:58:00'!
+m1! !
+!ClassToRenameSelector methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 16:58:00'!
+m3 | x | x := self. x := ClassOfSender new. x m1; printString! !
+
+!testRun: #RenameSelectorWithActualScopeTest #test11CanNotRenameWithReceiverTypeOfCascadeMessageSendNotIncludedInImplementors stamp: 'JFGO 11/6/2024 16:58:00'!
+PASSED!
+
+!classRemoval: #ClassToRenameSelector stamp: 'JFGO 11/6/2024 16:58:00'!
+RefactoringClassTestData subclass: #ClassToRenameSelector
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!classRemoval: #ClassOfSender stamp: 'JFGO 11/6/2024 16:58:00'!
+RefactoringClassTestData subclass: #ClassOfSender
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__Refactoring-TestData__'!
+
+!testRun: #RenameSelectorWithActualScopeTest #test12SuperclassInstanceCreationMessagesShouldNotBeUsed stamp: 'JFGO 11/6/2024 16:58:00'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test01QuickReturnSelfMethodsReturnSelfTypeAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test02QuickReturnTrueMethodsReturnTrueReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test03QuickReturnFalseMethodsReturnFalseAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test04QuickReturnNilMethodsReturnUndefinedObjectAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test05QuickReturnMinusOneMethodsReturnSmallIntegerAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test06QuickReturnZeroMethodsReturnSmallIntegerAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test07QuickReturnOneMethodsReturnSmallIntegerAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test08QuickReturnTwoMethodsReturnSmallIntegerAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test09QuickReturnOfFirstInstanceVariableMethodsReturnInstanceVariableTypesAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test10QuickReturnOfSecondInstanceVariableMethodsReturnInstanceVariableTypesAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test11classMethodReturnsClassTypeAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test12newMethodReturnsInstanceTypeAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test13yourselfMethodReturnsSelfTypeAsReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!classDefinition: #LiveTypingClassToBeRemoved category: #'__LiveTyping-TestData__' stamp: 'JFGO 11/6/2024 16:58:01'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!classRemoval: #LiveTypingClassToBeRemoved stamp: 'JFGO 11/6/2024 16:58:01'!
+Object subclass: #LiveTypingClassToBeRemoved
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: '__LiveTyping-TestData__'!
+
+!testRun: #ReturnTypeInfoTest #test14RemovingAClassRemovesItAndItsClassFromMethodReturnType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test15ReturnTypesOfAbstractMethodsIncludesSubclassesImplementationsTypes stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #ReturnTypeInfoTest #test16ReturnTypesOfAbstractMethodWorksWhenNotImplementedInAllSubclasses stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test01IsEmptyWhenAllTypesAreNil stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test02StoresAddedTypes stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test03StoresSameTypeOnce stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test04StoresMoreThanOneTypeCorrectly stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test05DoesNotStoreTypesWhenContainerIsNil stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test06CommonSupertypeOfSiblingsClassesReturnsRightSuperclass stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test07CommonSupertypeOnSameHierarchyIsMostTopClass stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test08CommonSupertypeOnSameHierarchyIsNotAffectedByAddingOrder stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test09ObjectIsCommonSupertypeWhenClassesAreNotSiblings stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test10ProtoObjectIsCommonSupertypeWhenThereAreNoTypesStored stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test11ProtoObjectIsCommonSupertypeWhenCointainerIsNil stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test12CommonSupertypeIfNoTypesReturnsAlternativeClosureValueWhenIsEmpty stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test13CommonSupertypeIfNoTypesReturnsAlternativeClosureValueWhenContainerIsNil stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test14UndefinedObjectIsNotConsideredWhenLookingForCommonSupertype stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test15StoresTypesIsTrueWhenContainerIsNotNil stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test16StoresTypesIsFalseWhenContainerIsNil stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test17IsMegamorphicWhenContainerIsFull stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test18IsNotMegamorphicWhenContainerIsNotFull stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test19CommonSelectorsPreviousToSameOnlyTypeIsEmpty stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test20CommonSelectorsPreviousToSuperclassOfOnlyAddedTypeAreAddedTypeSelectors stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test21CommonSelectorsPreviousToSuperclassSuperclassOfOnlyAddedTypeAreAddedTypeUpToSuperclassSelectors stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test22CommonSelectorsPreviousToInvalidSuperclassRaisesError stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test23CommonSelectorsPreviousToSuperclassOfSiblingTypesAreSiblingsCommonSelectors stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test24CommonSelectorsPreviousToOnSameHierarchyReturnsCommonSuperclassesSelectors stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test25CommonSelectorsPreviousToAddedSSupertypeOnSameHierarchyIsEmpty stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test26CommonSelectorsPreviousToWhenNotStoringTypesIsEmpty stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test27CommonSelectorsPreviousToIfInvalidSupertypeEvaluatesInvalidBlock stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test28CommonSelectorsPreviousToIfInvalidSupertypeWithManyTypesEvaluatesInvalidBlock stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test29CommonSelectosGoesUpToIncludingProtoObject stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test30CommonSupertypeIfGenericEvaluatesIfGenericBlockForObject stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test31CommonSupertypeIfGenericEvaluatesIfGenericBlockForProtoObject stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test32WithCommonSupertypeDoIfGenericEvaluatesDoBlockWhenNoGenericSupertype stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test33WithCommonSupertypeDoIfGenericEvaluatesGenericBlockWhenGenericSupertype stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test34AddingATypeWhenNoMoreSpaceEvaluatesIsFullBlock stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test35TypeIsNotMoreInTypesWhenRemoved stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test36RemovingTypeWhenTypesIsEmptyEvaluatesIfAbsent stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test37RemovingNotIncludedTypeEvaluatesIfAbsent stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test38RemovingLastAddedTypeWorksAsExpected stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test39RemoveTypeSignalExceptionWhenTypeNotFound stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #VariableTypeInfoTest #test40TypesDoEvaluatesBlockOnEachType stamp: 'JFGO 11/6/2024 16:58:01'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test01onVarToVarAssigmentAssignorFlowsToAssignee stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test02ThereIsAlwaysANodeForReturnValue stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test03onAssigmentToAssigmentAllVarsAreLinked stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test04onVarReturnItFlowsToReturnNode stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test05CanTrackAMethodThroughMessageSends stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test06TrackedMethodIsLinkedToVarsOnAssigment stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test07CanTrackMultipleMethodThroughMessageSends stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test08TrackedMethodsAreLinkedToVarsOnAssigment stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test09InstVarsAreAlwaysAddedToGraph stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #FlowGraphCreationTest #test10WhenVarIsConnectedToReturnValueItsNeighborsAreAlsoConnected stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test01CanAddAGenericType stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test02GenericsDoesNotRepeat stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test03GenericsCannotBeAlteredFromOuterScope stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test04CanSaveASelectorForAGeneric stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test05TracedMethodsCanBeRecovered stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test06TracedMethodsCantBeModifiedExternally stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test07ATracedMethodCanBeDeleted stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test08AGenericCanBeDeleted stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test09CanSaveAGetterSelectorForAGeneric stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test10GetterSelectorsCantBeModifiedExternally stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test11CanStoreAndRetrieveTracedMethodRefs stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test12CanStoreAndRetrieveMultipleTracedMethodRefs stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test13AnalysisCanBeInitializedRecursively stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test14RecursiveAnalysisHasRecursiveTracedMethods stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test15GraphsAreDeletedWhenAllAnalysisFinish stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test16CanStoreGenericTypeConstructors stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test17SaveASelectorForAGenericWithMultipleParams stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #GAStorageTest #test18AGetterMethodCanBeDeleted stamp: 'JFGO 11/6/2024 16:58:09'!
+PASSED!
+
+!testRun: #InferenceTest #test01GenericClassesAreReplacedByGenericTypeInstances stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test02GenericClassesAreMergedWithTheirGenericTypes stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test03LiteralCollectionOneLiteralElement stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test04LiteralCollectionLiteralElementsOfDifferentType stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test05LiteralCollectionElementsFromVariable stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test06LiteralCollectionElementsFromMethodCall stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test07LiteralCollectionElementsFromMethodCallWithArgumentsTypesFromContext stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test08LiteralCollectionElementsFromRecursiveMethod stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test09LiteralCollectionFlowingInMultipleVariables stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test10LiteralCollectionFlowingInMultipleVariablesArgumentInMethod stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test11LiteralCollectionFlowingInMultipleVariablesEachReceivingMessages stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test12LiteralCollectionFlowingInMultipleVariablesEachReceivingMessagesBeforeAndAfterAssigment stamp: 'JFGO 11/6/2024 16:58:10'!
+PASSED!
+
+!testRun: #InferenceTest #test13LiteralCollectionFlowingInMultipleVariablesArgumentInMultipleMethod stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test14LiteralCollectionFlowingInMultipleVariablesMultipleArgumentsInMethod stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test15LiteralCollectionFlowingToNonSelfMethod stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test16LiteralCollectionFlowingToSuperMethod stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test17GenericTypeReturningParameterFromGetter stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test18MethodReturningGenericType stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test19InstanceVariableUsedOnlyWithinCurrentClass stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test20InstanceVariableExposedByGetterAssignToVariable stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test21InstanceVariableExposedByMultipleGettersAssignToVariable stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test22InstanceVariableMessageSendsToGetters stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test23InstanceVariableGettersUsedAsArguments stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test24InstanceVariableFlowingToOtherVariables stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test25CollectionContainingAnotherCollection stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test26CollectionContainingMultipleCollections stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test27CollectionAssignedFromMethodCallAndNotUsedAfter stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test28ReturnResultOfMethodCall stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test29MethodCallOnMultipleClassesWithSameProtocol stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test30MethodCallInsideGenericClasses stamp: 'JFGO 11/6/2024 16:58:11'!
+PASSED!
+
+!testRun: #InferenceTest #test31CascadeMessageSends stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test32ArgumentCollectsInfoFromCalls stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test33ArgumentCollectsInfoFromCallsAndCurrentMethod stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test34GenericTypeConstructorFromArguments stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test35GenericTypeConstructorFromArgumentParameters stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test36TraceReturnValueWhenMethodReturnsArgument stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test37AddingFromOtherCollectionParameters stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test38CollectionFromLiteralNode stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test39CollectionWithMultipleParameters stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test40GetterForGenericWithMultipleParameters stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test41ArgumentCollectsInfoFromCallsWithMultipleParameters stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test42ArgumentCollectsInfoFromCallsAndCurrentMethodWithMultipleParameters stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test43ReturnTypeOfSetterMethodIsLastArgument stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test44CollectionIsDetectedWhenReturnedFromMethodAndAssignedToVariable stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #InferenceTest #test45ArgumentCollectsInfoCurrentMethodWithNoCallers stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test001SameType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test002DifferentType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test003SameHierarchy stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test004CommonSupertypeIsObject stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test005SameGeneric stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test006SameGenericDifferentOrder stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test007GenericsHandleSystemTypes stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test008NestedGenerics stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test009GenericSupertypeWithSameGenerics stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test010GenericSupertypeWithCommonGenerics stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test011FixedAgainstGenericType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test012FixedAgainstGenericTypeInList stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test013GenericAgainstFixedTypeInList stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test014NestedGenerics stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test015NestedGenericsWithDifferentDepth stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test016EmptyTypeAgainstSelf stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test017EmptyTypeAgainstFixedType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test018EmptyTypeAgainstGenericType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test019UnionTypeCollectsTypes stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test020UnionTypeAgainstSelf stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test021UnionTypeAgainstInnerElement stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test022ConvertionAccordingToReceiver stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test023ConvertionToArray stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test024EnumeratingClassTypes stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test025EnumeratingLiveTypes stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #LiveTypeTests #test026EnumeratingLiveAndClassTypes stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test001EmptyRawTypes stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test002AllClasses stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test003AnEmptyCollectionsContentType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test004ClassesAndCollectionsContentType stamp: 'JFGO 11/6/2024 16:58:12'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test005ACollectionsContentTypeWithTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test006SeveralCollectionsContentTypesWithTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test007CreateFixedType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test008CreateEmptyType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test009CreateGenericType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test010CreateGenericNestedType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test011CreateGenericNonEmptyType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #RawToLiveTypesAdapterTests #test012CreateGenericMultipleNestedType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test001TooltipForEmptyCollection stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test002TooltipForSingleItemCollection stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test003TooltipForTwoItemsWhenSupertypeIsObject stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test004TooltipForTwoItemsWithCommonSupertype stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test005TooltipForVariableWithCollectionAndSomeOtherType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test006TooltipForMergedCollections stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test007TooltipForSameCollectionsWithSameTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test008TooltipForSameCollectionsWithCommonSuperTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test009TooltipForSameCollectionsWithNoSuperTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test010TooltipForCommonSuperCollectionsWithCommonSuperTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test011TooltipForNestedCollections stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test012TooltipForCommonSuperCollectionsWithNoSuperTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test013TooltipForCommonSuperCollectionsRepeatedWithNoSuperTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test014TooltipForCommonSuperCollectionsWithEmptyCollections stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test015TooltipForCommonSuperCollectionsWithAnEmptyCollection stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test016TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test017TooltipForCommonSuperTypeAndNoCommonType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test018TooltipForCommonSuperCollectionsAndNoCollection stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test019TooltipForNestedCollectionsOneOfThemEmpty stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test020TooltipForNestedCollectionsBothSameTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test021TooltipForNestedCollectionsEachNoCommonInnerType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test022TooltipForNestedCommonSuperCollectionsNoCommonInnerType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test023TooltipForNestedNoCommonSupertype stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test024TooltipForNestedRepeatedTypeDifferentInners stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test025TooltipForNestedCommonTypesAndIntruder stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test026TooltipForNestedCommontTypesWithTwoLevelIntruder stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test027TooltipForAwfullyComplexInnerCollections stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test028TooltipOnlyOneType stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test029TooltipCommonSuperTypeSingleClasses stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test030TooltipNoTypes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test031TooltipNoCommonSuperTypeSingleClasses stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TooltipTests #test032TooltipForCollectionWithTwoParameters stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test01IsCreatedEmpty stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test02AddingANodeIncreasesTheirCount stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test03AddingAnEdgeIncreasesTheirCount stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test04CannotLinkInexistantNodes stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test05CanAccessNodesButCantDirectlyAddToResult stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeFlowGraphTest #test06CheckingConnectionOnAssociatedUndirectedGraph stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test001Empty stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test002Fixed stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test003GenericSingleValue stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test004MultipleFixed stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test005GenericMultipleValues stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test006MultipleFixedWithNoCommonSupertype stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test007MultipleGenerics stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test008GenericEmptyValue stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test009MultipleGenericsEmptyValue stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #TypeNodeTests #test010EmptyAndFixed stamp: 'JFGO 11/6/2024 16:58:13'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test01ManyMethodsCanBeTypeChecked stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test02ClassesCanBeTypeChecked stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test03MethodsWithoutTypeAnnotationsLogsAProblem stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test04AlertsDetectIfNone stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test05AlertsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test06WarningsCollectsAllTypeCheckersWarnings stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test07ErrorsDetectIfNone stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test08ErrorsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test09ProblemsCollectsTypeCheckersProblems stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test10WarningsDetectIfNone stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test11WarningsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test12HasErrorsReturnsTrueIfATypeCheckerHasErrors stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test13HasErrorsReturnsFalseWhenNoErrorFound stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test14ErrorsCollectsAllTypeCheckersErrors stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test15HasErrorsOrWarnings stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 11/6/2024 16:58:17'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test13TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test14TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test15TypeCastIfTrueIfFalseCorrectlyAppliesAndRejectsCastedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test16TypeCastNestedRejectionsRejectsEachLevelCastedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test17TypeCastManyVariablesNestedRejectionsRejectsEachLevelCastedTypeForEachVariable stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test01TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02_1TypeCastIfFalseReturnsAllTypesWhenBlockIsVariable stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test03TypeCastIfFalseNestedReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test04TypeCastIfFalseIfTrueReturnsTypesCorrectlyForEachBlock stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test05TypeCastIfTrueIfFalseReturnsAllTypesWhenVariableIsNotAffectedByCondition stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test06TypeCastIfTrueIfFalseOverDifferentNodesGivesRightContextToEach stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test07TypeCastAppliesCorrectlyToParseNodeClass stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test08TypeCastAppliesCorrectlyToMessageNodeSelector stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test09TypeCastAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test10TypeCastDistinctIfTrueReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test11TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test12TypeCastNegatedIfFalseCorrectlyAppliesCastedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test13TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test14TypeCastDistinctNegatedIfTrueReturnsCastedType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test15TypeCastDistinctNegatedAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16TypeCastManyNegationsCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_1TypeCastObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_2TypeCastObjectClassSymbolCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_3TypeCastObjectClassToUnexistentSymbolDontApplyContext stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_4TypeCastClassNameToObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_5TypeCastClassSymbolToObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_6TypeCastClassNameDistinctToObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_7TypeCastObjectClassDistinctSymbolCastCorrectly stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test17BranchesAsMessageReceiverAreCorrectlyCasted stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test18BranchesAsMessageArgumentAreCorrectlyCasted stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test19ObjectEqualsToLiteralIfFalseReturnsPreviousTypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test20ObjectEqualsToLiteralIfTrueReturnsLiteralType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test21ObjectDistinctToLiteralCastCorrectlyBothBranches stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test22LiteralEqualsToObjectIfTrueReturnsLiteralType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test23LiteralDistinctToObjectCastCorrectlyBothBranches stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test24WhenConditionIsNotCastingPreservePreviousTypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test25IsKindOfForChildTypesFixesType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test26IsKindOfCastingSupertypeKeepsSubtypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test27IsKindOfRejectingSupertypeExcludeAllSubtypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28IsIsTypeMessageCastType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28_1IsIsTypeMessageReturnsOriginalTypesWhenSubclassesOfCastType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test29IsIsTypeMessageWhenRejectingTypeShouldFilter stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test30IsIsTypeMessageOnDIfferentVariableShouldntFilter stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31IsIsTypeMessageOnDIfferentTypesShouldRemoveAll stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test32IsNilMessageIfTrueCastToNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test33ObjectEqualsToNilCastToNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test34ObjectEqualsToNilIfFalseRejectsNilType stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test35NilEqualsToObjectCastToNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test36ObjectDistinctToNilCastOnFalseRejectsOnTrue stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test37IsNilMessageIfFalseRejectsNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test38notNilMessageIfTrueRejectsNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test39NotNilMessageIfFalseCastToNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test40IfNilMessageCastToNil stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test41IfNotNilKeepsPreviousTypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test42DisjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test44NegatedDisjunctionRejectsCastedTypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test45ConjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test46NegatedConjunctionAllowsAllPreviousTypes stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test47ManyDisjunctionCollectsEachOneAndRejectsRemaining stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test48ManyConjunctionCollectsCommonTypesAndRejectsRemaining stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test49ConjunctionOnlyOnOneSideAffectingContextIgnoreOtherside stamp: 'JFGO 11/6/2024 16:58:18'!
+PASSED!
+
+Object subclass: #ContextAppliersTestTopClass
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+!classDefinition: #ContextAppliersTestTopClass category: #'LiveTypingTypeChecker-ContextAppliers-Tests' stamp: 'JFGO 11/6/2024 16:59:32'!
+Object subclass: #ContextAppliersTestTopClass
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+ContextAppliersTestTopClass subclass: #ContextAppliersTestMidClass
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+!classDefinition: #ContextAppliersTestMidClass category: #'LiveTypingTypeChecker-ContextAppliers-Tests' stamp: 'JFGO 11/6/2024 16:59:53'!
+ContextAppliersTestTopClass subclass: #ContextAppliersTestMidClass
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+ContextAppliersTestMidClass subclass: #ContextAppliersTestLeafClassA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+!classDefinition: #ContextAppliersTestLeafClassA category: #'LiveTypingTypeChecker-ContextAppliers-Tests' stamp: 'JFGO 11/6/2024 17:20:20'!
+ContextAppliersTestMidClass subclass: #ContextAppliersTestLeafClassA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+ContextAppliersTestTopClass subclass: #ContextAppliersTestLeafClassB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+!classDefinition: #ContextAppliersTestLeafClassB category: #'LiveTypingTypeChecker-ContextAppliers-Tests' stamp: 'JFGO 11/6/2024 17:20:29'!
+ContextAppliersTestTopClass subclass: #ContextAppliersTestLeafClassB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'LiveTypingTypeChecker-ContextAppliers-Tests'!
+
+!classRenamed: #ContextAppliersTestMidClass as: #ContextAppliersTestMidClassA stamp: 'JFGO 11/6/2024 17:20:48'!
+Smalltalk renameClassNamed: #ContextAppliersTestMidClass as: #ContextAppliersTestMidClassA!
+!ContextAppliersTestTopClass methodsFor: 'nil' stamp: 'JFGO 11/6/2024 17:21:17'!
+isSomeTypeMessage
+	^true! !
+!ContextAppliersTestMidClassA methodsFor: 'no messages' stamp: 'JFGO 11/6/2024 17:21:46' overrides: 50546327!
+isSomeTypeMessage
+	^false! !
+!ContextAppliersTestTopClass methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 17:22:46'!
+someMessage
+	^'hi'.! !
+!TypesWithContextAppliersTestMethods methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:27:10'!
+isIsMessageOverridenOnSubclass
+	|v1|
+	v1:= Array new.
+	v1 := 5.	
+	v1 := OrderedCollection new.
+	
+	v1 isCollection ifTrue:[v1 isEmpty.]! !
+!TypesWithContextAppliersTestMethods methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:29:54' prior: 50546341!
+isIsMessageOverridenOnSubclass
+	|v1|
+	v1:= ContextAppliersTestLeafClassA new. "isType false"
+	v1:= ContextAppliersTestLeafClassB new. "isType true"
+	
+	
+	v1 isTy ifTrue:[v1 isEmpty.]! !
+!TypesWithContextAppliersTestMethods methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:30:38' prior: 50546350!
+isIsMessageOverridenOnSubclass
+	|v1|
+	v1:= ContextAppliersTestLeafClassA new. "isType false"
+	v1:= ContextAppliersTestLeafClassB new. "isType true"
+	
+	
+	v1 isSomeTypeMessage ifTrue:[v1 someMessage .]! !
+!TypesWithContextAppliersTestMethods methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:31:58' prior: 50546360!
+isIsMessageOverridenOnSubclass
+	|v1|
+	v1:= ContextAppliersTestLeafClassA new. "isSomeType redefined to false on parent"
+	v1:= ContextAppliersTestLeafClassB new. "isSomeType true from topClass"
+	
+	
+	v1 isSomeTypeMessage ifTrue:[v1 someMessage .]! !
+!TypesWithContextAppliersTest methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:34:06'!
+test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses
+	
+	"ifTrue Branch"
+	self withMessageName: #isIsMessageOverridenOnSubclass
+	calculateTypesOfNode: 'v1' 
+	withinBlockWithCode: '[ v1 someMessage. ]'
+	asserting: [:types | 
+		self assert:types size equals: 1.
+		self assert: types includes: Integer.
+		
+	].
+	
+	"ifFalse Branch"
+	self withMessageName: #isIsMessageOverridenOnSubclass
+	calculateTypesOfNode: 'v1' 
+	withinBlockWithCode: '[ v1 someMessage. ]'
+	asserting: [:types | 
+		self assert:types size equals: 2.
+		self assert: types includes: OrderedCollection.
+		self assert: types includes: String.
+	].! !
+!ContextAppliersTestMidClassA methodsFor: 'as yet unclassified' stamp: 'JFGO 11/6/2024 17:34:57'!
+anotherMessage
+	^'bye'.! !
+!TypesWithContextAppliersTest methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:35:10' prior: 50546382!
+test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses
+	
+	"ifTrue Branch"
+	self withMessageName: #isIsMessageOverridenOnSubclass
+	calculateTypesOfNode: 'v1' 
+	withinBlockWithCode: '[ v1 someMessage. ]'
+	asserting: [:types | 
+		self assert:types size equals: 1.
+		self assert: types includes: Integer.
+		
+	].
+	
+	"ifFalse Branch"
+	self withMessageName: #isIsMessageOverridenOnSubclass
+	calculateTypesOfNode: 'v1' 
+	withinBlockWithCode: '[ v1 anotherMessage. ]'
+	asserting: [:types | 
+		self assert:types size equals: 2.
+		self assert: types includes: OrderedCollection.
+		self assert: types includes: String.
+	].! !
+!TypesWithContextAppliersTest methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:35:45' prior: 50546410!
+test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses
+	
+	"ifTrue Branch"
+	self withMessageName: #isIsMessageOverridenOnSubclass
+	calculateTypesOfNode: 'v1' 
+	withinBlockWithCode: '[ v1 someMessage. ]'
+	asserting: [:types | 
+		self assert:types size equals: 1.
+		self assert: types includes: ContextAppliersTestLeafClassB.
+		
+	].
+	
+	"ifFalse Branch"
+	self withMessageName: #isIsMessageOverridenOnSubclass
+	calculateTypesOfNode: 'v1' 
+	withinBlockWithCode: '[ v1 anotherMessage. ]'
+	asserting: [:types | 
+		self assert:types size equals: 1.
+		self assert: types includes: ContextAppliersTestLeafClassA.
+	].! !
+
+!testRun: #TypesWithContextAppliersTest #test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses stamp: 'JFGO 11/6/2024 17:35:47'!
+FAILURE!
+!IsTypeMessageContextApplier methodsFor: 'LiveTyping-private' stamp: 'JFGO 11/6/2024 17:36:44' prior: 50540114 overrides: 50539950!
+liveTypesCastingObjectFor: aParseNode in:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo
+	| implementors subclassesTypes originalTypes |
+	
+	implementors := self implementorsReturningTrue.
+	originalTypes := self originalRawTypesFor: aParseNode in:  compiledMethod addingIncompleteTypeInfoTo: incompleteTypeInfo.
+	
+	subclassesTypes := originalTypes inject: OrderedCollection new into: [:result :aType | (aType lookupSelector: messageSelector ) 
+			ifNotNil: [ :method |  method isReturnSpecialTrue ifTrue: [result add: aType]. result.].
+		 ].
+	subclassesTypes isEmpty ifTrue:[
+		^RawToLiveTypesAdapter new adapt: implementors .
+	] ifFalse:[
+		^RawToLiveTypesAdapter new adapt: subclassesTypes .
+	].
+		
+	! !
+
+!testRun: #TypesWithContextAppliersTest #test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses stamp: 'JFGO 11/6/2024 17:36:55'!
+FAILURE!
+
+!testRun: #TypesWithContextAppliersTest #test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses stamp: 'JFGO 11/6/2024 17:36:55'!
+FAILURE!
+!TypesWithContextAppliersTestMethods methodsFor: 'isType message context' stamp: 'JFGO 11/6/2024 17:37:49' prior: 50546371!
+isIsMessageOverridenOnSubclass
+	|v1|
+	v1:= ContextAppliersTestLeafClassA new. "isSomeType redefined to false on parent"
+	v1:= ContextAppliersTestLeafClassB new. "isSomeType true from topClass"
+	
+	
+	v1 isSomeTypeMessage ifTrue:[v1 someMessage .] ifFalse: [v1 anotherMessage .]
+	! !
+
+!testRun: #TypesWithContextAppliersTest #test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses stamp: 'JFGO 11/6/2024 17:37:56'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test01ManyMethodsCanBeTypeChecked stamp: 'JFGO 11/6/2024 17:38:02'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test02ClassesCanBeTypeChecked stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test03MethodsWithoutTypeAnnotationsLogsAProblem stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test04AlertsDetectIfNone stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test05AlertsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test06WarningsCollectsAllTypeCheckersWarnings stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test07ErrorsDetectIfNone stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test08ErrorsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test09ProblemsCollectsTypeCheckersProblems stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test10WarningsDetectIfNone stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test11WarningsDetectIfNoneValuesIfNoneWhenNoProblemFound stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test12HasErrorsReturnsTrueIfATypeCheckerHasErrors stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test13HasErrorsReturnsFalseWhenNoErrorFound stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test14ErrorsCollectsAllTypeCheckersErrors stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #ManyMethodsTypeCheckerDragonTest #test15HasErrorsOrWarnings stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test01MethodTypedCorrectlyDoesNotGenerateIssues stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test02MethodThatDontCheckTypesGeneratesIssue stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test03PrimitiveMethodsDontCheckTypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test04MethodWithMessageNotUnderstoodByReceiverGeneratesError stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test05MethodWithTypeErrorOnMessageReceiverGeneratesAlert stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test06MethodWithManyTypeErrorsOnMessageGeneratesManyAlerts stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test07MethodWithMessageWithNoReceiverTypeGeneratesAlert stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test08MethodWithMessageNotUnderstoodInArgumentsGeneratesAlerts stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test09MethodThatThrowsSpecificExceptionDoesNoGenerateAlerts stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test10MessageSentToMethodWithNoReturnTypeGeneratesIssue stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test11MethodWithCollectionItemsGeneratesAlertForBlockVariable stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test12MethodWithVariableManyTypesGeneratesAlertForEachUnsupportedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test13TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test14TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test15TypeCastIfTrueIfFalseCorrectlyAppliesAndRejectsCastedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test16TypeCastNestedRejectionsRejectsEachLevelCastedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #MethodTypeCheckerDragonTest #test17TypeCastManyVariablesNestedRejectionsRejectsEachLevelCastedTypeForEachVariable stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test01TypeCastIfTrueCorrectlyAppliesCastedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02TypeCastIfFalseReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test02_1TypeCastIfFalseReturnsAllTypesWhenBlockIsVariable stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test03TypeCastIfFalseNestedReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test04TypeCastIfFalseIfTrueReturnsTypesCorrectlyForEachBlock stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test05TypeCastIfTrueIfFalseReturnsAllTypesWhenVariableIsNotAffectedByCondition stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test06TypeCastIfTrueIfFalseOverDifferentNodesGivesRightContextToEach stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test07TypeCastAppliesCorrectlyToParseNodeClass stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test08TypeCastAppliesCorrectlyToMessageNodeSelector stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test09TypeCastAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test10TypeCastDistinctIfTrueReturnsAllTypesButRejected stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test11TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test12TypeCastNegatedIfFalseCorrectlyAppliesCastedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test13TypeCastDistinctAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test14TypeCastDistinctNegatedIfTrueReturnsCastedType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test15TypeCastDistinctNegatedAppliesCorrectlyWhenItBeginsWithClassInCondition stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16TypeCastManyNegationsCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_1TypeCastObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_2TypeCastObjectClassSymbolCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_3TypeCastObjectClassToUnexistentSymbolDontApplyContext stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_4TypeCastClassNameToObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_5TypeCastClassSymbolToObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_6TypeCastClassNameDistinctToObjectClassNameCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test16_7TypeCastObjectClassDistinctSymbolCastCorrectly stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test17BranchesAsMessageReceiverAreCorrectlyCasted stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test18BranchesAsMessageArgumentAreCorrectlyCasted stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test19ObjectEqualsToLiteralIfFalseReturnsPreviousTypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test20ObjectEqualsToLiteralIfTrueReturnsLiteralType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test21ObjectDistinctToLiteralCastCorrectlyBothBranches stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test22LiteralEqualsToObjectIfTrueReturnsLiteralType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test23LiteralDistinctToObjectCastCorrectlyBothBranches stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test24WhenConditionIsNotCastingPreservePreviousTypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test25IsKindOfForChildTypesFixesType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test26IsKindOfCastingSupertypeKeepsSubtypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test27IsKindOfRejectingSupertypeExcludeAllSubtypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28IsIsTypeMessageCastType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test28_1IsIsTypeMessageReturnsOriginalTypesWhenSubclassesOfCastType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test29IsIsTypeMessageWhenRejectingTypeShouldFilter stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test30IsIsTypeMessageOnDIfferentVariableShouldntFilter stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31IsIsTypeMessageOnDIfferentTypesShouldRemoveAll stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test31_1IsTypeMessageRedefinedInMidClassAndAffectsItsSubclasses stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test32IsNilMessageIfTrueCastToNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test33ObjectEqualsToNilCastToNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test34ObjectEqualsToNilIfFalseRejectsNilType stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test35NilEqualsToObjectCastToNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test36ObjectDistinctToNilCastOnFalseRejectsOnTrue stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test37IsNilMessageIfFalseRejectsNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test38notNilMessageIfTrueRejectsNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test39NotNilMessageIfFalseCastToNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test40IfNilMessageCastToNil stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test41IfNotNilKeepsPreviousTypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test42DisjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test44NegatedDisjunctionRejectsCastedTypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test45ConjunctionOnDifferentTypesCollectsThemAndRejectsRemaining stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test46NegatedConjunctionAllowsAllPreviousTypes stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test47ManyDisjunctionCollectsEachOneAndRejectsRemaining stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test48ManyConjunctionCollectsCommonTypesAndRejectsRemaining stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+
+!testRun: #TypesWithContextAppliersTest #test49ConjunctionOnlyOnOneSideAffectingContextIgnoreOtherside stamp: 'JFGO 11/6/2024 17:38:03'!
+PASSED!
+Morphic view for MessageSet models. See category 'GUI building'.!
+Morphic view for MessageSet models. See category 'GUI building'.!
+
+----QUIT----(6 November 2024 17:39:51) CuisUniversity-6169.image priorSource: 6245038!
